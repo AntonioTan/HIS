@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aJ2TwJkDQJStDp62mfur7poRgu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
@@ -33,7 +49,40 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="" />
+      <created>1586439387121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586439387121</updated>
+      <workItem from="1586439389991" duration="241000" />
+    </task>
+    <task id="LOCAL-00001" summary="The first version">
+      <created>1586439626297</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586439626297</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="The first version" />
+    <option name="LAST_COMMIT_MESSAGE" value="The first version" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1586439626143">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439626143" />
     <state x="647" y="449" key="Github.CreateGistDialog" timestamp="1586439474296">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
