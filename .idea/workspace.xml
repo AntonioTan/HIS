@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aJ2TwJkDQJStDp62mfur7poRgu" />
@@ -20,9 +43,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="HIS" type="Python.DjangoServer" factoryName="Django server">
@@ -59,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586439387121</updated>
-      <workItem from="1586439389991" duration="241000" />
+      <workItem from="1586439389991" duration="1176000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -68,24 +98,106 @@
       <option name="project" value="LOCAL" />
       <updated>1586439626297</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="The first version">
+      <created>1586439700510</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586439700510</updated>
+    </task>
+    <task id="LOCAL-00003" summary="The first version">
+      <created>1586439722311</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586439722311</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/tantianyi/PycharmProjects/HIS/HIS" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The first version" />
     <option name="LAST_COMMIT_MESSAGE" value="The first version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1586439700409">
+    <state x="440" y="192" key="#Notifications" timestamp="1586442677490">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439700409" />
+    <state x="440" y="192" key="#Notifications/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442677490" />
+    <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1586442418494">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1586442514800">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
     <state x="647" y="449" key="Github.CreateGistDialog" timestamp="1586439474296">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1586442029189">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1586442029188">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1586442029187">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1586442029189">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1586442669694">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442669694" />
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1586442649856">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442649856" />
   </component>
 </project>
