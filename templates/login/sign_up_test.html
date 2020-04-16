@@ -16,6 +16,13 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<!-
+ For front end developer !!!
+ This page is used for new users to sign up.
+ Please leave me some space for a form including some input and radio (html elements).
+ You need to choose the css/js for the sign_up form so that I can add my code later without worrying about the beauty problem.
+ Remember you need to make sure navigator of every html remains the same. So does the over-all style.
+->
 <form action="{% url 'sign_up_test' %}" method="post">
 {% csrf_token %}
     {% for field in sign_up_form %}
