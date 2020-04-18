@@ -1,21 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home_page.html" afterDir="false" />
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="I just finish some validators for the User sign up">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/choices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -23,6 +41,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -30,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,12 +66,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="HIS" type="Python.DjangoServer" factoryName="Django server">
@@ -90,6 +111,10 @@
       <option name="presentableId" value="Default" />
       <updated>1586439387121</updated>
       <workItem from="1586439389991" duration="1176000" />
+      <workItem from="1586799539164" duration="1377000" />
+      <workItem from="1586833432923" duration="11223000" />
+      <workItem from="1587026891579" duration="20040000" />
+      <workItem from="1587223106720" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -112,7 +137,63 @@
       <option name="project" value="LOCAL" />
       <updated>1586439722311</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Just create a model named User">
+      <created>1586532793583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586532793583</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Almost finish the login module&#10;Still need to check out the bug">
+      <created>1587047964929</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587047964929</updated>
+    </task>
+    <task id="LOCAL-00006" summary="I just finish some validators for the User sign up">
+      <created>1587049694139</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587049694139</updated>
+    </task>
+    <task id="LOCAL-00007" summary="I add some tips and requirements for front-end developers.">
+      <created>1587050622193</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587050622193</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add the home page sign in">
+      <created>1587108856466</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587108856466</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add FYI for this html">
+      <created>1587109163998</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587109163998</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add FYI for home_page module">
+      <created>1587109191358</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587109191358</updated>
+    </task>
+    <task id="LOCAL-00011" summary="merge requirement">
+      <created>1587223353195</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587223353195</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +227,13 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="OPEN_TABS">
@@ -156,48 +244,111 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The first version" />
-    <option name="LAST_COMMIT_MESSAGE" value="The first version" />
+    <MESSAGE value="Just create a model named User" />
+    <MESSAGE value="Almost finish the login module&#10;Still need to check out the bug" />
+    <MESSAGE value="I just finish some validators for the User sign up" />
+    <MESSAGE value="I add some tips and requirements for front-end developers." />
+    <MESSAGE value="Add the home page sign in" />
+    <MESSAGE value="Add FYI for this html" />
+    <MESSAGE value="Add FYI for home_page module" />
+    <MESSAGE value="merge requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge requirement" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="192" key="#Deployment" timestamp="1586798758901">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="192" key="#Deployment/0.0.1680.1050@0.0.1680.1050" timestamp="1586798758901" />
+    <state x="440" y="192" key="#Inspections" timestamp="1587015412477">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="192" key="#Inspections/0.0.1680.1050@0.0.1680.1050" timestamp="1587015412477" />
     <state x="440" y="192" key="#Notifications" timestamp="1586442677490">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Notifications/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442677490" />
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587010338169">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587010338169" />
+    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587015916341">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1587015916341" />
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1586442418494">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1586442514800">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1587223441865">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1587223441865" />
+    <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="168" y="94" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223334967" />
     <state x="647" y="449" key="Github.CreateGistDialog" timestamp="1586439474296">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1586442029189">
+    <state width="819" height="295" key="GridCell.Tab.0.bottom" timestamp="1586799525314">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1586442029188">
+    <state width="819" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525314" />
+    <state width="819" height="295" key="GridCell.Tab.0.center" timestamp="1586799525313">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1586442029187">
+    <state width="819" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525313" />
+    <state width="819" height="295" key="GridCell.Tab.0.left" timestamp="1586799525312">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1586442029189">
+    <state width="819" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525312" />
+    <state width="819" height="295" key="GridCell.Tab.0.right" timestamp="1586799525314">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1586442669694">
+    <state width="819" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525314" />
+    <state x="168" y="94" key="MergeDialog" timestamp="1587223184303">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442669694" />
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1586442649856">
+    <state x="168" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184303" />
+    <state x="553" y="249" key="MultipleFileMergeDialog" timestamp="1587223184346">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442649856" />
+    <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
+    <state x="349" y="164" key="SettingsEditor" timestamp="1586799684054">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586799684054" />
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1587223416121">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587223416121" />
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1587223108871">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223108871" />
+    <state x="594" y="246" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587223136247">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="594" y="246" key="git4idea.branch.GitSmartOperationDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223136247" />
+    <state x="622" y="325" key="git4idea.merge.GitMergeDialog" timestamp="1587223323444">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1587223451652">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223451652" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586799673175">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586799673175" />
   </component>
 </project>
