@@ -95,7 +95,6 @@ class SignUpView(View):
         form = self.form_class(self.initial)
         if request.COOKIES['post_token'] != 'allow':
             return render(request, 'home_page_login_test.html')
-
         if form.is_valid():
             user_data = get_user_data(self.initial)
             new_user = User.objects.create(
@@ -103,6 +102,7 @@ class SignUpView(View):
                 password=user_data['password'],
                 birth=user_data['birth'],
                 age=user_data['age'],
+                sex=user_data['sex'],
                 phone=user_data['phone'],
                 email=user_data['email'],
                 sign_up_time=user_data['sign_up_time'],
@@ -121,6 +121,7 @@ def get_user_data(form_data):
     user_data = {}
     user_data['name'] = form_data['name']
     user_data['password'] = form_data['password']
+    user_data['sex'] = True if form_data['sex']=='male' else False
     user_data['phone'] = form_data['phone']
     user_data['birth'] = form_data['birth']
     user_data['email'] = form_data['email']
