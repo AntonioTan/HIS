@@ -42,7 +42,7 @@ class Schedule(models.Model):
     doctor = models.ForeignKey(to='Doctor', on_delete=models.CASCADE)
     morning_registration_num = models.SmallIntegerField(default=0)
     afternoon_registration_num = models.SmallIntegerField(default=0)
-    weekday = models.SmallIntegerField(max_length=1)
+    weekday = models.SmallIntegerField()
     # type 1 for clinic || 0 for non-clinic
     type = models.BooleanField()
 
