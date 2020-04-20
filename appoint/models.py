@@ -10,7 +10,8 @@ class Registration(models.Model):
     # a registration is valid for 4 hour from start time
     start_time = models.DateTimeField()
     price = models.SmallIntegerField()
-    department = models.ForeignKey(to='Department', on_delete=models.CASCADE)
+    doctor = models.ForeignKey(to='Doctor', on_delete=models.CASCADE)
+    available = models.BooleanField()
 
 
 class Department(models.Model):
@@ -39,8 +40,8 @@ class Order(models.Model):
 
 class Schedule(models.Model):
     doctor = models.ForeignKey(to='Doctor', on_delete=models.CASCADE)
-    morning_registration_num = models.SmallIntegerField()
-    afternoon_registration_num = models.SmallIntegerField()
+    morning_registration_num = models.SmallIntegerField(default=0)
+    afternoon_registration_num = models.SmallIntegerField(default=0)
     weekday = models.SmallIntegerField(max_length=1)
     # type 1 for clinic || 0 for non-clinic
     type = models.BooleanField()
