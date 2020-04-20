@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Cronb Part
+
+CRONJOBS = [
+    ('*/1 * * * *', 'HIS.cron.test1'),
+]
+
 
 # Application definition
 
@@ -39,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'appoint',
-    'django_crontab'
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
