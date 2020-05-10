@@ -16,6 +16,29 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="FirstPage" id="login">
+        <form action="http://www.baidu.com" method="GET">
+        <p>
+        <img id="account_img" src="{% static 'blog/images/doctor.jpg' %}"/><input id="account" type="text" name="userid" placeholder="注册邮箱/手机号" value=""/>
+        </p>
+            <img id="password_img" src="{% static 'blog/images/password.JPG' %}"/><input type="password" name="usercode" value="" id="password"/>
+        <p><a href="https://im.qq.com/" target="_blank" id="forgot"> 忘记密码？</a>
+               <a href="http://127.0.0.1:8000/SignUp" target="_blank" id="Nocount"> 没有账号，立即注册</a>
+        </p>
+
+            <input type="submit" name="登录1" value="用户登录" id="signin_user">
+            <input type="submit" name="登录2" value="医生登录" id="signin_doctor">
+    </form>
+    </div>
+
+    <div id="Introdution">
+        <div id="text">
+        XXX医院很高兴为您服务！
+        您可以通过登录本系统，实现您的预约挂号、接受分诊、查看诊断结果等服务需求。
+        本系统会给您带来不一样的方便快捷的预约就诊体验！
+        </div>
+
+    </div>
 <!-
  For front end developer !!!
  This is a home page. We need a form which will serve as the one for users to log in.
@@ -23,8 +46,9 @@
  You can add some introduction to this program so that this page can seem fascinating.
 
  Most important thing is you need to decide what the navigator looks like here.
-->
-<form action="{% url 'login:sign_in_test' %}" method="post">
+
+
+  <form action="{% url 'login:sign_in_test' %}" method="post">
     {% csrf_token %}
     {% for field in sign_in_form %}
     <div class="field_wrapper">
@@ -33,7 +57,7 @@
         {{ field }}
     </div>
     {% endfor %}
-    <input type="submit" value="submit">
+    <input type="submit" value="submit">->
 </form>
 </body>
 </html>
