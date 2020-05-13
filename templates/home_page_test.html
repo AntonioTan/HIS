@@ -15,50 +15,98 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
 </head>
+{% load static %}
+<style>
+    .form-control{width:250px}
+    #function{margin-left:60%;font-size:12px}
+    #title{margin-top: 6px}
+    .lead{font-size: 16px}
+    #introduction{margin-left:30%;margin-top:130px}
+    #FP{background-image:url({% static "blog/images/back2.jpg" %});width:100%;height: 600px}
+</style>
+    
 <body>
-    <div class="FirstPage" id="login">
-        <form action="http://www.baidu.com" method="GET">
-        <p>
-        <img id="account_img" src="{% static 'blog/images/doctor.jpg' %}"/><input id="account" type="text" name="userid" placeholder="注册邮箱/手机号" value=""/>
-        </p>
-            <img id="password_img" src="{% static 'blog/images/password.JPG' %}"/><input type="password" name="usercode" value="" id="password"/>
-        <p><a href="https://im.qq.com/" target="_blank" id="forgot"> 忘记密码？</a>
-               <a href="http://127.0.0.1:8000/SignUp" target="_blank" id="Nocount"> 没有账号，立即注册</a>
-        </p>
-
-            <input type="submit" name="登录1" value="用户登录" id="signin_user">
-            <input type="submit" name="登录2" value="医生登录" id="signin_doctor">
-             <input type="submit" name="登录3" value="管理员登录" id="signin_admin">
-    </form>
+    <nav class="navbar navbar-default" role="navigation" style="margin:0;padding: 0">
+    <div class="container-fluid">
+    <div class="navbar-header" id="title">
+        <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
     </div>
+    <div id="function">
+        <ul class="nav navbar-nav" style="margin-top: 8px;">
+            <li><a href="#" id="page1">首页</a></li>
+            <li><a href="#" id="department">科室分类</a></li>
+            <li><a href="#" id="reserve">预约挂号</a></li>
+            <li><a href="#" id="contact">联系我们</a></li>
+            <li><a href="#" id="help">帮助中心</a></li>
+            <li><a href="#" id="self">个人中心</a></li>
+            <!--以下部分登陆成功后才会显示-->
+            <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="min-width:100%">
+                    <li><a href="#">设置</a></li>
+                    <li><a href="#">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
 
-    <div id="Introdution">
-        <div id="text">
-        XXX医院很高兴为您服务！
-        您可以通过登录本系统，实现您的预约挂号、接受分诊、查看诊断结果等服务需求。
-        本系统会给您带来不一样的方便快捷的预约就诊体验！
-        </div>
+<div class="container" id="FP">
+    <div class="row">
+        <div class="col-xs-6">
+            <div id="introduction">
+            <h2>线上挂号、排队分诊一体化</h2>
+            <p class="lead">本系统为患者提供线上医生查询、快捷挂号的功能</p>
+            <p class="lead">点击“科室分类”，查看具体科室情况</p>
+            <p class="lead">点击“预约挂号”，查看医生介绍，实现预约</p>
+            </div>
+     </div>
+
+        <div class="col-xs-6" >
+            <form class="form-horizontal" role="form" method="post" action="" style="margin-left:70px;margin-top:120px">
+         <div class="form-group">
+         <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-user"></span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="firstname" placeholder="注册邮箱/手机">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastname" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-lock"></span></label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="lastname" placeholder="输入密码">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">记住密码
+        </label>
+          <label style="margin-left:50px">
+          <input type="checkbox">自动登录
+        </label>
+      </div>
 
     </div>
-<!-
- For front end developer !!!
- This is a home page. We need a form which will serve as the one for users to log in.
- I think this home page should imitate the github homepage.
- You can add some introduction to this program so that this page can seem fascinating.
-
- Most important thing is you need to decide what the navigator looks like here.
-
-
-  <form action="{% url 'login:sign_in_test' %}" method="post">
-    {% csrf_token %}
-    {% for field in sign_in_form %}
-    <div class="field_wrapper">
-        {{ field.errors }}
-        {{ field.label }}
-        {{ field }}
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-info" style="margin-left:18px;text-align: center;width:200px">登录</button>
     </div>
-    {% endfor %}
-    <input type="submit" value="submit">->
+  </div>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <label><a href="http://www.w3school.com.cn/">忘记密码？</a></label>
+        <label><a href="http://www.w3school.com.cn/" style="margin-left:50px">没有账号，立即注册</a></label>
+         </div>
+  </div>
+
 </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
