@@ -12,3 +12,4 @@ def test1():
                                  strength='test',
                                  department=models.Department.objects.all()[0],)
     new_doctor.save()
+
