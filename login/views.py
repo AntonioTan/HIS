@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.http.cookie import SimpleCookie
 from django.shortcuts import render
 from django.views import View
+from django.contrib.auth.hashers import make_password, check_password
 from .forms import SignUp, SignIn
 from .models import User
 from datetime import date
@@ -63,8 +64,8 @@ def verify_sign_in(sign_in_data):
     name = sign_in_data['name']
     password = sign_in_data['password']
     try:
-        rst = User.objects.get(name=name).password
-        check = password == rst
+        encoded_password = User.objects.get(name=name).password
+        check = check_password(password=password, encoded=encoded_password)
     except ObjectDoesNotExist:
         return False
     return check
@@ -120,7 +121,8 @@ class SignUpView(View):
 def get_user_data(form_data):
     user_data = {}
     user_data['name'] = form_data['name']
-    user_data['password'] = form_data['password']
+    # Look OUT I use make_password here!
+    user_data['password'] = make_password(form_data['password'], None)
     user_data['sex'] = True if form_data['sex']=='male' else False
     user_data['phone'] = form_data['phone']
     user_data['birth'] = form_data['birth']

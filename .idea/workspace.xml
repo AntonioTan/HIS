@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="I just finish some validators for the User sign up">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/choices.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="Add cronjob settings  the test of which has been verified">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/register_all_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/register_all_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +33,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="AntonioTan &lt;congmi@outlook.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="login" />
@@ -55,33 +52,68 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1aJ2TwJkDQJStDp62mfur7poRgu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/HIS" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.data_create">
+    <configuration name="data_create" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HIS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/appoint" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HIS/data_create.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="HIS" type="Python.DjangoServer" factoryName="Django server">
       <module name="HIS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="HIS.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -99,6 +131,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.data_create" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -115,6 +152,13 @@
       <workItem from="1586833432923" duration="11223000" />
       <workItem from="1587026891579" duration="20040000" />
       <workItem from="1587223106720" duration="281000" />
+      <workItem from="1588925073826" duration="12152000" />
+      <workItem from="1589198436624" duration="4266000" />
+      <workItem from="1589419564432" duration="118000" />
+      <workItem from="1589420001583" duration="178000" />
+      <workItem from="1589521864072" duration="12152000" />
+      <workItem from="1589616840392" duration="4102000" />
+      <workItem from="1589638521116" duration="3610000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -193,7 +237,105 @@
       <option name="project" value="LOCAL" />
       <updated>1587223353195</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="model change">
+      <created>1587369953940</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587369953940</updated>
+    </task>
+    <task id="LOCAL-00013" summary="I just finish some validators for the User sign up">
+      <created>1587370051379</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587370051379</updated>
+    </task>
+    <task id="LOCAL-00014" summary="change the models.py">
+      <created>1587370350511</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587370350511</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add django-crontab">
+      <created>1587370383404</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587370383404</updated>
+    </task>
+    <task id="LOCAL-00016" summary="model 2.0">
+      <created>1587385074576</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587385074576</updated>
+    </task>
+    <task id="LOCAL-00017" summary="CRONJOB for some time schedule jobs">
+      <created>1587385176157</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587385176157</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add cronjob settings  the test of which has been verified">
+      <created>1587385210947</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587385210947</updated>
+    </task>
+    <task id="LOCAL-00019" summary="new version of register_all_test.html">
+      <created>1588927437015</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588927437015</updated>
+    </task>
+    <task id="LOCAL-00020" summary="new version of appoint urls">
+      <created>1588934504034</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1588934504034</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Well appoint version 1 &#10;now you can pick a date&#10;but other picks work the same  way">
+      <created>1588948526768</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588948526768</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add the appoint module setting into HIS">
+      <created>1588948553573</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1588948553573</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Create fake data into database">
+      <created>1589642594556</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1589642594556</updated>
+    </task>
+    <task id="LOCAL-00024" summary="data from zxc">
+      <created>1589642605356</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1589642605356</updated>
+    </task>
+    <task id="LOCAL-00025" summary="create fake data into database">
+      <created>1589642619929</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589642619929</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +369,31 @@
             </State>
           </value>
         </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/tantianyi/PycharmProjects/HIS/templates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -239,38 +406,53 @@
     <option name="OPEN_TABS">
       <set>
         <option value="1" />
+        <option value="2" />
       </set>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="The first version" />
     <MESSAGE value="Just create a model named User" />
     <MESSAGE value="Almost finish the login module&#10;Still need to check out the bug" />
-    <MESSAGE value="I just finish some validators for the User sign up" />
     <MESSAGE value="I add some tips and requirements for front-end developers." />
     <MESSAGE value="Add the home page sign in" />
     <MESSAGE value="Add FYI for this html" />
     <MESSAGE value="Add FYI for home_page module" />
     <MESSAGE value="merge requirement" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge requirement" />
+    <MESSAGE value="model change" />
+    <MESSAGE value="I just finish some validators for the User sign up" />
+    <MESSAGE value="change the models.py" />
+    <MESSAGE value="add django-crontab" />
+    <MESSAGE value="model 2.0" />
+    <MESSAGE value="CRONJOB for some time schedule jobs" />
+    <MESSAGE value="Add cronjob settings  the test of which has been verified" />
+    <MESSAGE value="new version of register_all_test.html" />
+    <MESSAGE value="new version of appoint urls" />
+    <MESSAGE value="Well appoint version 1 &#10;now you can pick a date&#10;but other picks work the same  way" />
+    <MESSAGE value="Add the appoint module setting into HIS" />
+    <MESSAGE value="Create fake data into database" />
+    <MESSAGE value="data from zxc" />
+    <MESSAGE value="create fake data into database" />
+    <option name="LAST_COMMIT_MESSAGE" value="create fake data into database" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="192" key="#Deployment" timestamp="1586798758901">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Deployment/0.0.1680.1050@0.0.1680.1050" timestamp="1586798758901" />
-    <state x="440" y="192" key="#Inspections" timestamp="1587015412477">
+    <state x="440" y="192" key="#Inspections" timestamp="1587369925858">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="192" key="#Inspections/0.0.1680.1050@0.0.1680.1050" timestamp="1587015412477" />
+    <state x="440" y="192" key="#Inspections/0.0.1680.1050@0.0.1680.1050" timestamp="1587369925858" />
     <state x="440" y="192" key="#Notifications" timestamp="1586442677490">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Notifications/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442677490" />
-    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587010338169">
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587389421151">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587010338169" />
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587389421151" />
     <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587015916341">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -279,11 +461,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1587223441865">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589642939962">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
-    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1587223441865" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589642939962" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -292,26 +474,46 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="819" height="295" key="GridCell.Tab.0.bottom" timestamp="1586799525314">
+    <state width="819" height="294" key="GridCell.Tab.0.bottom" timestamp="1589642467279">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state width="819" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525314" />
-    <state width="819" height="295" key="GridCell.Tab.0.center" timestamp="1586799525313">
+    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589642467279" />
+    <state width="819" height="264" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1589419529894" />
+    <state width="819" height="294" key="GridCell.Tab.0.center" timestamp="1589642467278">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
-    <state width="819" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525313" />
-    <state width="819" height="295" key="GridCell.Tab.0.left" timestamp="1586799525312">
+    <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589642467278" />
+    <state width="819" height="264" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1589419529893" />
+    <state width="819" height="294" key="GridCell.Tab.0.left" timestamp="1589642467277">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
-    <state width="819" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525312" />
-    <state width="819" height="295" key="GridCell.Tab.0.right" timestamp="1586799525314">
+    <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589642467277" />
+    <state width="819" height="264" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1589419529892" />
+    <state width="819" height="294" key="GridCell.Tab.0.right" timestamp="1589642467279">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state width="819" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586799525314" />
+    <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589642467279" />
+    <state width="819" height="264" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1589419529893" />
+    <state width="819" height="363" key="GridCell.Tab.1.bottom" timestamp="1589637102728">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="819" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102728" />
+    <state width="819" height="363" key="GridCell.Tab.1.center" timestamp="1589637102727">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="819" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102727" />
+    <state width="819" height="363" key="GridCell.Tab.1.left" timestamp="1589637102726">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="819" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102726" />
+    <state width="819" height="363" key="GridCell.Tab.1.right" timestamp="1589637102727">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="819" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102727" />
     <state x="168" y="94" key="MergeDialog" timestamp="1587223184303">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -320,19 +522,24 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
-    <state x="349" y="164" key="SettingsEditor" timestamp="1586799684054">
+    <state x="349" y="164" key="SettingsEditor" timestamp="1589636711194">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586799684054" />
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589636711194" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1587223416121">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587223416121" />
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1587223108871">
+    <state x="638" y="267" key="VcsDiffUtil.ChangesDialog" timestamp="1589642735540">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223108871" />
+    <state x="638" y="267" key="VcsDiffUtil.ChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589642735540" />
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1589638524589">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589638524589" />
+    <state x="496" y="358" key="com.intellij.ide.util.TipDialog/0.23.1680.980@0.23.1680.980" timestamp="1589419564457" />
     <state x="594" y="246" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587223136247">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -341,14 +548,32 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1587223451652">
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1589642899645">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223451652" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1586799673175">
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589642899645" />
+    <state x="602" y="165" key="refactoring.ChangeSignatureDialog" timestamp="1588927230241">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1586799673175" />
+    <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589636672597">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589636672597" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/appoint/forms.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1589642255041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
   </component>
 </project>

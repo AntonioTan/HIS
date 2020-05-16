@@ -22,16 +22,24 @@
  If you see this, please contact me by WeChat.
  Now I will just use this for test.
 ->
-<form action="{% url 'appoint-views-register_test' register_test.id %}" method="post">
+<form action="{% url 'appoint:register_test' %}" method="post">
 {% csrf_token %}
 {% if days %}
-    {% for day in days%}
-    <label>
-        <input type="radio">
-        <span>{{ day }}</span>
-    </label>
+    {% for field in days %}
+    <div class="field_wrapper">
+        {{ field.label }}
+        {{ field }}
+    </div>
     {% endfor %}
+{#    {% for day in days %}#}
+{#        <div class="day_wrapper">#}
+{#            <input type="radio" id="id_{{ days.index|day }}">#}
+{#            <label for="id{{ days|length }}">{{ day }}</label>#}
+{#        {{ days|remove }}#}
+{#        </div>#}
+{#    {% endfor %}#}
 {% endif %}
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
