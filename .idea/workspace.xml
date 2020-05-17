@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appoint/search_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -167,7 +166,7 @@
       <workItem from="1589420001583" duration="178000" />
       <workItem from="1589521864072" duration="12152000" />
       <workItem from="1589616840392" duration="4102000" />
-      <workItem from="1589638521116" duration="8521000" />
+      <workItem from="1589638521116" duration="8903000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -358,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589677352025</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="search_test html created">
+      <created>1589678705234</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1589678705234</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,11 +492,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589677351899">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589678705117">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
-    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589677351899" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589678705117" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -547,10 +553,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
-    <state x="349" y="164" key="SettingsEditor" timestamp="1589678691061">
+    <state x="349" y="164" key="SettingsEditor" timestamp="1589679086324">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589678691061" />
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589679086324" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1587223416121">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -582,10 +588,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589678624832">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589679067837">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589678624832" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589679067837" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1589678567823" />
   </component>
   <component name="XDebuggerManager">
