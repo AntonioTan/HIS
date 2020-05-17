@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="static setting">
+      <change afterPath="$PROJECT_DIR$/appoint/static/appoint/imgs/back2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appoint/static/appoint/imgs/man.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appoint/static/appoint/imgs/woman.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/data_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/data_create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/~$医院挂号信息.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appoint/search_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/appoint/static/appoint/imgs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,16 +91,17 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/HIS" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.data_create">
+  <component name="RunManager" selected="Python.views">
     <configuration name="data_create" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HIS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,6 +116,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HIS/data_create.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HIS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/appoint" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/appoint/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,6 +172,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.views" />
         <item itemvalue="Python.data_create" />
       </list>
     </recent_temporary>
@@ -166,7 +198,10 @@
       <workItem from="1589420001583" duration="178000" />
       <workItem from="1589521864072" duration="12152000" />
       <workItem from="1589616840392" duration="4102000" />
-      <workItem from="1589638521116" duration="8903000" />
+      <workItem from="1589638521116" duration="12843000" />
+      <workItem from="1589684600101" duration="1685000" />
+      <workItem from="1589688672922" duration="195000" />
+      <workItem from="1589689093296" duration="21570000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -364,11 +399,28 @@
       <option name="project" value="LOCAL" />
       <updated>1589678705234</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="static setting">
+      <created>1589679133607</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1589679133607</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -465,7 +517,9 @@
     <MESSAGE value="create fake data into database" />
     <MESSAGE value="a few changes recently" />
     <MESSAGE value="search_test html created" />
-    <option name="LAST_COMMIT_MESSAGE" value="search_test html created" />
+    <MESSAGE value="static setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="static setting" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="192" key="#Deployment" timestamp="1586798758901">
@@ -492,11 +546,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589678705117">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589682097894">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
-    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589678705117" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589682097894" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -505,30 +559,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="819" height="294" key="GridCell.Tab.0.bottom" timestamp="1589678049484">
+    <state width="819" height="294" key="GridCell.Tab.0.bottom" timestamp="1589709819816">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589678049484" />
-    <state width="819" height="264" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1589419529894" />
-    <state width="819" height="294" key="GridCell.Tab.0.center" timestamp="1589678049482">
+    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589709819816" />
+    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1589684549009" />
+    <state width="819" height="294" key="GridCell.Tab.0.center" timestamp="1589709819815">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
-    <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589678049482" />
-    <state width="819" height="264" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1589419529893" />
-    <state width="819" height="294" key="GridCell.Tab.0.left" timestamp="1589678049482">
+    <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589709819815" />
+    <state width="819" height="294" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1589684549008" />
+    <state width="819" height="294" key="GridCell.Tab.0.left" timestamp="1589709819814">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
-    <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589678049482" />
-    <state width="819" height="264" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1589419529892" />
-    <state width="819" height="294" key="GridCell.Tab.0.right" timestamp="1589678049483">
+    <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589709819814" />
+    <state width="819" height="294" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1589684549007" />
+    <state width="819" height="294" key="GridCell.Tab.0.right" timestamp="1589709819816">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
-    <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589678049483" />
-    <state width="819" height="264" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1589419529893" />
+    <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589709819816" />
+    <state width="819" height="294" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1589684549009" />
     <state width="819" height="363" key="GridCell.Tab.1.bottom" timestamp="1589637102728">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -557,19 +611,19 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589679086324" />
-    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1587223416121">
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1589682567694">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
-    <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587223416121" />
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589682567694" />
     <state x="638" y="267" key="VcsDiffUtil.ChangesDialog" timestamp="1589642735540">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="638" y="267" key="VcsDiffUtil.ChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589642735540" />
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1589638524589">
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1589688681304">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589638524589" />
+    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589688681304" />
     <state x="496" y="358" key="com.intellij.ide.util.TipDialog/0.23.1680.980@0.23.1680.980" timestamp="1589419564457" />
     <state x="594" y="246" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587223136247">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -588,11 +642,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589679067837">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589689350384">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589679067837" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1589678567823" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589689350384" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1589689341400" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -606,6 +660,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1589644764689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
+    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1589708206815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
+    <SUITE FILE_PATH="coverage/HIS$views.coverage" NAME="views Coverage Results" MODIFIED="1589709816884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
   </component>
 </project>
