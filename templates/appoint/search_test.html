@@ -239,7 +239,7 @@
 {#            </div>#}
             {% if picked_type %}
                 {% if doctors|length %}
-                    {% for doctor in doctors %}
+                    {% for doctor in page_doctors %}
                         <div class="col-xs-2" style="width:30%;margin-top:5%">
                             <div class="row" style="margin-left:10%">
                                 <div class="col-xs-2" style="width:130px">
@@ -250,7 +250,9 @@
                                     <p>号源：专家号</p>
                                     <div class="form-group">
                                         <label for="lastname">
-                                            <button class="btn btn-info" href="#">我要预约</button>
+                                            <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
+                                                <button class="btn btn-info">我要预约</button>
+                                            </a>
                                         </label>
                                     </div>
                                 </div>
@@ -272,14 +274,20 @@
                 {% endif %}
             {% else %}
                 {% if schedules|length %}
-                    {% for schedule in schedules %}
+                    {% for schedule in page_schedules %}
                      <div class="col-xs-2"style="width:30%;margin-top:5%">
                      <div class="row" style="margin-left:10%" >
                         <div class="col-xs-2"style="width:130px">
                             <p>科室：{{schedule.department_name}}</p>
                             <p>号源：普通号</p>
                             <div class="form-group">
-                               <label for="lastname"><button class="btn btn-info" href="#">我要预约</button></label>
+                               <label for="lastname">
+                                   <a href="/appoint/registration_test/picked_department_id={{ schedule.department_id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
+                                   <button class="btn btn-info">
+                                       我要预约
+                                   </button>
+                                       </a>
+                                </label>
                             </div>
                         </div>
                      </div>
@@ -315,15 +323,18 @@
 
 
         <!--分页器部分 -->
-        <ul class="pagination" style="margin-left: 40%">
-         <li><a href="#">&laquo;</a></li>
-         <li class="active"><a href="#">1</a></li>
-         <li><a href="#">2</a></li>
-         <li><a href="#">3</a></li>
-         <li><a href="#">4</a></li>
-         <li><a href="#">5</a></li>
-         <li><a href="#">&raquo;</a></li>
-        </ul>
+    <ul class="pagination" style="margin-left: 40%">
+        <li><a href="/appoint/search_test/change_page=previous/">&laquo;</a></li>
+        {% for page in pages %}
+            {% if picked_page == page %}
+                <li class="active"><a href="/appoint/search_test/picked_page={{ page }}/">{{ page }}</a></li>
+            {% else %}
+                <li><a href="/appoint/search_test/picked_page={{ page }}/">{{ page }}</a></li>
+
+            {% endif %}
+        {% endfor %}
+        <li><a href="/appoint/search_test/change_page=next/">&raquo;</a></li>
+    </ul>
     </div>
 
 </div>
