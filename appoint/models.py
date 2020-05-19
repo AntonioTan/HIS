@@ -35,6 +35,7 @@ class Order(models.Model):
     order_time = models.DateTimeField(null=True)
     # 1 for to_purchase || 2 for purchased || 3 for completed || 4 for against_rule
     status = models.SmallIntegerField(default=1)
+    description = models.CharField(default='', max_length=300)
 
 
 class Schedule(models.Model):

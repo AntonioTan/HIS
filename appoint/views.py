@@ -1,3 +1,5 @@
+from math import ceil
+
 from django.shortcuts import render, redirect
 from .models import Department, Doctor, Schedule
 from business_calendar import Calendar, MO, TU, WE, TH, FR
@@ -8,8 +10,6 @@ from .data import appoint_basic_data
 
 
 # Create your views here.
-
-
 def register_test(request, department, doctor_id, weekday, type):
     if len(str(department)) != 0:
         department = Department.objects.get(name=department)
@@ -19,6 +19,47 @@ def register_test(request, department, doctor_id, weekday, type):
 def deal_date(request, picked_date):
     print(picked_date)
     return render(request, template_name='appoint/search_test.html')
+
+
+def deal_registration(request, *args, **kwargs):
+    if request.method != 'POST':
+        print(kwargs)
+        for key in kwargs.keys():
+            kwargs[key] = int(kwargs[key])
+        context = {}
+        department = Department.objects.get(id=kwargs['picked_department_id'])
+        if kwargs['picked_type']:
+            doctor = Doctor.objects.get(id=kwargs['picked_doctor_id'])
+            doctor = doctor
+            schedule = Schedule.objects.get(department=department,
+                                                       doctor=doctor,
+                                                       morning_afternoon=kwargs['picked_morning_afternoon'],
+                                                       type=kwargs['picked_type'],
+                                                       weekday=kwargs['picked_date'],
+                                                       )
+            context['doctor_name'] = doctor.name
+            context['doctor_sex'] = '男' if doctor.sex else '女'
+            context['doctor_title'] = doctor.title
+            context['doctor_strength'] = doctor.strength
+        else:
+            schedule = Schedule.objects.get(department=department,
+                                            morning_afternoon=kwargs['picked_morning_afternoon'],
+                                            type=kwargs['picked_type'],
+                                            weekday=kwargs['picked_date'],
+                                                       )
+        context['department_name'] = department.name
+        context['type'] = kwargs['picked_type']
+        context['price'] = schedule.price
+        context['date'] = str(datetime.today().date()+timedelta(days=kwargs['picked_date']))
+        context['time'] = '上午8:00 --  10:00' if not kwargs['picked_morning_afternoon'] else '下午2:00 -- 4:00'
+        context['schedule_id'] = schedule.id
+        return render(request, template_name='appoint/submit_test.html', context=context)
+    else:
+        print(request.POST.get('description'))
+        user_id = request.COOKIES.get('user_id')
+        print(user_id)
+        context = {}
+        return render(request, template_name='appoint/submit_test.html', context=context)
 
 
 class AppointView(View):
@@ -38,6 +79,7 @@ class AppointView(View):
                     self.initial[key] = int(kwargs[key])
                 else:
                     self.initial[key] = kwargs[key]
+
                 if key in ['picked_type', 'picked_morning_afternoon', 'picked_date']:
                     self.initial['schedule_objs'] = Schedule.objects.filter(type=self.initial['picked_type'],
                                                                             morning_afternoon=self.initial['picked_morning_afternoon'],
@@ -52,11 +94,33 @@ class AppointView(View):
             print(self.initial['picked_type']==0)
             if self.initial['picked_type']:
                 self.initial['doctor_objs'] = [schedule.doctor for schedule in self.initial['schedule_objs']]
+                self.initial['pages'] = list(range(1, max(2, ceil(len(self.initial['doctor_objs'])/8+1))))
                 self.initial['doctors'] = [{'id': doctor.id, 'name': doctor.name, 'sex': '男' if doctor.sex == 1 else '女',
-                         'department_name': doctor.department.name, 'title': doctor.title} for doctor in
+                         'department_name': doctor.department.name, 'department_id': doctor.department.id, 'title': doctor.title} for doctor in
                         self.initial['doctor_objs']]
-            self.initial['schedules'] = [{'department_name': schedule.department.name, 'id': schedule.id} for schedule in
+            else:
+                self.initial['pages'] = list(range(1, max(2, ceil(len(self.initial['schedule_objs'])/8+1))))
+
+            self.initial['schedules'] = [{'department_name': schedule.department.name, 'id': schedule.id, 'department_id': schedule.department.id} for schedule in
                               self.initial['schedule_objs']]
+
+            if 'picked_page' not in kwargs.keys() and 'change_page' not in kwargs.keys():
+                self.initial['picked_page'] = 1
+            elif 'picked_page' in kwargs.keys():
+                self.initial['picked_page'] = int(kwargs['picked_page'])
+            elif kwargs['change_page']  == 'previous':
+                self.initial['picked_page'] = self.initial['picked_page'] - 1 if  self.initial['picked_page'] != 1 else 1
+            else:
+                self.initial['picked_page'] = self.initial['picked_page'] + 1 if  self.initial['picked_page'] != self.initial['pages'][-1] else self.initial['pages'][-1]
+
+            if self.initial['picked_page'] != self.initial['pages'][-1]:
+                self.initial['page_schedules'] = self.initial['schedules'][(self.initial['picked_page']-1)*8: self.initial['picked_page']*8]
+                self.initial['page_doctors'] = self.initial['doctors'][(self.initial['picked_page']-1)*8: self.initial['picked_page']*8]
+            else:
+                self.initial['page_schedules'] = self.initial['schedules'][
+                    (self.initial['picked_page'] - 1) * 8:]
+                self.initial['page_doctors'] = self.initial['doctors'][
+                    (self.initial['picked_page'] - 1) * 8:]
 
             for key in self.initial.keys():
                 if 'picked' in key:
@@ -65,7 +129,7 @@ class AppointView(View):
 
 
 
-    #
+
     # def dispatch(self, request, *args, **kwargs):
     #     if request.method == 'POST':
     #         return self.post(request)
