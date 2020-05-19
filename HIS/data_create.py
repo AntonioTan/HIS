@@ -186,7 +186,7 @@ def create_doctor(doctors, departments):
         print(department_name)
         department = Department.objects.get(name=department_name)
         name = doctor[1]
-        sex = 0 if doctor[2]  == '女' else 1
+        sex = 0 if doctor[2] == '女' else 1
         title = doctor[4]
         strength = doctor[5] if index % 5 in [0, 1, 2] else ''
         Doctor.objects.create(name=name, sex=sex, title=title, strength=strength, department=department)
@@ -203,13 +203,14 @@ def create_doctor(doctors, departments):
 def create_schedule():
     work_day_nums = [3, 4, 5]
     for doctor in Doctor.objects.all():
-        work_day_num = work_day_nums[random.randint(0, 2)]
-        for week_day in random.sample(range(1, 8), work_day_num):
-            num = 30
-            price = 80
-            for morning_afternoon in [0, 1]:
-                Schedule.objects.create(weekday=week_day, doctor=doctor, department=doctor.department,
-                                        morning_afternoon=morning_afternoon, num=num, type=1, price=price)
+        if doctor.title not in ['住院医师', '实习医师']:
+            work_day_num = work_day_nums[random.randint(0, 2)]
+            for week_day in random.sample(range(1, 8), work_day_num):
+                num = 30
+                price = 80
+                for morning_afternoon in [0, 1]:
+                    Schedule.objects.create(weekday=week_day, doctor=doctor, department=doctor.department,
+                                            morning_afternoon=morning_afternoon, num=num, type=1, price=price)
 
     for department in Department.objects.all():
         print(department.name)
@@ -236,14 +237,14 @@ if __name__ == '__main__':
     departments = list(departments['名称'])
     print(departments)
     # create_department(list(departments['名称']))
-    # Doctor.objects.all().delete()
-    # # create_doctor(doctors.iterrows(), departments)
-    # Schedule.objects.all().delete()
-    # create_schedule()
-    for schedule in Schedule.objects.filter(type=0, weekday=datetime.isoweekday(datetime.today().date())):
-        print(schedule.department.name)
-
-    print()
-    for department in Department.objects.all():
-        print(department.name)
-    print(Schedule.objects.filter(department=Department.objects.get(id=int('95'))))
+    Doctor.objects.all().delete()
+    create_doctor(doctors.iterrows(), departments)
+    Schedule.objects.all().delete()
+    create_schedule()
+    # for schedule in Schedule.objects.filter(type=0, weekday=datetime.isoweekday(datetime.today().date())):
+    #     print(schedule.department.name)
+    #
+    # print()
+    # for department in Department.objects.all():
+    #     print(department.name)
+    # print(Schedule.objects.filter(department=Department.objects.get(id=int('95'))))
