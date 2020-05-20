@@ -7,7 +7,7 @@ import os
 import django
 from django.contrib.auth.hashers import make_password
 import pandas as pd
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")
 django.setup()
 from datetime import timedelta
 from login.models import User

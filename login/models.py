@@ -23,3 +23,5 @@ class User(models.Model):
     appoint_times = models.SmallIntegerField()
     # This can be defined according to appoint_times
     appoint_available = models.BooleanField()
+    # break rule times
+    break_rule_times = models.SmallIntegerField(default=0)

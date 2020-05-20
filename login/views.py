@@ -1,6 +1,9 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect, HttpResponse
 from django.http.cookie import SimpleCookie
+import os, django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
+django.setup()
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.hashers import make_password, check_password
@@ -8,6 +11,7 @@ from .forms import SignUp, SignIn
 from .models import User
 from datetime import date
 from datetime import datetime
+from appoint.models import Order
 # Create your views here.
 
 
@@ -30,8 +34,8 @@ def welcome_login(request, name):
 class SignInView(View):
     form_class = SignIn
     initial = {'key': 'value'}
-    template_name='home_page_test.html'
-    success_template_name='home_page_login_test.html'
+    template_name='login/home_page_test.html'
+    success_template_name='login/user_center_test.html'
 
     def dispatch(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -40,7 +44,7 @@ class SignInView(View):
             if request.COOKIES['post_token'] != 'allow':
                 return render(request, 'home_page_login_test.html')
             form = SignIn()
-            response = render(request, 'home_page_test.html', context={'sign_in_form': form})
+            response = render(request, 'login/home_page_test.html', context={'sign_in_form': form})
             response.set_cookie(key='post_token', value='allow')
             return response
 
@@ -49,11 +53,26 @@ class SignInView(View):
 
     def post(self, request):
         self.initial = request.POST
+        print(self.initial)
         if request.COOKIES['post_token'] != 'allow':
-            return render(request, 'home_page_login_test.html')
+            return render(request, '.html')
         if verify_sign_in(self.initial):
-            response = HttpResponseRedirect('user=%s' % self.initial['name'])
+            # get user
+            sign_in_user = User.objects.get(name=self.initial['name'])
+            # get today registrations
+            today_orders = Order.objects.filter(status=2, patient=sign_in_user)
+            today_registrations = [today_order.registration for today_order in today_orders]
+            # get all registrations
+            all_orders = Order.objects.filter(patient=sign_in_user)
+            all_registrations = [order.registration for order in all_orders]
+            context = {
+                'user': sign_in_user,
+                'today_regestrations': today_registrations,
+                'all_registrations': all_registrations
+            }
+            response = render(request=request, template_name=self.success_template_name, context={'user': sign_in_user})
             response.set_cookie(key='post_token', value='disable')
+            response.set_cookie(key='user_id', value=sign_in_user.id)
             return response
         else:
             form = self.form_class(self.initial)
