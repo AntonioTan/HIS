@@ -18,7 +18,7 @@ def register_test(request, department, doctor_id, weekday, type):
 
 def deal_date(request, picked_date):
     print(picked_date)
-    return render(request, template_name='appoint/search_test.html')
+    return render(request, template_name='pay/index.html')
 
 
 def deal_registration(request, *args, **kwargs):

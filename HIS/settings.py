@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'login',
     'appoint',
     'django_crontab',
+    'pay',
 ]
 
 MIDDLEWARE = [
@@ -129,5 +130,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_FILE_DIRS = [
     os.path.join(BASE_DIR, 'appoint/static'),
-    os.path.join(BASE_DIR, 'login/static')
+    os.path.join(BASE_DIR, 'login/static'),
+    os.path.join(BASE_DIR, 'static')
 ]
+
+ALIPAY_PUBLIC = os.path.join(BASE_DIR,'pay','alipay','alipay_keys','alipay_public.txt')
+APP_PUBLIC = os.path.join(BASE_DIR,'pay','alipay','alipay_keys','app_public.txt')
+APP_PRIVATE = os.path.join(BASE_DIR,'pay','alipay','alipay_keys','app_private.txt')

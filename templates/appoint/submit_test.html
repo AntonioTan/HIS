@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-xs-6">
-        <form class="form-horizontal" role="form" method="post" action={% url 'appoint:registration_test' arg1=schedule_id%}
+        <form class="form-horizontal" role="form" method="post" action={% url 'pay:pay_test' arg1=price%}
               style="margin-top:6%;opacity:0.6;width:700px">
             {% csrf_token %}
             <div class="form-group" style="margin-left:30%;min-width:100%">
@@ -145,7 +145,7 @@
 
     {% else %}
         <div class="col-xs-6">
-        <form class="form-horizontal" role="form" method="post" action={% url 'appoint:registration_test' arg1=11%}
+        <form class="form-horizontal" role="form" method="post" action={% url 'pay:pay_test' arg1=price%}
               style="margin-top:6%;opacity:0.6;width:700px">
             {% csrf_token %}
         <div class="form-group" style="margin-left:30%;min-width:100%">

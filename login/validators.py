@@ -1,14 +1,15 @@
 from django.core.exceptions import ValidationError, MultipleObjectsReturned, ObjectDoesNotExist
 from .models import User
-
+import datetime
 
 def validate_user_name(value):
     existed_user_error = ValidationError(
-                ('User Name Already Exists: %(value)s'),
+                ('用户名已存在: %s'%value),
                 params={'value': value},
                 code='用户名重复')
     try:
         a = User.objects.get(name=value)
+        raise existed_user_error
     except MultipleObjectsReturned:
         raise existed_user_error
     except ObjectDoesNotExist:
@@ -27,6 +28,10 @@ def validate_user_birth(value):
         raise ValidationError('Please enter valid birth',
                               params={'value': value},
                               code='出生年份过老')
+    try:
+        datetime.datetime.strptime(str(value), '%Y-%m-%d')
+    except ValueError:
+        raise ValidationError(("错误的日期格式 应该是 YYYY-MM-DD"), params=value, code="日期格式错误")
 
 
 def validate_user_password(value):

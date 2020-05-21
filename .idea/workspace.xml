@@ -19,14 +19,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="dynamically display the appointment finally">
-      <change afterPath="$PROJECT_DIR$/login/migrations/0004_user_break_rule_times.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/user_center_test.html" afterDir="false" />
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pay/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/alipay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/alipay_public.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/app_private.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/app_public.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pay/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/sign_up.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/sign_up_success_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pay/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pay/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/data_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/data_create.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/search_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/submit_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/submit_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/home_page_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/user_center_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/user_center_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,14 +106,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pay/alipay/alipay_keys" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -103,16 +124,17 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/HIS" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
       <recent name="$PROJECT_DIR$/templates/login" />
       <recent name="$PROJECT_DIR$/templates/appoint" />
       <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
       <recent name="$PROJECT_DIR$/data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/HIS" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.data_create">
@@ -220,7 +242,7 @@
       <workItem from="1589848129137" duration="136000" />
       <workItem from="1589851237315" duration="173000" />
       <workItem from="1589851427545" duration="599000" />
-      <workItem from="1589960419281" duration="2026000" />
+      <workItem from="1589960419281" duration="32270000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -453,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589851563436</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="user_center added back_end">
+      <created>1589975238718</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1589975238718</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Just create a model named User" />
     <MESSAGE value="Almost finish the login module&#10;Still need to check out the bug" />
     <MESSAGE value="I add some tips and requirements for front-end developers." />
     <MESSAGE value="Add the home page sign in" />
@@ -558,7 +586,8 @@
     <MESSAGE value="search_test html created" />
     <MESSAGE value="static setting" />
     <MESSAGE value="dynamically display the appointment finally" />
-    <option name="LAST_COMMIT_MESSAGE" value="dynamically display the appointment finally" />
+    <MESSAGE value="user_center added back_end" />
+    <option name="LAST_COMMIT_MESSAGE" value="user_center added back_end" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -574,23 +603,23 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Notifications/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442677490" />
-    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587389421151">
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590031639013">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587389421151" />
-    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587015916341">
+    <state x="304" y="188" width="1071" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590031639013" />
+    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589993901411">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1587015916341" />
+    <state x="572" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1589993901411" />
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1586442418494">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589851563259">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589975238531">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
-    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589851563259" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589975238531" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -647,10 +676,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
-    <state x="349" y="164" key="SettingsEditor" timestamp="1589679086324">
+    <state x="349" y="164" key="SettingsEditor" timestamp="1590028900797">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589679086324" />
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1590028900797" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1589851481007">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -673,19 +702,19 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1589973893426">
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog" timestamp="1589986392325">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
-    <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589973893426" />
+    <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589986392325" />
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog" timestamp="1588927230241">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1589689350384">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590028869053">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1589689350384" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590028869053" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1589689341400" />
   </component>
   <component name="XDebuggerManager">
