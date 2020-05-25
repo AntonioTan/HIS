@@ -13,12 +13,21 @@ from .models import User
 from datetime import date
 from datetime import datetime
 from appoint.models import Order
+from login.models import User
 # Create your views here.
 
 
-def user_center(request, name):
-    context = get_user_center_context(name)
-    return render(request, template_name='login/user_center_test.html', context=context)
+def user_center(request):
+    print(request.COOKIES)
+    if 'user_id' in request.COOKIES:
+        user_id = request.COOKIES['user_id']
+        name = User.objects.get(id=user_id).name
+        context = get_user_center_context(name)
+        response = render(request, template_name='login/user_center_test.html', context=context)
+        response.set_cookie(key='user_id', value=user_id, expires=3600)
+        return response
+    else:
+        return render(request, template_name='login/home_page_test.html')
 
 
 def logout(request):
@@ -54,6 +63,9 @@ class SignInView(View):
         if request.method == 'POST':
             return self.post(request)
         else:
+            if 'post_token' not in request.COOKIES.keys():
+                print('request', request.COOKIES)
+                request.COOKIES['post_token'] = 'allow'
             if request.COOKIES['post_token'] != 'allow':
                 return redirect('appoint:search_test')
             response = render(request, self.template_name, context={'sign_in_form': SignIn()})
@@ -61,22 +73,20 @@ class SignInView(View):
             return response
 
     def get(self, request):
-        return
+        print('get')
 
     def post(self, request):
-        print(request.COOKIES)
         self.initial = request.POST
         print(self.initial)
-        print(request.COOKIES)
+        print('post', request.COOKIES)
         # TODO we need direct user to home_page_logged_in
-        if request.COOKIES['post_token'] != 'allow':
+        if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':
             return redirect('appoint:search_test')
         if verify_sign_in(self.initial):
             context = get_user_center_context(self.initial['name'])
             response = render(request, self.success_template_name, context=context)
             response.set_cookie(key='post_token', value='disable', expires=3600)
             response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
-            print('Response')
             return response
         else:
             # form = self.form_class(self.initial)
@@ -117,11 +127,10 @@ class SignUpView(View):
 
     def post(self, request, *args, **kwargs):
         self.initial = request.POST
-        print(self.initial)
         form = self.form_class(
             self.initial
         )
-        if request.COOKIES['post_token'] != 'allow':
+        if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':
             return redirect('appoint:search_test')
         if self.initial['password'] == self.initial['repeat_password'] and form.is_valid():
             print('No Wrong')
@@ -181,10 +190,7 @@ def get_user_center_context(user_name):
     today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
     today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))
     against_rule_orders = all_orders.filter(status=4)
-    history_orders = []
-    for order in all_orders:
-        if order not in today_orders:
-            history_orders.append(order)
+    history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))
     context = {
         'user': sign_in_user,
         'today_orders': today_orders,

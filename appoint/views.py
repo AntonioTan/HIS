@@ -1,12 +1,16 @@
 from math import ceil
 
 from django.shortcuts import render, redirect
-from .models import Department, Doctor, Schedule
+from .models import Department, Doctor, Schedule, Order
 from business_calendar import Calendar, MO, TU, WE, TH, FR
 from datetime import datetime, timedelta
 from django.views import View
 from .forms import DatePickForm
 from .data import appoint_basic_data
+import os, django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
+django.setup()
+from login.models import User
 
 
 # Create your views here.
@@ -23,43 +27,51 @@ def deal_date(request, picked_date):
 
 def deal_registration(request, *args, **kwargs):
     if request.method != 'POST':
-        print(kwargs)
-        for key in kwargs.keys():
-            kwargs[key] = int(kwargs[key])
-        context = {}
-        department = Department.objects.get(id=kwargs['picked_department_id'])
-        if kwargs['picked_type']:
-            doctor = Doctor.objects.get(id=kwargs['picked_doctor_id'])
-            doctor = doctor
-            schedule = Schedule.objects.get(department=department,
-                                                       doctor=doctor,
-                                                       morning_afternoon=kwargs['picked_morning_afternoon'],
-                                                       type=kwargs['picked_type'],
-                                                       weekday=kwargs['picked_date'],
-                                                       )
-            context['doctor_name'] = doctor.name
-            context['doctor_sex'] = '男' if doctor.sex else '女'
-            context['doctor_title'] = doctor.title
-            context['doctor_strength'] = doctor.strength
+        if 'user_id' in request.COOKIES.keys():
+            print(kwargs)
+            for key in kwargs.keys():
+                kwargs[key] = int(kwargs[key])
+            context = {}
+            department = Department.objects.get(id=kwargs['picked_department_id'])
+            if kwargs['picked_type']:
+                doctor = Doctor.objects.get(id=kwargs['picked_doctor_id'])
+                doctor = doctor
+                schedule = Schedule.objects.get(department=department,
+                                                           doctor=doctor,
+                                                           morning_afternoon=kwargs['picked_morning_afternoon'],
+                                                           type=kwargs['picked_type'],
+                                                           weekday=kwargs['picked_date'],
+                                                           )
+                context['doctor_name'] = doctor.name
+                context['doctor_sex'] = '男' if doctor.sex else '女'
+                context['doctor_title'] = doctor.title
+                context['doctor_strength'] = doctor.strength
+            else:
+                schedule = Schedule.objects.get(department=department,
+                                                morning_afternoon=kwargs['picked_morning_afternoon'],
+                                                type=kwargs['picked_type'],
+                                                weekday=kwargs['picked_date'],
+                                                           )
+            context['department_name'] = department.name
+            context['type'] = kwargs['picked_type']
+            context['price'] = schedule.price
+            context['date'] = str(datetime.today().date()+timedelta(days=kwargs['picked_date']))
+            context['time'] = '上午8:00 --  10:00' if not kwargs['picked_morning_afternoon'] else '下午2:00 -- 4:00'
+            context['schedule_id'] = schedule.id
+            response = render(request, template_name='appoint/submit_test.html', context=context)
+            response.set_cookie(key='user_id', value=request.COOKIES['user_id'], expires=3600)
+            return response
         else:
-            schedule = Schedule.objects.get(department=department,
-                                            morning_afternoon=kwargs['picked_morning_afternoon'],
-                                            type=kwargs['picked_type'],
-                                            weekday=kwargs['picked_date'],
-                                                       )
-        context['department_name'] = department.name
-        context['type'] = kwargs['picked_type']
-        context['price'] = schedule.price
-        context['date'] = str(datetime.today().date()+timedelta(days=kwargs['picked_date']))
-        context['time'] = '上午8:00 --  10:00' if not kwargs['picked_morning_afternoon'] else '下午2:00 -- 4:00'
-        context['schedule_id'] = schedule.id
-        return render(request, template_name='appoint/submit_test.html', context=context)
+            return render(request, 'login/home_page_test.html')
     else:
-        print(request.POST.get('description'))
-        user_id = request.COOKIES.get('user_id')
-        print(user_id)
-        context = {}
-        return render(request, template_name='appoint/submit_test.html', context=context)
+        if 'user_id' in request.COOKIES.keys():
+            print(request.POST.get('description'))
+            user_id = request.COOKIES.get('user_id')
+            response = render(request, template_name='appoint/submit_test.html',)
+            response.set_cookie(key='user_id', value=user_id, expires=3600)
+            return response
+        else:
+            return render(request, 'login/home_page_test.html')
 
 
 class AppointView(View):
@@ -71,6 +83,7 @@ class AppointView(View):
         # self.initial['dates'] = [datetime.today().date() + timedelta(days=i) for i in range(7)]
         # self.initial['dates'] = [str(date) + weekdays[datetime.isoweekday(date)] for date in self.initial['dates']]
         print('dispatch')
+        print(request.COOKIES)
         if request.method == 'POST':
             return self.post(request)
         else:
@@ -92,6 +105,13 @@ class AppointView(View):
                                                                             morning_afternoon=self.initial['picked_morning_afternoon'],
                                                                             weekday=self.initial['picked_date'], department=Department.objects.get(id=self.initial['picked_department_id']))
             print(self.initial['picked_type']==0)
+            if 'user_id' in request.COOKIES.keys():
+                user_orders = Order.objects.filter(patient=User.objects.get(id=request.COOKIES['user_id']), status=2)
+                print('GET User Order!')
+                if user_orders:
+                    for user_order in user_orders:
+                        print(user_order.id)
+                        self.initial['schedule_objs'] = self.initial['schedule_objs'].exclude(id=user_order.registration.id)
             if self.initial['picked_type']:
                 self.initial['doctor_objs'] = [schedule.doctor for schedule in self.initial['schedule_objs']]
                 self.initial['pages'] = list(range(1, max(2, ceil(len(self.initial['doctor_objs'])/8+1))))
@@ -125,7 +145,10 @@ class AppointView(View):
             for key in self.initial.keys():
                 if 'picked' in key:
                     print(key, self.initial[key])
-            return render(request, template_name='appoint/search_test.html', context=self.initial)
+            response = render(request, template_name='appoint/search_test.html', context=self.initial)
+            if 'user_id' in request.COOKIES.keys():
+                response.set_cookie(key='user_id', value=request.COOKIES['user_id'], expires=3600)
+            return response
 
 
 

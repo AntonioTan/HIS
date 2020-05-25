@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 # Cronb Part
 
 CRONJOBS = [
-    ('*/1 * * * *', 'HIS.cron.test1'),
+    ('59 11 * * *', 'HIS.cron.restore_schedule'),
+    ('59 11 * * *', 'HIS.cron.break_rule'),
 ]
 
 

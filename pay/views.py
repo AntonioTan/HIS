@@ -8,8 +8,12 @@ from django.conf import settings
 from django.urls import reverse
 import logging
 import traceback
-
-
+from datetime import datetime
+import os, django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
+django.setup()
+from appoint.models import Order, Schedule
+from login.models import User
 from alipay.aop.api.AlipayClientConfig import AlipayClientConfig
 from alipay.aop.api.DefaultAlipayClient import DefaultAlipayClient
 from alipay.aop.api.FileItem import FileItem
@@ -33,13 +37,28 @@ logging.basicConfig(
     filemode='a',)
 logger = logging.getLogger('')
 
+
 def pay_result(request):
     return render(request, 'pay/success.html')
 
 
-def pay_test(request, price):
+def pay_test(request, price, schedule_id):
     print(request.method)
     if request.method == 'POST':
+        if 'user_id' not in request.COOKIES:
+            return render(request, 'login/home_page_test.html')
+        user_id = request.COOKIES['user_id']
+        patient = User.objects.get(id=user_id)
+        registration = Schedule.objects.get(id=schedule_id)
+        registration.num = registration.num-1
+        Order.objects.create(
+            patient=patient,
+            registration=registration,
+            status=2,
+            description=request.POST['description'],
+            order_time=datetime.now()
+        )
+        print('Order Created')
         """
         设置配置，包括支付宝网关地址、app_id、应用私钥、支付宝公钥等，其他配置值可以查看AlipayClientConfig的定义。
         """
@@ -66,7 +85,8 @@ def pay_test(request, price):
         #    """
         # 对照接口文档，构造请求对象
         model = AlipayTradePagePayModel()
-        model.out_trade_no = "pay201905020000221"
+        model.out_trade_no = 'pay'+str(time.time()).replace('.', '')[0:16]
+        # model.out_trade_no = "pay201905020000220"
         model.total_amount = price
         model.subject = "测试"
         model.body = "支付宝测试"

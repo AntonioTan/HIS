@@ -20,33 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pay/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/alipay.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/alipay_public.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/app_private.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/alipay/alipay_keys/app_public.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/sign_up.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/sign_up_success_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pay/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pay/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/cron.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/cron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/data_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/data_create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pay/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pay/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appoint/search_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appoint/submit_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/submit_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/home_page_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/user_center_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/user_center_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +92,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pay/alipay/alipay_keys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -242,7 +228,11 @@
       <workItem from="1589848129137" duration="136000" />
       <workItem from="1589851237315" duration="173000" />
       <workItem from="1589851427545" duration="599000" />
-      <workItem from="1589960419281" duration="32270000" />
+      <workItem from="1589960419281" duration="37057000" />
+      <workItem from="1590240995752" duration="1515000" />
+      <workItem from="1590334968203" duration="498000" />
+      <workItem from="1590375769071" duration="936000" />
+      <workItem from="1590411180528" duration="6108000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -482,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589975238718</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Well Too many stuff">
+      <created>1590073715303</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1590073715303</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Almost finish the login module&#10;Still need to check out the bug" />
     <MESSAGE value="I add some tips and requirements for front-end developers." />
     <MESSAGE value="Add the home page sign in" />
     <MESSAGE value="Add FYI for this html" />
@@ -587,7 +583,8 @@
     <MESSAGE value="static setting" />
     <MESSAGE value="dynamically display the appointment finally" />
     <MESSAGE value="user_center added back_end" />
-    <option name="LAST_COMMIT_MESSAGE" value="user_center added back_end" />
+    <MESSAGE value="Well Too many stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Well Too many stuff" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -615,11 +612,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1589975238531">
+    <state x="432" y="130" key="CommitChangelistDialog2" timestamp="1590073715105">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
-    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1589975238531" />
+    <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590073715105" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -628,30 +625,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="819" height="294" key="GridCell.Tab.0.bottom" timestamp="1589729168198">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="263" key="GridCell.Tab.0.bottom" timestamp="1590416199913">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168198" />
-    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1589684549009" />
-    <state width="819" height="294" key="GridCell.Tab.0.center" timestamp="1589729168197">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="263" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1590416199913" />
+    <state width="1638" height="263" key="GridCell.Tab.0.center" timestamp="1590416199912">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
     <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
-    <state width="819" height="294" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1589684549008" />
-    <state width="819" height="294" key="GridCell.Tab.0.left" timestamp="1589729168196">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="263" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1590416199912" />
+    <state width="1638" height="263" key="GridCell.Tab.0.left" timestamp="1590416199912">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
     <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168196" />
-    <state width="819" height="294" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1589684549007" />
-    <state width="819" height="294" key="GridCell.Tab.0.right" timestamp="1589729168197">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="263" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1590416199912" />
+    <state width="1638" height="263" key="GridCell.Tab.0.right" timestamp="1590416199913">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
-    <state width="819" height="294" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1589684549009" />
+    <state width="1638" height="263" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1590416199913" />
     <state width="819" height="363" key="GridCell.Tab.1.bottom" timestamp="1589637102728">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -680,11 +677,12 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1590028900797" />
-    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1589851481007">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="440" y="271" key="Vcs.Push.Dialog.v2" timestamp="1590335020473">
+      <screen x="0" y="23" width="1680" height="979" />
     </state>
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589851481007" />
+    <state x="440" y="271" key="Vcs.Push.Dialog.v2/0.23.1680.979@0.23.1680.979" timestamp="1590335020473" />
     <state x="638" y="267" key="VcsDiffUtil.ChangesDialog" timestamp="1589642735540">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -711,10 +709,11 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590028869053">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="505" y="240" width="670" height="631" key="search.everywhere.popup" timestamp="1590416689926">
+      <screen x="0" y="23" width="1680" height="979" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590028869053" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590076450707" />
+    <state x="505" y="240" width="670" height="631" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1590416689926" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1589689341400" />
   </component>
   <component name="XDebuggerManager">
@@ -730,6 +729,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HIS$views.coverage" NAME="views Coverage Results" MODIFIED="1589709816884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
-    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1589728945689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
+    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1590415828225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
   </component>
 </project>

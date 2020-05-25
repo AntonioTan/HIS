@@ -44,7 +44,7 @@ appoint_basic_data = {
     'morning_afternoons': [{'id': morning_afternoons.index(morning_afternoon), 'name': morning_afternoon} for morning_afternoon in morning_afternoons],
     'picked_type': 1,
     'picked_page': 1,
-    'picked_date': 0,
+    'picked_date': datetime.isoweekday(datetime.today().date()),
     'picked_morning_afternoon': 0,
     'page_schedules': [],
 }

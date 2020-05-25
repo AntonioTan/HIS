@@ -11,6 +11,6 @@ urlpatterns= [
     path('sign_in_test/', SignInView.as_view(), name='sign_in_test'),
     re_path(r'^sign_in_test/user=(?P<name>.+)/$', views.welcome_login, name='welcome_login'),
     path('logout/', views.logout, name='logout'),
-    path('user_center/<str:name>/', views.user_center, name='user_center')
+    path('user_center/', views.user_center, name='user_center')
 ]
 

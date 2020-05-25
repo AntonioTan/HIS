@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-xs-6">
-        <form class="form-horizontal" role="form" method="post" action={% url 'pay:pay_test' arg1=price%}
+        <form class="form-horizontal" role="form" method="post" action={% url 'pay:pay_test' price=price schedule_id=schedule_id %}
               style="margin-top:6%;opacity:0.6;width:700px">
             {% csrf_token %}
             <div class="form-group" style="margin-left:30%;min-width:100%">
@@ -129,10 +129,10 @@
         <div class="form-group" style="margin-left: 2%;padding-bottom: 5%">
     <div class="col-sm-offset-2 col-sm-10">
       <label for="firstname" class="col-sm-2 control-label">
-          <button type="button" class="btn btn-info" style="text-align: center;width:100px">提交申请</button>
+          <button type="submit" class="btn btn-info" style="text-align: center;width:100px">提交申请</button>
       </label>
         <label for="firstname" class="col-sm-2 control-label" style="margin-left: 20%">
-          <button type="button" class="btn btn-info" style="text-align: center;width:100px">返回</button>
+          <button type="submit" class="btn btn-info" style="text-align: center;width:100px">返回</button>
       </label>
     </div>
         </div>
@@ -208,7 +208,7 @@
             <button type="submit" class="btn btn-info" style="text-align: center;width:100px">提交申请</button>
         </label>
         <label for="firstname" class="col-sm-2 control-label" style="margin-left: 20%">
-            <button type="button" class="btn btn-info" style="text-align: center;width:100px">返回</button>
+            <button type="submit" class="btn btn-info" style="text-align: center;width:100px">返回</button>
         </label>
     </div>
 </div>
