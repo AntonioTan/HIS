@@ -25,7 +25,7 @@ SECRET_KEY = 'q((tc4p$+&8d_$+pud*m1g-b@pq4y_$s-qzi4w)-z&b(dhqo_0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dev.mysite.com', 'localhost', '101.133.155.68', '127.0.0.1']
 
 # Cronb Part
 
@@ -129,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATIC_FILE_DIRS = [
     os.path.join(BASE_DIR, 'appoint/static'),
     os.path.join(BASE_DIR, 'login/static'),
