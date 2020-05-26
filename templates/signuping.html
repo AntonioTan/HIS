@@ -19,21 +19,28 @@
     #FP{background-image:url("static/images/back2.jpg");width:100%;height: 1000px}
 </style>
 <body>
-<nav class="navbar navbar-default" role="navigation" style="margin:0;padding: 0">
-    <div class="container-fluid">
-    <div class="navbar-header" id="title">
-        <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
-    </div>
-    <div id="function">
-        <ul class="nav navbar-nav" style="margin-top: 8px;">
-            <li><a href="#" id="page1">首页</a></li>
+<nav class="navbar navbar-default navbar-menu" style="margin:0;padding:0">
+	  <div class="menu-container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-menu" aria-expanded="false">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="service-menu">
+	      <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
+	      	<li><a href="#" id="page1">首页</a></li>
             <li><a href="#" id="department">科室分类</a></li>
             <li><a href="#" id="reserve">预约挂号</a></li>
             <li><a href="#" id="contact">联系我们</a></li>
             <li><a href="#" id="help">帮助中心</a></li>
             <li><a href="#" id="self">个人中心</a></li>
-            <!--以下部分登陆成功后才会显示-->
-            <li>
+              <li>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="min-width:100%">
@@ -42,10 +49,10 @@
                     <li><a href="#">退出登录</a></li>
                 </ul>
             </li>
-        </ul>
-    </div>
-    </div>
-</nav>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 
 <div class="container" id="FP">
    <div class="container" style="margin-left:8%;margin-top:2%">
@@ -57,13 +64,18 @@
          <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-user" style="font-size: 15px">  用户名:</span></label>
     <div class="col-sm-10">
 
-      <input type="text" class="form-control" id="firstname" placeholder="请输入用户名">
+      <input type="text" class="form-control" id="firstname" placeholder="请输入用户名" title="请注意"
+			data-toggle="popover" data-placement="right" data-dismiss="alert"
+			data-content="输入的用户名为6-15位包含数字，字母和汉字">
+</div>
     </div>
-  </div>
+
   <div class="form-group">
     <label for="password" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-lock" style="font-size: 15px">  设置密码:</span></label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="lastname" placeholder="请设置密码">
+      <input type="text" class="form-control" id="firstname" placeholder="请设置密码" title="请注意"
+			data-toggle="popover" data-placement="right"
+			data-content="输入的用户名为6-20位包含数字和字母">
     </div>
   </div>
                 <div class="form-group">
@@ -84,6 +96,14 @@
     <label for="name" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-asterisk" style="font-size: 15px">  姓名:</span></label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="name" placeholder="请输入您的姓名">
+    </div>
+                    </div>
+
+
+                         <div class="form-group">
+    <label for="name" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-asterisk" style="font-size: 15px">  出生日期:</span></label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="name" placeholder="请输入您的出生日期">
     </div>
 
   </div>
@@ -139,6 +159,20 @@
 </form>
         </div>
     </div>
+<script>
+$(function () {
+	$("[data-toggle='popover']").popover({
+          keyboard: true
+    });
+
+	setTimeout(function(){
+   setTimeout("$(\"[data-toggle='popover']\").popover('hide')",2000);
+});
+
+});
+
+</script>
+
 
 
 
