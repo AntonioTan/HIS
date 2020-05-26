@@ -2,9 +2,10 @@ from django.core.exceptions import ValidationError, MultipleObjectsReturned, Obj
 from .models import User
 import datetime
 
+
 def validate_user_name(value):
     existed_user_error = ValidationError(
-                ('用户名已存在: %s'%value),
+                ('用户名已存在: %s' % value),
                 params={'value': value},
                 code='用户名重复')
     try:

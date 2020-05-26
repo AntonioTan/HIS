@@ -25,3 +25,5 @@ class User(models.Model):
     appoint_available = models.BooleanField()
     # break rule times
     break_rule_times = models.SmallIntegerField(default=0)
+    # 0 for non-admin| 1 for admin
+    admin = models.BooleanField(default=0)

@@ -17,6 +17,16 @@ from login.models import User
 # Create your views here.
 
 
+def department_list(request):
+    department_list_template = 'login/department.html'
+    return render(request, template_name=department_list_template)
+
+
+def help(request):
+    help_template = 'login/help.html'
+    return render(request, template_name=help_template)
+
+
 def contact(request):
     contact_template = 'login/contact.html'
     return render(request, template_name=contact_template)
@@ -29,7 +39,7 @@ def user_center(request):
         name = User.objects.get(id=user_id).name
         context = get_user_center_context(name)
         context = add_user_id(request, context)
-        response = render(request, template_name='login/user_center_test.html', context=context)
+        response = render(request, template_name='login/user_center.html', context=context)
         response.set_cookie(key='user_id', value=user_id, expires=3600)
         return response
     else:
@@ -39,7 +49,7 @@ def user_center(request):
 def logout(request):
     context = {'sign_in_form': SignIn()}
     context = add_user_id(request, context)
-    response = render(request, 'login/home_page_test.html', context=context)
+    response = render(request, 'login/home_page.html', context=context)
     response.set_cookie(key='post_token', value='allow')
     response.delete_cookie('user_id')
     return response
@@ -66,6 +76,7 @@ class SignInView(View):
     form_class = SignIn
     initial = {'key': 'value'}
     template_name='login/home_page.html'
+    admin_template_name = 'appoint/admin.html'
     success_template_name = 'login/user_center_test.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -95,11 +106,18 @@ class SignInView(View):
             return redirect('appoint:search_test')
         if verify_sign_in(self.initial):
             context = get_user_center_context(self.initial['name'])
-            context = add_user_id(request, context)
-            response = render(request, self.success_template_name, context=context)
-            response.set_cookie(key='post_token', value='disable', expires=3600)
-            response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
-            return response
+            print(context)
+            if 'admin' in context.keys():
+                response = render(request, self.admin_template_name, context=context)
+                response.set_cookie(key='post_token', value='disable', expires=3600)
+                response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
+                return response
+            else:
+                context = add_user_id(request, context)
+                response = render(request, self.success_template_name, context=context)
+                response.set_cookie(key='post_token', value='disable', expires=3600)
+                response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
+                return response
         else:
             # form = self.form_class(self.initial)
             # TODO we need to show user what's wrong with his account or password
@@ -201,23 +219,32 @@ def get_user_data(form_data):
 def get_user_center_context(user_name):
     # get user
     sign_in_user = User.objects.get(name=user_name)
-    # get all registrations
-    all_orders = Order.objects.filter(patient=sign_in_user)
-    # get today registrations
-    today_date = datetime.today().date()
-    today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)
-    today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
-    today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))
-    against_rule_orders = all_orders.filter(status=4)
-    history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))
-    context = {
-        'user': sign_in_user,
-        'today_orders': today_orders,
-        'history_orders': history_orders,
-        'today_date': today_date,
-        'against_rule_orders': against_rule_orders
-    }
-    return context
+    print(sign_in_user)
+    if sign_in_user.admin:
+        return {
+            'user': sign_in_user,
+            'admin': 1
+        }
+    else:
+        # get all registrations
+        all_orders = Order.objects.filter(patient=sign_in_user)
+        # get today registrations
+        today_date = datetime.today().date()
+        today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)
+        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
+        today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))
+        against_rule_orders = all_orders.filter(status=4)
+        history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))
+        context = {
+            'user': sign_in_user,
+            'today_orders': today_orders,
+            'history_orders': history_orders,
+            'today_date': today_date,
+            'against_rule_orders': against_rule_orders,
+
+        }
+        return context
+
 
 
 def add_user_id(request, context):

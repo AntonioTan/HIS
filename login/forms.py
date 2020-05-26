@@ -27,6 +27,9 @@ class SignUp(forms.Form):
 
     password = forms.CharField(max_length=20,
                                label='密码',
+                               error_messages={
+                                   'required': '请输入密码'
+                               }
                                )
 
     birth = forms.DateField(label="生日",

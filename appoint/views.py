@@ -108,8 +108,8 @@ class AppointView(View):
             print(self.initial['picked_type']==0)
             if 'user_id' in request.COOKIES.keys():
                 user_orders = Order.objects.filter(patient=User.objects.get(id=request.COOKIES['user_id']), status=2)
-                print('GET User Order!')
                 if user_orders:
+                    print('GET User Order!')
                     for user_order in user_orders:
                         print(user_order.id)
                         self.initial['schedule_objs'] = self.initial['schedule_objs'].exclude(id=user_order.registration.id)
