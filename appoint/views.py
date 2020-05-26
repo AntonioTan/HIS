@@ -2,7 +2,6 @@ from math import ceil
 
 from django.shortcuts import render, redirect
 from .models import Department, Doctor, Schedule, Order
-from business_calendar import Calendar, MO, TU, WE, TH, FR
 from datetime import datetime, timedelta
 from django.views import View
 from .forms import DatePickForm
@@ -11,6 +10,7 @@ import os, django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
 django.setup()
 from login.models import User
+from login.views import add_user_id
 
 
 # Create your views here.
@@ -32,6 +32,7 @@ def deal_registration(request, *args, **kwargs):
             for key in kwargs.keys():
                 kwargs[key] = int(kwargs[key])
             context = {}
+            context = add_user_id(request, context)
             department = Department.objects.get(id=kwargs['picked_department_id'])
             if kwargs['picked_type']:
                 doctor = Doctor.objects.get(id=kwargs['picked_doctor_id'])
@@ -145,7 +146,9 @@ class AppointView(View):
             for key in self.initial.keys():
                 if 'picked' in key:
                     print(key, self.initial[key])
-            response = render(request, template_name='appoint/search_test.html', context=self.initial)
+            context = self.initial
+            context = add_user_id(request, context)
+            response = render(request, template_name='appoint/search_test.html', context=context)
             if 'user_id' in request.COOKIES.keys():
                 response.set_cookie(key='user_id', value=request.COOKIES['user_id'], expires=3600)
             return response

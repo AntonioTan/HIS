@@ -17,12 +17,18 @@ from login.models import User
 # Create your views here.
 
 
+def contact(request):
+    contact_template = 'login/contact.html'
+    return render(request, template_name=contact_template)
+
+
 def user_center(request):
     print(request.COOKIES)
     if 'user_id' in request.COOKIES:
         user_id = request.COOKIES['user_id']
         name = User.objects.get(id=user_id).name
         context = get_user_center_context(name)
+        context = add_user_id(request, context)
         response = render(request, template_name='login/user_center_test.html', context=context)
         response.set_cookie(key='user_id', value=user_id, expires=3600)
         return response
@@ -31,7 +37,9 @@ def user_center(request):
 
 
 def logout(request):
-    response = render(request, 'login/home_page_test.html', context={'sign_in_form': SignIn()})
+    context = {'sign_in_form': SignIn()}
+    context = add_user_id(request, context)
+    response = render(request, 'login/home_page_test.html', context=context)
     response.set_cookie(key='post_token', value='allow')
     response.delete_cookie('user_id')
     return response
@@ -42,6 +50,7 @@ def sign_up_test(request):
     context = {
         "sign_up_form": sign_up_form
     }
+    context = add_user_id(request, context)
     return render(request, 'login/sign_up_test.html', context=context)
 
 
@@ -68,7 +77,9 @@ class SignInView(View):
                 request.COOKIES['post_token'] = 'allow'
             if request.COOKIES['post_token'] != 'allow':
                 return redirect('appoint:search_test')
-            response = render(request, self.template_name, context={'sign_in_form': SignIn()})
+            context = {'sign_in_form': SignIn()}
+            context = add_user_id(request, context)
+            response = render(request, self.template_name, context=context)
             response.set_cookie(key='post_token', value='allow')
             return response
 
@@ -84,6 +95,7 @@ class SignInView(View):
             return redirect('appoint:search_test')
         if verify_sign_in(self.initial):
             context = get_user_center_context(self.initial['name'])
+            context = add_user_id(request, context)
             response = render(request, self.success_template_name, context=context)
             response.set_cookie(key='post_token', value='disable', expires=3600)
             response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
@@ -91,7 +103,9 @@ class SignInView(View):
         else:
             # form = self.form_class(self.initial)
             # TODO we need to show user what's wrong with his account or password
-            return render(request, template_name=self.template_name, context={'error': '用户名或密码错误'})
+            context = {'error': '用户名或密码错误'}
+            context = add_user_id(request, context)
+            return render(request, template_name=self.template_name, context=context)
 
 
 def verify_sign_in(sign_in_data):
@@ -117,7 +131,9 @@ class SignUpView(View):
             return self.post(request)
         else:
             form = SignUp()
-            response = render(request, 'login/sign_up.html', context={'sign_up_form': form})
+            context = {'sign_up_form': form}
+            context = add_user_id(request, context)
+            response = render(request, 'login/sign_up.html', context)
             response.set_cookie(key='post_token', value='allow', expires=3600)
             return response
 
@@ -158,8 +174,11 @@ class SignUpView(View):
                 errors[error_key] = errors[error_key][0].message
             if self.initial['password'] != self.initial['repeat_password']:
                 errors['repeat_password'] = '确认密码与密码不相同'
+                # TODO add cleaned_data
             cleaned_data = form.cleaned_data
-            return render(request, template_name=self.template_name, context={'sign_up_form': form, 'errors': errors})
+            context = {'sign_up_form': form, 'errors': errors}
+            context = add_user_id(request, context)
+            return render(request, template_name=self.template_name, context=context)
 
 
 def get_user_data(form_data):
@@ -199,3 +218,12 @@ def get_user_center_context(user_name):
         'against_rule_orders': against_rule_orders
     }
     return context
+
+
+def add_user_id(request, context):
+    if 'user_id' not in request.COOKIES.keys():
+        return context
+    else:
+        context['user_id'] = request.COOKIES['user_id']
+        return context
+

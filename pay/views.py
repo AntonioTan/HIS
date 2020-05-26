@@ -158,7 +158,6 @@ class AlipayView(LoginRequiredMixin, View):
 
 # /order/alipay_result
 class AlipayResult(View):
-
     def check_pay(self, params):  # 定义检查支付结果的函数
         from alipay.aop.api.util.SignatureUtils import verify_with_rsa
         sign = params.pop('sign', None)  # 取出签名
