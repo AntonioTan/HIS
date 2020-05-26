@@ -20,149 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/tantianyi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-mappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/autocomplete.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/changelists.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/responsive_rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/css/widgets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/fonts/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/fonts/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/calendar-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-addlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-alert.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-calendar.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-changelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-deletelink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-no.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-unknown-alt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-unknown.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-viewlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/icon-yes.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/inline-delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/selector-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/sorting-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/tooltag-add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/img/tooltag-arrowright.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/SelectBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/SelectFilter2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/actions.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/autocomplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/cancel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/change_form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/collapse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/collapse.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/core.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/inlines.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/inlines.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/jquery.init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/popup_response.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/prepopulate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/prepopulate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/prepopulate_init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/urlify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/appoint/imgs/back2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/appoint/imgs/man.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collected_static/appoint/imgs/woman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/static/login/imgs/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/static/login/imgs/back2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login/static/login/imgs/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/change_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/FirstPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FirstPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/home_page_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page_test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +95,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/login/static/login/imgs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -244,17 +113,17 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
-      <recent name="$PROJECT_DIR$/templates/login" />
-      <recent name="$PROJECT_DIR$/templates/appoint" />
-      <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
-      <recent name="$PROJECT_DIR$/data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/HIS" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/login/static/login/imgs" />
+      <recent name="$PROJECT_DIR$/templates/login" />
+      <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
+      <recent name="$PROJECT_DIR$/templates/appoint" />
+      <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.HIS">
@@ -373,7 +242,7 @@
       <workItem from="1590375769071" duration="936000" />
       <workItem from="1590411180528" duration="6948000" />
       <workItem from="1590421450314" duration="9000" />
-      <workItem from="1590453886991" duration="11906000" />
+      <workItem from="1590453886991" duration="13877000" />
     </task>
     <task id="LOCAL-00001" summary="The first version">
       <created>1586439626297</created>
@@ -627,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590419417163</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Some bugs fixed &#10;It's almost there!">
+      <created>1590492502220</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1590492502220</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -768,12 +644,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590419416949">
-      <screen x="0" y="23" width="1680" height="979" />
+    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590492501950">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
     <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590073715105" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.979@0.23.1680.979" timestamp="1590419416949" />
+    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590492501950" />
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog" timestamp="1587223334968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -826,14 +703,16 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="819" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102727" />
-    <state x="168" y="94" key="MergeDialog" timestamp="1587223184303">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="168" y="111" key="MergeDialog" timestamp="1590492621601">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="168" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184303" />
-    <state x="553" y="249" key="MultipleFileMergeDialog" timestamp="1587223184346">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="168" y="111" key="MergeDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492621601" />
+    <state x="553" y="256" width="897" height="449" key="MultipleFileMergeDialog" timestamp="1590492621713">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
+    <state x="553" y="256" width="897" height="449" key="MultipleFileMergeDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492621713" />
     <state x="-227" y="179" key="SettingsEditor" timestamp="1590486700823">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
@@ -874,12 +753,12 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590492222332">
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590492515358">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589986392325" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492222332" />
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492515358" />
     <state x="713" y="435" key="publish.login" timestamp="1590480458319">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
@@ -888,13 +767,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup" timestamp="1590486822352">
+    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup" timestamp="1590494200126">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590076450707" />
     <state x="505" y="240" width="670" height="631" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1590416689926" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590479645364" />
-    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590486822351" />
+    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590494200126" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

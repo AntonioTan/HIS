@@ -27,7 +27,7 @@ def user_center(request):
         response.set_cookie(key='user_id', value=user_id, expires=3600)
         return response
     else:
-        return render(request, template_name='login/home_page_test.html')
+        return render(request, template_name='login/home_page.html')
 
 
 def logout(request):
@@ -56,7 +56,7 @@ def welcome_login(request, name):
 class SignInView(View):
     form_class = SignIn
     initial = {'key': 'value'}
-    template_name='login/home_page_test.html'
+    template_name='login/home_page.html'
     success_template_name = 'login/user_center_test.html'
 
     def dispatch(self, request, *args, **kwargs):
