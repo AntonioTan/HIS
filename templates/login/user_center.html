@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>医患服务系统个人中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</head>
+{% load static %}
+<style>
+    #function{margin-left:60%;font-size:12px}
+    #title{margin-top: 6px}
+    #All{background-image:url({% static "login/imgs/back2.jpg" %});width:100%;height:580px}
+    .form-control{width:250px}
+</style>
+
+<body>
+<nav class="navbar navbar-default navbar-menu" style="margin:0;padding:0">
+	  <div class="menu-container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-menu" aria-expanded="false">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="service-menu">
+	      <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
+	      	<li><a href="#" id="page1">首页</a></li>
+            <li><a href="#" id="department">科室分类</a></li>
+            <li><a href="#" id="reserve">预约挂号</a></li>
+            <li><a href="#" id="contact">联系我们</a></li>
+            <li><a href="#" id="help">帮助中心</a></li>
+            <li><a href="#" id="self">个人中心</a></li>
+              <li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="min-width:100%">
+                    <li><a href="#">设置</a></li>
+                    <li><a href="#">我的预约</a></li>
+                    <li><a href="#">退出登录</a></li>
+                </ul>
+            </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+<div class="row" style="background-image: url({% static "blog/images/back2.jpg" %}")>
+        <div class="col-xs-4" style="margin-left: 6%;height:600px;width:200px;margin-top:5%">
+            <img src="{% static "login/imgs/user.png" %}" class="img-circle" style="width: 120px;height:120px;margin-top:5%">
+
+        <div class="form-group" style="margin-top: 2%">
+         <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-user" style="color:cornflowerblue;"></span></label>
+            <p id="name" style="font-size: 13px">{{ user.name }}</p>
+        </div>
+            <div class="form-group" style="margin-top: 2%">
+         <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-paperclip" style="color:cornflowerblue;"></span></label>
+            {% if user.sex == 0 %}
+                <p id="sex" style="font-size: 13px">女</p>
+            {% else %}
+                <p id="sex" style="font-size: 13px">男</p>
+            {% endif %}
+        </div>
+            <div class="form-group" style="margin-top: 2%">
+         <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-calendar" style="color:cornflowerblue;"></span></label>
+            <p id="birth" style="font-size: 13px">{{ user.birth }}</p>
+        </div>
+            <div class="form-group" style="margin-top: 2%">
+            <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-phone" style="color:cornflowerblue;"></span></label>
+            <p id="phnoe" style="font-size: 13px">{{ user.phone }}</p>
+        </div>
+
+            <div class="form-group" style="margin-top: 2%">
+            <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-exclamation-sign" style="color:cornflowerblue;"></span></label>
+                <p id="break" style="font-size: 13px">本月违约次数:<span class="label label-danger" style="font-size:10px;margin-left: 5px">{{ user.break_rule_times }}</span></p>
+        </div>
+
+        </div>
+
+    <div class="col-xs-2" style="width:800px">
+       <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+				   href="#collapseOne">
+					当前预约
+				</a>
+			</h4>
+		</div>
+
+		<div id="collapseOne" class="panel-collapse collapse in">
+			<div class="panel-body">
+                <ul class="list-group">
+                    {% if today_orders|length %}
+                        {% for today_order in today_orders %}
+                            <li class="list-group-item" style="margin-top:2%">
+                                <p>姓名：{{ today_order.registration.doctor.name }}</p>
+                                <p>科室: {{ today_order.registration.department.name }}
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                                {% if today_order.registration.type == 1 %}
+                                    <p>号源类型：专家号</p>
+                                {% else %}
+                                    <p>号源类型：普通号</p>
+                                {% endif %}
+                                <p>时间：{{ today_date }} &nbsp&nbsp&nbsp
+                                    {% if today_order.registration.morning_afternoon %}
+                                        2:00-4:00
+                                    {% else %}
+                                        8:00-10:00
+                                    {% endif %}
+                                </p>
+                                {% if today_order.registration.status != 4 %}
+                                    <p>是否违约：无</p>
+                                {% else %}
+                                    <p>是否违约：是</p>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+                        <li class="list-group-item" style="margin-top:2%">
+                            <p>没有记录</p>
+                        </li>
+                    {% endif %}
+                </ul>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" >
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+				   href="#collapseTwo">
+					历史预约记录
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse">
+			<div class="panel-body">
+				<ul class="list-group">
+                {% if history_orders|length %}
+                        {% for history_order in history_orders %}
+                            <li class="list-group-item" style="margin-top:2%">
+                                <p>姓名：{{ history_order.registration.doctor.name }}</p>
+                                <p>科室: {{ history_order.registration.department.name }}
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                                {% if history_order.registration.type == 1 %}
+                                    <p>号源类型：专家号</p>
+                                {% else %}
+                                    <p>号源类型：普通号</p>
+                                {% endif %}
+                                <p>时间：{{ today_date }} &nbsp&nbsp&nbsp
+                                    {% if history_order.registration.morning_afternoon %}
+                                        2:00-4:00
+                                    {% else %}
+                                        8:00-10:00
+                                    {% endif %}
+                                </p>
+                                {% if history_order.registration.status != 4 %}
+                                    <p>是否违约：无</p>
+                                {% else %}
+                                    <p>是否违约：是</p>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+                        <li class="list-group-item" style="margin-top:2%">
+                            <p>没有记录</p>
+                        </li>
+                    {% endif %}
+                </ul>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+				   href="#collapseThree">
+					违约记录
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse">
+			<div class="panel-body">
+				<ul class="list-group">
+                   {% if against_rule_orders|length %}
+                        {% for against_rule_order in against_rule_orders %}
+                            <li class="list-group-item" style="margin-top:2%">
+                                <p>姓名：{{ against_rule_order.registration.doctor.name }}</p>
+                                <p>科室: {{ against_rule_order.registration.department.name }}
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                                {% if against_rule_order.registration.type == 1 %}
+                                    <p>号源类型：专家号</p>
+                                {% else %}
+                                    <p>号源类型：普通号</p>
+                                {% endif %}
+                                {% if against_rule_order.registration.status != 4 %}
+                                    <p>是否违约：无</p>
+                                {% else %}
+                                    <p>是否违约：是</p>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+                        <li class="list-group-item" style="margin-top:2%">
+                            <p>没有记录</p>
+                        </li>
+                    {% endif %}
+                </ul>
+			</div>
+		</div>
+	</div>
+       </div>
+       </div>
+</div>
+</div>
+
+</body>
+</html>

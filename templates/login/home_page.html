@@ -29,7 +29,7 @@
     }
 
     #FP {
-        background-image: url({% static "blog/images/back2.jpg" %});
+        background-image: url({% static "login/imgs/background.jpg" %});
         width: 100%;
         height: 600px
     }
@@ -51,14 +51,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="service-menu">
             <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
-                <li><a href="#" id="page1">首页</a></li>
-                <li><a href="#" id="department">科室分类</a></li>
-                <li><a href="#" id="reserve">预约挂号</a></li>
-                <li><a href="#" id="contact">联系我们</a></li>
-                <li><a href="#" id="help">帮助中心</a></li>
+                <li><a href="{% url 'login:sign_in' %}" id="page1">首页</a></li>
+                <li><a href="{% url 'login:department_list' %}" id="department">科室分类</a></li>
+                <li><a href="{% url 'appoint:search_test' %}" id="reserve">预约挂号</a></li>
+                <li><a href="{% url 'login:contact' %}" id="contact">联系我们</a></li>
+                <li><a href="{% url 'login:help' %}" id="help">帮助中心</a></li>
                 <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
+        {% if user_id %}
+            <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="min-width:100%">
+                            <li><a href="#">设置</a></li>
+                            <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
+                            <li><a href="{% url 'login:logout' %}">退出登录</a></li>
+                        </ul>
+                    </li>
+        {% endif %}
     </div><!-- /.container-fluid -->
 </nav>
 
@@ -74,7 +85,7 @@
         </div>
 
         <div class="col-xs-6">
-            <form class="form-horizontal" role="form" method="post" action="" style="margin-left:70px;margin-top:120px">
+            <form class="form-horizontal" role="form" method="post" action={% url 'login:sign_in' %} style="margin-left:70px;margin-top:120px">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-user"></span></label>

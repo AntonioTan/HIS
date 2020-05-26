@@ -229,13 +229,15 @@
                                     <p>科室：{{ doctor.department_name }}</p>
                                     <p>职称：{{ doctor.title }}</p>
                                     <p>号源：专家号</p>
-                                    <div class="form-group">
-                                        <label for="lastname">
-                                            <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
-                                                <button class="btn btn-info">我要预约</button>
-                                            </a>
-                                        </label>
-                                    </div>
+                                    {% if user_id %}
+                                        <div class="form-group">
+                                            <label for="lastname">
+                                                <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
+                                                    <button class="btn btn-info">我要预约</button>
+                                                </a>
+                                            </label>
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                                 <div class="col-xs-2" style="">
@@ -258,19 +260,19 @@
                     {% for schedule in page_schedules %}
                      <div class="col-xs-2"style="width:30%;margin-top:5%">
                      <div class="row" style="margin-left:10%" >
-                        <div class="col-xs-2"style="width:130px">
-                            <p>科室：{{schedule.department_name}}</p>
-                            <p>号源：普通号</p>
-                            <div class="form-group">
-                               <label for="lastname">
-                                   <a href="/appoint/registration_test/picked_department_id={{ schedule.department_id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
-                                   <button class="btn btn-info">
-                                       我要预约
-                                   </button>
-                                       </a>
-                                </label>
-                            </div>
-                        </div>
+                         <div class="col-xs-2" style="width:130px">
+                             <p>科室：{{ schedule.department_name }}</p>
+                             <p>号源：普通号</p>
+                             {% if user_id %}
+                                 <div class="form-group">
+                                     <label for="lastname">
+                                         <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
+                                             <button class="btn btn-info">我要预约</button>
+                                         </a>
+                                     </label>
+                                 </div>
+                             {% endif %}
+                         </div>
                      </div>
                     </div>
                     {% endfor %}
