@@ -20,15 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login/static/login/imgs/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/forget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/password_changed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24,_11_43_下午_[Default_Changelist]/data.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24,_11_43_下午_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24__11_43___Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/data.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26__11_02___Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/help_center.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/revise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HIS/data_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/data_create.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/help.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/user_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/user_center.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/revise.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/revise.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +112,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/login/static/login/imgs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/login" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -116,8 +136,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/login/static/login/imgs" />
       <recent name="$PROJECT_DIR$/templates/login" />
+      <recent name="$PROJECT_DIR$/login/static/login/imgs" />
       <recent name="$PROJECT_DIR$/templates/appoint" />
       <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
       <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
@@ -239,14 +259,9 @@
       <workItem from="1590375769071" duration="936000" />
       <workItem from="1590411180528" duration="6948000" />
       <workItem from="1590421450314" duration="9000" />
-      <workItem from="1590453886991" duration="55035000" />
-    </task>
-    <task id="LOCAL-00002" summary="The first version">
-      <created>1586439700510</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1586439700510</updated>
+      <workItem from="1590453886991" duration="64835000" />
+      <workItem from="1590583864237" duration="661000" />
+      <workItem from="1590584709436" duration="955000" />
     </task>
     <task id="LOCAL-00003" summary="The first version">
       <created>1586439722311</created>
@@ -584,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590567243783</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="change password finished">
+      <created>1590570378274</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1590570378274</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +686,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new version of register_all_test.html" />
     <MESSAGE value="new version of appoint urls" />
     <MESSAGE value="Well appoint version 1 &#10;now you can pick a date&#10;but other picks work the same  way" />
     <MESSAGE value="Add the appoint module setting into HIS" />
@@ -689,7 +710,8 @@
     <MESSAGE value="added button style changes &#10;fix non-doctor registration bug" />
     <MESSAGE value="change test to final" />
     <MESSAGE value="add code verification" />
-    <option name="LAST_COMMIT_MESSAGE" value="add code verification" />
+    <MESSAGE value="change password finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="change password finished" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -725,14 +747,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590567243537">
+    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590570378084">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
     <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590073715105" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.979@0.23.1680.979" timestamp="1590419416949" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1590542357259" />
-    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590567243537" />
+    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590570378084" />
     <state x="168" y="111" width="1344" height="841" key="DiffContextDialog" timestamp="1590567204679">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
@@ -747,34 +769,34 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="819" height="263" key="GridCell.Tab.0.bottom" timestamp="1590570148566">
+    <state width="819" height="263" key="GridCell.Tab.0.bottom" timestamp="1590583848385">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168198" />
     <state width="819" height="263" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1590542321279" />
-    <state width="819" height="263" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1590570148566" />
-    <state width="819" height="263" key="GridCell.Tab.0.center" timestamp="1590570148565">
+    <state width="819" height="263" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1590583848384" />
+    <state width="819" height="263" key="GridCell.Tab.0.center" timestamp="1590583848383">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
     <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
     <state width="819" height="263" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1590542321278" />
-    <state width="819" height="263" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1590570148565" />
-    <state width="819" height="263" key="GridCell.Tab.0.left" timestamp="1590570148564">
+    <state width="819" height="263" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1590583848383" />
+    <state width="819" height="263" key="GridCell.Tab.0.left" timestamp="1590583848380">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
     <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168196" />
     <state width="819" height="263" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1590542321278" />
-    <state width="819" height="263" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1590570148564" />
-    <state width="819" height="263" key="GridCell.Tab.0.right" timestamp="1590570148566">
+    <state width="819" height="263" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1590583848380" />
+    <state width="819" height="263" key="GridCell.Tab.0.right" timestamp="1590583848383">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
     <state width="819" height="263" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1590542321279" />
-    <state width="819" height="263" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1590570148566" />
+    <state width="819" height="263" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1590583848383" />
     <state width="819" height="363" key="GridCell.Tab.1.bottom" timestamp="1589637102728">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -846,13 +868,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590567674149">
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590570395488">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589986392325" />
     <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.980@0.23.1680.980" timestamp="1590542494526" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590567674149" />
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590570395488" />
     <state x="713" y="435" key="publish.login" timestamp="1590480458319">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
@@ -861,13 +883,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup" timestamp="1590569712322">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590585101453">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590076450707" />
     <state x="505" y="240" width="670" height="631" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1590416689926" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590542062235" />
-    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590569712322" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590585101453" />
+    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590584166478" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

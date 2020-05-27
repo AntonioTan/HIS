@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]" date="1590505360608" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2020/5/26, 11:02 下午 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="data.db" />
+    <option name="AFTER_PATH" value="data.db" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/data.db" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="login/static/login/imgs/2.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/2.png" />
+  </binary>
+</changelist>

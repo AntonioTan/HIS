@@ -1,0 +1,155 @@
+Index: login/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django import forms\nfrom .validators import validate_user_name, validate_user_phone, validate_user_birth\nfrom . import choices\n\n\nclass SignIn(forms.Form):\n    name = forms.CharField(max_length=20,\n                           label='用户名',\n                           error_messages={\n                               'required': '请输入用户名'\n                           }\n                           )\n    password = forms.CharField(max_length=20,\n                               label='密码',\n                               )\n\n\nclass SignUp(forms.Form):\n    # basically this form is consistent with the User model\n    # Alert -> if we change the User model, don't forget changing the form here\n    name = forms.CharField(max_length=20,\n                           label='用户名',\n                           error_messages={\n                               'required': '请输入用户名'\n                           },\n                           validators=[validate_user_name])\n\n    password = forms.CharField(max_length=20,\n                               label='密码',\n                               error_messages={\n                                   'required': '请输入密码'\n                               }\n                               )\n\n    birth = forms.DateField(label=\"生日\",\n                            help_text='1999-09-03',\n                            validators=[validate_user_birth])\n\n    sex = forms.ChoiceField(label=\"性别\",\n                            choices=choices.SEX_CHOICES,\n                            widget=forms.RadioSelect)\n\n    phone = forms.CharField(max_length=11,\n                            label='手机号',\n                            validators=[validate_user_phone])\n\n    email = forms.EmailField(label='邮箱')\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- login/forms.py	(revision 7d9d1e27c244b788adacedf26e6df6f0ea4d986c)
++++ login/forms.py	(date 1590504173600)
+@@ -34,15 +34,28 @@
+ 
+     birth = forms.DateField(label="生日",
+                             help_text='1999-09-03',
++                            error_messages={
++                                'required': '请输入生日'
++                            },
+                             validators=[validate_user_birth])
+ 
+     sex = forms.ChoiceField(label="性别",
++                            error_messages={
++                                'required': '请选择性别'
++                            },
+                             choices=choices.SEX_CHOICES,
+                             widget=forms.RadioSelect)
+ 
+     phone = forms.CharField(max_length=11,
+                             label='手机号',
++                            error_messages={
++                                'required': '请输入手机号'
++                            },
+                             validators=[validate_user_phone])
+ 
+-    email = forms.EmailField(label='邮箱')
++    email = forms.EmailField(label='邮箱',
++                             error_messages={
++                                 'required': '请输入邮箱'
++                             }
++                             )
+ 
+Index: templates/login/sign_up.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\" xmlns: xmlns:>\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>注册页面</title>\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <script src=\"https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js\"></script>\n</head>\n{% load static %}\n<style>\n    .form-control {\n        width: 250px\n    }\n\n    #function {\n        margin-left: 60%;\n        font-size: 12px\n    }\n\n    #title {\n        margin-top: 6px\n    }\n\n    .lead {\n        font-size: 16px\n    }\n\n    #introduction {\n        margin-left: 30%;\n        margin-top: 130px\n    }\n\n    #FP {\n        background-image: url({% static \"appoint/imgs/back2.jpg\"  %});\n        width: 100%;\n        height: 1000px\n    }\n</style>\n<body>\n<nav class=\"navbar navbar-default\" role=\"navigation\" style=\"margin:0;padding: 0\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\" id=\"title\">\n            <p class=\"navbar-brand\" style=\"font-size:25px;color: black\">CUFE医院患者服务系统</p>\n        </div>\n        <div id=\"function\">\n            <ul class=\"nav navbar-nav\" style=\"margin-top: 8px;\">\n                <li><a href=\"#\" id=\"page1\">首页</a></li>\n                <li><a href=\"#\" id=\"department\">科室分类</a></li>\n                <li><a href=\"#\" id=\"reserve\">预约挂号</a></li>\n                <li><a href=\"#\" id=\"contact\">联系我们</a></li>\n                <li><a href=\"#\" id=\"help\">帮助中心</a></li>\n                <li><a href=\"#\" id=\"self\">个人中心</a></li>\n                <!--以下部分登陆成功后才会显示-->\n                <li>\n                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n                        <span class=\"glyphicon glyphicon-user\"></span> <b class=\"caret\"></b></a>\n                    <ul class=\"dropdown-menu\" style=\"min-width:100%\">\n                        <li><a href=\"#\">设置</a></li>\n                        <li><a href=\"#\">我的预约</a></li>\n                        <li><a href=\"#\">退出登录</a></li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </div>\n</nav>\n\n<div class=\"container\" id=\"FP\">\n    <div class=\"container\" style=\"margin-left:8%;margin-top:2%\">\n        <img src=\"static/images/2.png\" style=\"width: 718.5px;height: 133.5px\">\n    </div>\n    <div class=\"col-xs-6\">\n        <form class=\"form-horizontal\" role=\"form\" method=\"post\"\n              action={% url 'login:sign_up_test' %} style=\"margin-left:70px;margin-top:120px\">\n            {% csrf_token %}\n            <div class=\"form-group\">\n                <label for=\"name\" class=\"col-sm-2 control-label\"><span class=\"glyphicon glyphicon-user\"\n                                                                       style=\"font-size: 15px\">  用户名:</span></label>\n                <div class=\"col-sm-10\">\n                    <input type=\"text\" name='name' class=\"form-control\" id=\"firstname\" placeholder=\"请输入用户名\">\n                    {{ errors.name }}\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"password\" class=\"col-sm-2 control-label\"><span class=\"\tglyphicon glyphicon-lock\"\n                                                                           style=\"font-size: 15px\">  设置密码:</span></label>\n                <div class=\"col-sm-10\">\n                    <input name=\"password\" type=\"password\" class=\"form-control\" id=\"lastname\" placeholder=\"请设置密码\">\n                    {{ errors.password }}\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"repeat password\" class=\"col-sm-2 control-label\"><span class=\"\tglyphicon glyphicon-lock\"\n                                                                                  style=\"font-size: 15px\">  确认密码:</span></label>\n                <div class=\"col-sm-10\">\n                    <input name=\"repeat_password\" type=\"password\" class=\"form-control\" id=\"lastname\"\n                           placeholder=\"请确认密码\">\n                    {{ errors.repeat_password }}\n                </div>\n            </div>\n{#            {{ sign_up_form.sex }}#}\n            <div class=\"form-group\">\n                <label for=\"sex\" class=\"col-sm-2 control-label\"><span class=\"\tglyphicon glyphicon-asterisk\"\n                                                                      style=\"font-size: 15px\">  性别:</span></label>\n                <div class=\"col-sm-9 \">\n                    <label><input type=\"radio\" name=\"sex\" id=\"id_sex_0\" value=\"male\" size=\"12\"/>男</label>\n                    <label><input type=\"radio\" name=\"sex\" id=\"id_sex_1\" value=\"female\" size=\"12\"/>女</label>\n                    {{ errors.sex }}\n                </div>\n            </div>\n\n            <div class=\"form-group\">\n                <label for=\"e-mail\" class=\"col-sm-2 control-label\"><span class=\"\tglyphicon glyphicon-asterisk\"\n                                                                         style=\"font-size: 15px\">  邮箱:</span></label>\n                <div class=\"col-sm-10\">\n                    <input name=\"email\" type=\"text\" class=\"form-control\" id=\"e-mail\" placeholder=\"请输入您的邮箱\">\n                </div>\n                {{ errors.email }}\n            </div>\n            <div class=\"form-group\">\n                <label for=\"cellphone\" class=\"col-sm-2 control-label\"><span class=\"\tglyphicon glyphicon-phone-alt\"\n                                                                            style=\"font-size: 15px\">  移动电话:</span></label>\n                <div class=\"col-sm-10\">\n                    <input name=\"phone\" type=\"text\" class=\"form-control\" id=\"cellphone\" placeholder=\"请输入您的手机号\">\n                    <tr style=\"height: 20px\"></tr>\n                    {{ errors.phone }}\n                </div>\n            </div>\n            {{ sign_up_form.birth.label }}\n            {{ sign_up_form.birth}}\n            {{ errors.birth }}\n            <div class=\"form-group\">\n                <div class=\"col-sm-offset-2 col-sm-10\">\n                    <button type=\"submit\" class=\"btn btn-info\" style=\"margin-left:18px;text-align: center;width:200px\">\n                        完成注册\n                    </button>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <div class=\"col-sm-offset-2 col-sm-10\">\n                    <label><a href={% url 'login:sign_in_test' %} style=\"margin-left:50px\">已有账号？立即登录</a></label>\n                </div>\n            </div>\n\n        </form>\n    </div>\n</div>\n\n\n</body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/login/sign_up.html	(revision 7d9d1e27c244b788adacedf26e6df6f0ea4d986c)
++++ templates/login/sign_up.html	(date 1590504855588)
+@@ -70,7 +70,7 @@
+ 
+ <div class="container" id="FP">
+     <div class="container" style="margin-left:8%;margin-top:2%">
+-        <img src="static/images/2.png" style="width: 718.5px;height: 133.5px">
++        <img src="{% static 'login/imgs/2.png' %}" style="width: 718.5px;height: 133.5px">
+     </div>
+     <div class="col-xs-6">
+         <form class="form-horizontal" role="form" method="post"
+@@ -81,7 +81,7 @@
+                                                                        style="font-size: 15px">  用户名:</span></label>
+                 <div class="col-sm-10">
+                     <input type="text" name='name' class="form-control" id="firstname" placeholder="请输入用户名">
+-                    {{ errors.name }}
++                    <div stype="color:red,margin-left:1%">{{ errors.name }}</div>
+                 </div>
+             </div>
+             <div class="form-group">
+@@ -89,7 +89,7 @@
+                                                                            style="font-size: 15px">  设置密码:</span></label>
+                 <div class="col-sm-10">
+                     <input name="password" type="password" class="form-control" id="lastname" placeholder="请设置密码">
+-                    {{ errors.password }}
++                    <div stype="color:red,margin-left:1%">{{ errors.password }}</div>
+                 </div>
+             </div>
+             <div class="form-group">
+@@ -98,7 +98,7 @@
+                 <div class="col-sm-10">
+                     <input name="repeat_password" type="password" class="form-control" id="lastname"
+                            placeholder="请确认密码">
+-                    {{ errors.repeat_password }}
++                    <div stype="color:red,margin-left:1%">{{ errors.repeat_password }}</div>
+                 </div>
+             </div>
+ {#            {{ sign_up_form.sex }}#}
+@@ -108,8 +108,9 @@
+                 <div class="col-sm-9 ">
+                     <label><input type="radio" name="sex" id="id_sex_0" value="male" size="12"/>男</label>
+                     <label><input type="radio" name="sex" id="id_sex_1" value="female" size="12"/>女</label>
+-                    {{ errors.sex }}
+                 </div>
++                                    <div stype="color:red,margin-left:1%">{{ errors.sex }}</div>
++
+             </div>
+ 
+             <div class="form-group">
+@@ -118,7 +119,7 @@
+                 <div class="col-sm-10">
+                     <input name="email" type="text" class="form-control" id="e-mail" placeholder="请输入您的邮箱">
+                 </div>
+-                {{ errors.email }}
++                    <div stype="color:red,margin-left:1%">{{ errors.email }}</div>
+             </div>
+             <div class="form-group">
+                 <label for="cellphone" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-phone-alt"
+@@ -126,12 +127,20 @@
+                 <div class="col-sm-10">
+                     <input name="phone" type="text" class="form-control" id="cellphone" placeholder="请输入您的手机号">
+                     <tr style="height: 20px"></tr>
+-                    {{ errors.phone }}
++                    <div stype="color:red,margin-left:1%">{{ errors.phone }}</div>
++                </div>
++            </div>
++            <div class="form-group">
++                <label for="name" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-asterisk"
++                                                                       style="font-size: 15px">  出生日期:</span></label>
++                <div class="col-sm-10">
++                    <input type="date" class="form-control" name="birth" id="birth" placeholder="格式：YYYY-MM-DD">
+                 </div>
++
+             </div>
+-            {{ sign_up_form.birth.label }}
+-            {{ sign_up_form.birth}}
+-            {{ errors.birth }}
++{#            {{ sign_up_form.birth.label }}#}
++{#            {{ sign_up_form.birth}}#}
++{#            {{ errors.birth }}#}
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+                     <button type="submit" class="btn btn-info" style="margin-left:18px;text-align: center;width:200px">
+@@ -141,7 +150,7 @@
+             </div>
+             <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+-                    <label><a href={% url 'login:sign_in_test' %} style="margin-left:50px">已有账号？立即登录</a></label>
++                    <label><a href={% url 'login:sign_in' %} style="margin-left:50px">已有账号？立即登录</a></label>
+                 </div>
+             </div>
+ 
+Index: login/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.core.exceptions import ObjectDoesNotExist\nfrom django.http import HttpResponseRedirect, HttpResponse\nfrom django.shortcuts import redirect\nfrom django.http.cookie import SimpleCookie\nimport os, django\nos.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"HIS.settings\")  # project_name 项目名称\ndjango.setup()\nfrom django.shortcuts import render\nfrom django.views import View\nfrom django.contrib.auth.hashers import make_password, check_password\nfrom .forms import SignUp, SignIn\nfrom .models import User\nfrom datetime import date\nfrom datetime import datetime\nfrom appoint.models import Order\nfrom login.models import User\n# Create your views here.\n\n\ndef department_list(request):\n    department_list_template = 'login/department.html'\n    return render(request, template_name=department_list_template)\n\n\ndef help(request):\n    help_template = 'login/help.html'\n    return render(request, template_name=help_template)\n\n\ndef contact(request):\n    contact_template = 'login/contact.html'\n    return render(request, template_name=contact_template)\n\n\ndef user_center(request):\n    print(request.COOKIES)\n    if 'user_id' in request.COOKIES:\n        user_id = request.COOKIES['user_id']\n        name = User.objects.get(id=user_id).name\n        context = get_user_center_context(name)\n        context = add_user_id(request, context)\n        response = render(request, template_name='login/user_center.html', context=context)\n        response.set_cookie(key='user_id', value=user_id, expires=3600)\n        return response\n    else:\n        return render(request, template_name='login/home_page.html')\n\n\ndef logout(request):\n    context = {'sign_in_form': SignIn()}\n    context = add_user_id(request, context)\n    response = render(request, 'login/home_page.html', context=context)\n    response.set_cookie(key='post_token', value='allow')\n    response.delete_cookie('user_id')\n    return response\n\n\ndef sign_up_test(request):\n    sign_up_form = SignUp()\n    context = {\n        \"sign_up_form\": sign_up_form\n    }\n    context = add_user_id(request, context)\n    return render(request, 'login/sign_up_test.html', context=context)\n\n\ndef welcome_sign_up(request, name):\n    return render(request, 'login/welcome_user_test.html', context={'user_name': name})\n\n\ndef welcome_login(request, name):\n    return render(request, 'login/welcome_login_test.html', context={'name': name})\n\n\nclass SignInView(View):\n    form_class = SignIn\n    initial = {'key': 'value'}\n    template_name='login/home_page.html'\n    admin_template_name = 'appoint/admin.html'\n    success_template_name = 'login/user_center_test.html'\n\n    def dispatch(self, request, *args, **kwargs):\n        if request.method == 'POST':\n            return self.post(request)\n        else:\n            if 'post_token' not in request.COOKIES.keys():\n                print('request', request.COOKIES)\n                request.COOKIES['post_token'] = 'allow'\n            if request.COOKIES['post_token'] != 'allow':\n                return redirect('appoint:search_test')\n            context = {'sign_in_form': SignIn()}\n            context = add_user_id(request, context)\n            response = render(request, self.template_name, context=context)\n            response.set_cookie(key='post_token', value='allow')\n            return response\n\n    def get(self, request):\n        print('get')\n\n    def post(self, request):\n        self.initial = request.POST\n        print(self.initial)\n        print('post', request.COOKIES)\n        # TODO we need direct user to home_page_logged_in\n        if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':\n            return redirect('appoint:search_test')\n        if verify_sign_in(self.initial):\n            context = get_user_center_context(self.initial['name'])\n            print(context)\n            if 'admin' in context.keys():\n                response = render(request, self.admin_template_name, context=context)\n                response.set_cookie(key='post_token', value='disable', expires=3600)\n                response.set_cookie(key='user_id', value=context['user'].id, expires=3600)\n                return response\n            else:\n                context = add_user_id(request, context)\n                response = render(request, self.success_template_name, context=context)\n                response.set_cookie(key='post_token', value='disable', expires=3600)\n                response.set_cookie(key='user_id', value=context['user'].id, expires=3600)\n                return response\n        else:\n            # form = self.form_class(self.initial)\n            # TODO we need to show user what's wrong with his account or password\n            context = {'error': '用户名或密码错误'}\n            context = add_user_id(request, context)\n            return render(request, template_name=self.template_name, context=context)\n\n\ndef verify_sign_in(sign_in_data):\n    name = sign_in_data['name']\n    password = sign_in_data['password']\n    try:\n        encoded_password = User.objects.get(name=name).password\n        check = check_password(password=password, encoded=encoded_password)\n    except ObjectDoesNotExist:\n        return False\n    return check\n\n\nclass SignUpView(View):\n    form_class = SignUp\n    initial = {\"key\": \"value\"}\n    # TODO here we use the test html later we need to change it\n    template_name = \"login/sign_up.html\"\n    success_template_name = \"login/sign_up_success_test.html\"\n\n    def dispatch(self, request, *args, **kwargs):\n        if request.method == 'POST':\n            return self.post(request)\n        else:\n            form = SignUp()\n            context = {'sign_up_form': form}\n            context = add_user_id(request, context)\n            response = render(request, 'login/sign_up.html', context)\n            response.set_cookie(key='post_token', value='allow', expires=3600)\n            return response\n\n    def get(self, request, *args, **kwargs):\n        # we don't need this yet\n        return\n\n    def post(self, request, *args, **kwargs):\n        self.initial = request.POST\n        form = self.form_class(\n            self.initial\n        )\n        if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':\n            return redirect('appoint:search_test')\n        if self.initial['password'] == self.initial['repeat_password'] and form.is_valid():\n            print('No Wrong')\n            user_data = get_user_data(self.initial)\n            new_user = User.objects.create(\n                name=user_data['name'],\n                password=user_data['password'],\n                birth=user_data['birth'],\n                age=user_data['age'],\n                sex=user_data['sex'],\n                phone=user_data['phone'],\n                email=user_data['email'],\n                sign_up_time=user_data['sign_up_time'],\n                appoint_times=user_data['appoint_times'],\n                appoint_available=user_data['appoint_available']\n            )\n            new_user.save()\n            # response = HttpResponseRedirect('welcome=%s' % user_data['name'])\n            response = render(request, self.success_template_name)\n            response.set_cookie(key='post_token', value='disable', expires=3600)\n            return response\n        else:\n            errors = form.errors.as_data()\n            for error_key in errors.keys():\n                errors[error_key] = errors[error_key][0].message\n            if self.initial['password'] != self.initial['repeat_password']:\n                errors['repeat_password'] = '确认密码与密码不相同'\n                # TODO add cleaned_data\n            cleaned_data = form.cleaned_data\n            context = {'sign_up_form': form, 'errors': errors}\n            context = add_user_id(request, context)\n            return render(request, template_name=self.template_name, context=context)\n\n\ndef get_user_data(form_data):\n    user_data = {}\n    user_data['name'] = form_data['name']\n    # Look OUT I use make_password here!\n    user_data['password'] = make_password(form_data['password'], None)\n    user_data['sex'] = True if form_data['sex'] == 'male' else False\n    user_data['phone'] = form_data['phone']\n    user_data['birth'] = form_data['birth']\n    user_data['email'] = form_data['email']\n    user_data['age'] = date.today().year - int(user_data['birth'][0:4])\n    user_data['sign_up_time'] = datetime.now()\n    # TODO we need to change the appoint time here later\n    user_data['appoint_times'] = 3\n    user_data['appoint_available'] = True\n    return user_data\n\n\ndef get_user_center_context(user_name):\n    # get user\n    sign_in_user = User.objects.get(name=user_name)\n    print(sign_in_user)\n    if sign_in_user.admin:\n        return {\n            'user': sign_in_user,\n            'admin': 1\n        }\n    else:\n        # get all registrations\n        all_orders = Order.objects.filter(patient=sign_in_user)\n        # get today registrations\n        today_date = datetime.today().date()\n        today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)\n        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)\n        today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))\n        against_rule_orders = all_orders.filter(status=4)\n        history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))\n        context = {\n            'user': sign_in_user,\n            'today_orders': today_orders,\n            'history_orders': history_orders,\n            'today_date': today_date,\n            'against_rule_orders': against_rule_orders,\n\n        }\n        return context\n\n\n\ndef add_user_id(request, context):\n    if 'user_id' not in request.COOKIES.keys():\n        return context\n    else:\n        context['user_id'] = request.COOKIES['user_id']\n        return context\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- login/views.py	(revision 7d9d1e27c244b788adacedf26e6df6f0ea4d986c)
++++ login/views.py	(date 1590504945823)
+@@ -161,6 +161,7 @@
+ 
+     def post(self, request, *args, **kwargs):
+         self.initial = request.POST
++        print(self.initial)
+         form = self.form_class(
+             self.initial
+         )

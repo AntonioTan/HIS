@@ -114,7 +114,7 @@ def deal_registration(request, *args, **kwargs):
         if 'user_id' in request.COOKIES.keys():
             print(request.POST.get('description'))
             user_id = request.COOKIES.get('user_id')
-            response = render(request, template_name='appoint/submit.html', )
+            response = render(request, template_name='appoint/submit.html')
             response.set_cookie(key='user_id', value=user_id, expires=3600)
             return response
         else:

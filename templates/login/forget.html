@@ -12,7 +12,7 @@
 {% load static %}
 <style>
     #FP {
-        background-image: url({% static "blog/images/background.jpg" %});
+        background-image: url({% static "login/imgs/background.jpg" %});
         width: 100%;
         height: 600px
     }
@@ -51,60 +51,112 @@
         </div>
     </div>
 </nav>
-<div class="container" id="FP">
-    <form class="form-horizontal" role="form" method="post" action="{% url 'login:find_psw' %}"
-          style="margin-top:6%;opacity: 0.6;width:700px;margin-left:28%">
-        {% csrf_token %}
-        <div class="form-group" style="margin-left:21%;min-width:100%">
-            <label for="firstname" class="col-sm-2 control-label" style="font-size: 20px;width: 250px">找回密码</label>
+<form class="form-horizontal" role="form" method="post" action="{% url 'login:find_psw' %}"
+      style="margin-top:6%;opacity: 0.6;width:700px;margin-left:28%">
+    {% csrf_token %}
+    <div class="form-group" style="margin-left:20%;min-width:100%">
+        <label for="firstname" class="col-sm-2 control-label" style="font-size: 20px;width: 250px">找回密码</label>
+    </div>
+
+    <div class="form-group" style="margin-left: 13%">
+        <label for="disabledTextInput" class="col-sm-2 control-label"><span class="glyphicon glyphicon-euro"></span>&nbsp用户名</label>
+        <div class="col-sm-10">
+            <p style="position:absolute;color: red;left:55%;top:21%">{{ error }}</p>
+            <input name="name" type="text" class="form-control" id="firstname"
+                   placeholder={{ name }} value={{ name }} style="width:250px;margin-left:4%">
         </div>
-        {{ error }}
-        <fieldset>
-            <div class="form-group">
-                <label for="disabledTextInput" class="col-sm-2 control-label">
-                    <span
-                        class="glyphicon glyphicon-euro">
+    </div>
 
-                    </span>
-                    用户名
-                </label>
-                <div class="col-sm-10">
-                    {% if name %}
-                        <input type="text" name="name" class="form-control" id="firstname" placeholder={{ name }}
-                                value={{ name }}
-                           style="width:250px;margin-left:4%">
-                        {% else %}
-                    <input type="text" name="name" class="form-control" id="firstname" placeholder="Eric"
-                           style="width:250px;margin-left:4%">
-                    {% endif %}
-                </div>
-            </div>
-            <div class="form-group" style="margin-left: 13%">
-                <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-envelope"></span>&nbsp注册邮箱</label>
-                <div class="col-sm-10">
-                    {% if email %}
-                    <input type="text" name="email" class="form-control"
-                           value={{ email }}
-                                              placeholder={{ email }} style="width:250px;">
-                        {% else %}
-                        <input type="text" name="email" class="form-control"
-                                              placeholder="659992199@qq.com" style="width:250px;">
-                    {% endif %}
-                </div>
-
-            </div>
-        </fieldset>
-
-        <div class="form-group" style="margin-left: 11%">
-            <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-paperclip">验证码</span></label>
-            <div class="col-sm-10"><input name="code" type="text" class="form-control"
-                                          style="width:250px;margin-left:6%"></div>
-            <a href="{% url 'login:get_code' name=name email=email %}">获取验证码</a>
+    <div class="form-group" style="margin-left: 13%">
+        <label for="disabledTextInput" class="col-sm-2 control-label"><span class="glyphicon glyphicon-envelope"></span>&nbsp邮箱</label>
+        <div class="col-sm-10">
+            {% if email %}
+            <input name="email" type="text" class="form-control" id="firstname"
+                   placeholder={{ email }} style="width:250px;margin-left:4%">
+                {% else %}
+            <input type="text" name="email" class="form-control"}
+                                            placeholder="659992199@qq.com" value="659992199@qq.com"style="width:250px;">
+            {% endif %}
         </div>
-        <input class="invisible" name="real_code" value={{ real_code }}>
-        <button type="submit">预约</button>
-    </form>
-</div>
+    </div>
+
+    <div class="form-group" style="margin-left: 13%">
+        <label for="disabledTextInput" class="col-sm-2 control-label"><span class="glyphicon glyphicon-magnet"></span>验证码</label>
+        <div class="col-sm-10">
+            <input type="text" name="code" class="form-control" id="firstname" placeholder="输入验证码"
+                   style="width:250px;margin-left:4%">
+
+            <button type="button" style="position: absolute;left:38%;top:5%;height:30px">
+                <a href="{% url 'login:get_code' name=name email=email %}">获取验证码</a>
+            </button>
+
+        </div>
+    </div>
+        <div class="form-group" style="margin-left: 2%;padding-bottom: 5%">
+    <div class="col-sm-offset-2 col-sm-10">
+      <label for="firstname" class="col-sm-2 control-label">
+          <button type="submit" class="btn btn-info" style="text-align: center;width:100px">确认找回</button>
+      </label>
+    </div>
+        </div>
+    <input class="invisible" name="real_code" value={{ real_code }}>
+</form>
+
+
+{#<div class="container" id="FP">#}
+{#    <form class="form-horizontal" role="form" method="post" action="{% url 'login:find_psw' %}"#}
+{#          style="margin-top:6%;opacity: 0.6;width:700px;margin-left:28%">#}
+{#        {% csrf_token %}#}
+{#        <div class="form-group" style="margin-left:21%;min-width:100%">#}
+{#            <label for="firstname" class="col-sm-2 control-label" style="font-size: 20px;width: 250px">找回密码</label>#}
+{#        </div>#}
+{#        {{ error }}#}
+{#        <fieldset>#}
+{#            <div class="form-group">#}
+{#                <label for="disabledTextInput" class="col-sm-2 control-label">#}
+{#                    <span#}
+{#                        class="glyphicon glyphicon-euro">#}
+{##}
+{#                    </span>#}
+{#                    用户名#}
+{#                </label>#}
+{#                <div class="col-sm-10">#}
+{#                    {% if name %}#}
+{#                        <input type="text" name="name" class="form-control" id="firstname" placeholder={{ name }}#}
+{#                                value={{ name }}#}
+{#                           style="width:250px;margin-left:4%">#}
+{#                        {% else %}#}
+{#                    <input type="text" name="name" class="form-control" id="firstname" placeholder="Eric"#}
+{#                           style="width:250px;margin-left:4%">#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="form-group" style="margin-left: 13%">#}
+{#                <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-envelope"></span>&nbsp注册邮箱</label>#}
+{#                <div class="col-sm-10">#}
+{#                    {% if email %}#}
+{#                    <input type="text" name="email" class="form-control"#}
+{#                           value={{ email }}#}
+{#                                              placeholder={{ email }} style="width:250px;">#}
+{#                        {% else %}#}
+{#                        <input type="text" name="email" class="form-control"#}
+{#                                              placeholder="659992199@qq.com" style="width:250px;">#}
+{#                    {% endif %}#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </fieldset>#}
+{##}
+{#        <div class="form-group" style="margin-left: 11%">#}
+{#            <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-paperclip">验证码</span></label>#}
+{#            <div class="col-sm-10"><input name="code" type="text" class="form-control"#}
+{#                                          style="width:250px;margin-left:6%"></div>#}
+{#            <a href="{% url 'login:get_code' name=name email=email %}">获取验证码</a>#}
+{#        </div>#}
+{#        <input class="invisible" name="real_code" value={{ real_code }}>#}
+{#        <button type="submit">预约</button>#}
+{#    </form>#}
+{#</div>#}
 
 </body>
 </html>

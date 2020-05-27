@@ -21,6 +21,51 @@ import smtplib
 
 
 # Create your views here.
+def change_info(request):
+    print(request.POST)
+    if 'user_id' in request.COOKIES.keys():
+        if request.method != 'POST':
+            return render(request, template_name='login/revise.html')
+        user_id = request.COOKIES['user_id']
+        user = User.objects.get(id=user_id)
+        if user.admin:
+            return render(request, template_name='login/home_page.html')
+        user_data = {}
+        user_data['name'] = user.name
+        user_data['password'] = 'test'
+        user_data['sex'] = 'female'
+        user_data['age'] = 18
+        user_data['birth'] = request.POST['birth']
+        user_data['email'] = request.POST['email']
+        user_data['phone'] = request.POST['phone']
+        form = SignUp(user_data)
+        if form.is_valid():
+            print(user_data)
+            age = date.today().year - int(user_data['birth'][0:4])
+            context = get_user_center_context(user.name)
+            context = add_user_id(request, context)
+            user.birth = user_data['birth']
+            user.email = user_data['email']
+            user.phone = user_data['phone']
+            user.age = date.today().year - int(user_data['birth'][0:4])
+            user.save()
+            print('Saved')
+            context['user'] = user
+            response = render(request, template_name='login/user_center.html', context=context)
+        else:
+            errors = form.errors.as_data()
+            for error_key in errors.keys():
+                errors[error_key] = errors[error_key][0].message
+            print(errors)
+            context = {'errors': errors}
+            context = add_user_id(request, context)
+            context['user'] = user
+            response = render(request, template_name='login/revise.html', context=context)
+        response.set_cookie(key='user_id', value=user_id, expires=3600)
+        return response
+    else:
+        return render(request, template_name='login/home_page.html')
+
 
 def change_psw(request):
     rst = {}
@@ -90,6 +135,7 @@ class FindView(View):
             context[key] = request.POST[key]
         print(context)
         if context['name'] == '' or context['email'] == '':
+            context = self.initial
             context['error'] = '请输入用户名和邮箱'
             return render(request, template_name=self.template_name, context=context)
         elif context['real_code'] == '':
@@ -115,20 +161,21 @@ class FindView(View):
                 return render(request, template_name=self.template_name, context=context)
 
 
-
 def department_list(request):
+    print(request.COOKIES)
     department_list_template = 'login/department.html'
-    return render(request, template_name=department_list_template)
+    return render(request, template_name=department_list_template, context={'user_id':request.COOKIES['user_id']})
 
 
-def help(request):
-    help_template = 'login/help.html'
-    return render(request, template_name=help_template)
+def our_help(request):
+    help_template = 'login/help_center.html'
+    return render(request, template_name= help_template, context={'user_id':request.COOKIES['user_id']})
 
 
 def contact(request):
+    print(request.COOKIES)
     contact_template = 'login/contact.html'
-    return render(request, template_name=contact_template)
+    return render(request, template_name=contact_template, context={'user_id':request.COOKIES['user_id']})
 
 
 def user_center(request):
@@ -147,7 +194,6 @@ def user_center(request):
 
 def logout(request):
     context = {'sign_in_form': SignIn()}
-    context = add_user_id(request, context)
     response = render(request, 'login/home_page.html', context=context)
     response.set_cookie(key='post_token', value='allow')
     response.delete_cookie('user_id')
@@ -344,7 +390,6 @@ def get_user_center_context(user_name):
 
         }
         return context
-
 
 
 def add_user_id(request, context):

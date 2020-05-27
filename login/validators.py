@@ -19,14 +19,14 @@ def validate_user_name(value):
 
 def validate_user_phone(value):
     if len(value) != 11:
-        raise ValidationError('Please enter valid phone number',
+        raise ValidationError('请输入正确的手机号',
                               params={'value': value},
                               code='手机号长度错误')
 
 
 def validate_user_birth(value):
     if int(value.year) < 1900:
-        raise ValidationError('Please enter valid birth',
+        raise ValidationError('请输入真正的生日',
                               params={'value': value},
                               code='出生年份过老')
     try:

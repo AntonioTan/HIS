@@ -55,14 +55,14 @@
                 <li><a href="{% url 'login:department_list' %}" id="department">科室分类</a></li>
                 <li><a href="{% url 'appoint:search' %}" id="reserve">预约挂号</a></li>
                 <li><a href="{% url 'login:contact' %}" id="contact">联系我们</a></li>
-                <li><a href="{% url 'login:help' %}" id="help">帮助中心</a></li>
+                <li><a href="{% url 'login:ourhelp' %}" id="help">帮助中心</a></li>
                 <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
                 {% if user_id != -1 and user_id %}
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                         <ul class="dropdown-menu" style="min-width:100%">
-                            <li><a href="#">设置</a></li>
+                            <li><a href="{% url 'login:change_info' %}">设置</a></li>
                             <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
                             <li><a href="{% url 'login:logout' %}">退出登录</a></li>
                         </ul>
