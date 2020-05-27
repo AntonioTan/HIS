@@ -16,5 +16,6 @@ urlpatterns= [
     path('department_list/', views.department_list, name='department_list'),
     path('find_psw/', views.FindView.as_view(), name='find_psw'),
     path('get_code/<str:name>/<str:email>/', views.get_code, name='get_code'),
+    path('change_psw/', views.change_psw, name='change_psw'),
 ]
 

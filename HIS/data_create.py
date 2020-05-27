@@ -255,33 +255,34 @@ if __name__ == '__main__':
     # for department in Department.objects.all():
     #     print(department.name)
     # print(Schedule.objects.filter(department=Department.objects.get(id=int('95'))))
-    orders = Order.objects.filter(status=4)
-    print(orders[0].status)
-    # department = Department.objects.get(id=0)
-    # print(len(department))
-
-
-    sender = '2017312322@email.cufe.edu.cn'
-    receivers = ['antonio21tan@163.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
-
-    # 三个参数：第一个为文本内容，第二个 plain 设置文本格式，第三个 utf-8 设置编码
-    msg = ""
-    code = ''
-    for i in range(4):
-        code += string.ascii_letters[random.randint(0, 51)]
-    message = MIMEText('您的邮箱验证码是%s'%code, 'plain', 'utf-8')
-    message['From'] = Header("CUFE医院患者服务系统", 'utf-8')   # 发送者
-    message['To'] =  Header("用户", 'utf-8')        # 接收者
-
-    subject = 'CUFE医院患者服务系统邮箱验证码'
-    message['Subject'] = Header(subject, 'utf-8')
-
-
-    try:
-        smtpObj = smtplib.SMTP(host='smtp.exmail.qq.com', port=25)
-        smtpObj.login(user=sender, password='r9FMXKRcmDXo5DNb')
-        smtpObj.set_debuglevel(1)
-        smtpObj.sendmail(sender, receivers, message.as_string())
-        print("邮件发送成功")
-    except smtplib.SMTPException:
-        print("Error: 无法发送邮件")
+    # orders = Order.objects.filter(status=4)
+    # print(orders[0].status)
+    # # department = Department.objects.get(id=0)
+    # # print(len(department))
+    #
+    #
+    # sender = '2017312322@email.cufe.edu.cn'
+    # receivers = ['antonio21tan@163.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+    #
+    # # 三个参数：第一个为文本内容，第二个 plain 设置文本格式，第三个 utf-8 设置编码
+    # msg = ""
+    # code = ''
+    # for i in range(4):
+    #     code += string.ascii_letters[random.randint(0, 51)]
+    # message = MIMEText('您的邮箱验证码是%s'%code, 'plain', 'utf-8')
+    # message['From'] = Header("CUFE医院患者服务系统", 'utf-8')   # 发送者
+    # message['To'] =  Header("用户", 'utf-8')        # 接收者
+    #
+    # subject = 'CUFE医院患者服务系统邮箱验证码'
+    # message['Subject'] = Header(subject, 'utf-8')
+    #
+    #
+    # try:
+    #     smtpObj = smtplib.SMTP(host='smtp.exmail.qq.com', port=25)
+    #     smtpObj.login(user=sender, password='r9FMXKRcmDXo5DNb')
+    #     smtpObj.set_debuglevel(1)
+    #     smtpObj.sendmail(sender, receivers, message.as_string())
+    #     print("邮件发送成功")
+    # except smtplib.SMTPException:
+    #     print("Error: 无法发送邮件")
+    print(User.objects.get(id='100'))

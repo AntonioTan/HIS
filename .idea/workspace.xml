@@ -19,13 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="admin part update">
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/login/static/login/imgs/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login/password_changed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HIS/data_create.py" beforeDir="false" afterPath="$PROJECT_DIR$/HIS/data_create.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appoint/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appoint/search_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,8 +117,8 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/login/static/login/imgs" />
-      <recent name="$PROJECT_DIR$/templates/appoint" />
       <recent name="$PROJECT_DIR$/templates/login" />
+      <recent name="$PROJECT_DIR$/templates/appoint" />
       <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
       <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
     </key>
@@ -237,14 +239,7 @@
       <workItem from="1590375769071" duration="936000" />
       <workItem from="1590411180528" duration="6948000" />
       <workItem from="1590421450314" duration="9000" />
-      <workItem from="1590453886991" duration="35659000" />
-    </task>
-    <task id="LOCAL-00001" summary="The first version">
-      <created>1586439626297</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1586439626297</updated>
+      <workItem from="1590453886991" duration="55035000" />
     </task>
     <task id="LOCAL-00002" summary="The first version">
       <created>1586439700510</created>
@@ -554,7 +549,42 @@
       <option name="project" value="LOCAL" />
       <updated>1590539829263</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update search_test.html">
+      <created>1590542357436</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1590542357436</updated>
+    </task>
+    <task id="LOCAL-00047" summary="added button style changes &#10;fix non-doctor registration bug">
+      <created>1590544209952</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1590544209952</updated>
+    </task>
+    <task id="LOCAL-00048" summary="change test to final">
+      <created>1590545343344</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1590545343344</updated>
+    </task>
+    <task id="LOCAL-00049" summary="change test to final">
+      <created>1590545540553</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1590545540553</updated>
+    </task>
+    <task id="LOCAL-00050" summary="add code verification">
+      <created>1590567243781</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1590567243783</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,10 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add django-crontab" />
-    <MESSAGE value="model 2.0" />
-    <MESSAGE value="CRONJOB for some time schedule jobs" />
-    <MESSAGE value="Add cronjob settings  the test of which has been verified" />
     <MESSAGE value="new version of register_all_test.html" />
     <MESSAGE value="new version of appoint urls" />
     <MESSAGE value="Well appoint version 1 &#10;now you can pick a date&#10;but other picks work the same  way" />
@@ -659,7 +685,11 @@
     <MESSAGE value="admin.html added to appoint dir" />
     <MESSAGE value="new update" />
     <MESSAGE value="admin part update" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin part update" />
+    <MESSAGE value="update search_test.html" />
+    <MESSAGE value="added button style changes &#10;fix non-doctor registration bug" />
+    <MESSAGE value="change test to final" />
+    <MESSAGE value="add code verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="add code verification" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -695,19 +725,20 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590540193295">
+    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590567243537">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
     <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590073715105" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.979@0.23.1680.979" timestamp="1590419416949" />
-    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1590503354581" />
-    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590540193295" />
-    <state x="168" y="111" width="1344" height="840" key="DiffContextDialog" timestamp="1590500338848">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1590542357259" />
+    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590567243537" />
+    <state x="168" y="111" width="1344" height="841" key="DiffContextDialog" timestamp="1590567204679">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="168" y="94" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223334967" />
     <state x="168" y="111" key="DiffContextDialog/0.23.1680.980@0.23.1680.980" timestamp="1590500338848" />
+    <state x="168" y="111" width="1344" height="841" key="DiffContextDialog/0.23.1680.981@0.23.1680.981" timestamp="1590567204679" />
     <state x="100" y="294" width="1480" height="779" key="DirDiffDialog" timestamp="1590482591845">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
@@ -716,34 +747,34 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="647" y="449" key="Github.CreateGistDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586439474296" />
-    <state width="819" height="263" key="GridCell.Tab.0.bottom" timestamp="1590542321279">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state width="819" height="263" key="GridCell.Tab.0.bottom" timestamp="1590570148566">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168198" />
     <state width="819" height="263" key="GridCell.Tab.0.bottom/0.23.1680.980@0.23.1680.980" timestamp="1590542321279" />
-    <state width="1638" height="263" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1590513349453" />
-    <state width="819" height="263" key="GridCell.Tab.0.center" timestamp="1590542321278">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state width="819" height="263" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1590570148566" />
+    <state width="819" height="263" key="GridCell.Tab.0.center" timestamp="1590570148565">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.center/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029188" />
     <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
     <state width="819" height="263" key="GridCell.Tab.0.center/0.23.1680.980@0.23.1680.980" timestamp="1590542321278" />
-    <state width="1638" height="263" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1590513349452" />
-    <state width="819" height="263" key="GridCell.Tab.0.left" timestamp="1590542321278">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state width="819" height="263" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1590570148565" />
+    <state width="819" height="263" key="GridCell.Tab.0.left" timestamp="1590570148564">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.left/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029187" />
     <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168196" />
     <state width="819" height="263" key="GridCell.Tab.0.left/0.23.1680.980@0.23.1680.980" timestamp="1590542321278" />
-    <state width="1638" height="263" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1590513349451" />
-    <state width="819" height="263" key="GridCell.Tab.0.right" timestamp="1590542321279">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state width="819" height="263" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1590570148564" />
+    <state width="819" height="263" key="GridCell.Tab.0.right" timestamp="1590570148566">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state width="1638" height="295" key="GridCell.Tab.0.right/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442029189" />
     <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589729168197" />
     <state width="819" height="263" key="GridCell.Tab.0.right/0.23.1680.980@0.23.1680.980" timestamp="1590542321279" />
-    <state width="1638" height="263" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1590513349452" />
+    <state width="819" height="263" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1590570148566" />
     <state width="819" height="363" key="GridCell.Tab.1.bottom" timestamp="1589637102728">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -760,17 +791,17 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="819" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1589637102727" />
-    <state x="168" y="111" key="MergeDialog" timestamp="1590503391590">
+    <state x="168" y="111" key="MergeDialog" timestamp="1590542538020">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="168" y="94" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184303" />
-    <state x="168" y="111" key="MergeDialog/0.23.1680.980@0.23.1680.980" timestamp="1590503391590" />
+    <state x="168" y="111" key="MergeDialog/0.23.1680.980@0.23.1680.980" timestamp="1590542538020" />
     <state x="168" y="111" key="MergeDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492621601" />
-    <state x="553" y="256" width="897" height="449" key="MultipleFileMergeDialog" timestamp="1590503391636">
+    <state x="553" y="256" width="897" height="449" key="MultipleFileMergeDialog" timestamp="1590542538073">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="553" y="249" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223184346" />
-    <state x="553" y="256" key="MultipleFileMergeDialog/0.23.1680.980@0.23.1680.980" timestamp="1590503391636" />
+    <state x="553" y="256" key="MultipleFileMergeDialog/0.23.1680.980@0.23.1680.980" timestamp="1590542538073" />
     <state x="553" y="256" width="897" height="449" key="MultipleFileMergeDialog/0.23.1680.981@0.23.1680.981" timestamp="1590492621713" />
     <state x="385" y="151" key="SettingsEditor" timestamp="1590540185244">
       <screen x="0" y="23" width="1680" height="981" />
@@ -778,13 +809,14 @@
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1590028900797" />
     <state x="385" y="151" key="SettingsEditor/0.23.1680.980@0.23.1680.980" timestamp="1590501937056" />
     <state x="385" y="151" key="SettingsEditor/0.23.1680.981@0.23.1680.981" timestamp="1590540185244" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590540201757">
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590567255010">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589851481007" />
     <state x="440" y="271" key="Vcs.Push.Dialog.v2/0.23.1680.979@0.23.1680.979" timestamp="1590419424204" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.981@0.23.1680.981" timestamp="1590540201757" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.980@0.23.1680.980" timestamp="1590542365649" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.981@0.23.1680.981" timestamp="1590567255010" />
     <state x="638" y="267" key="VcsDiffUtil.ChangesDialog" timestamp="1589642735540">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -814,13 +846,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="622" y="325" key="git4idea.merge.GitMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587223323444" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590540220711">
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog" timestamp="1590567674149">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586447371204" />
     <state x="551" y="325" key="git4idea.merge.GitPullDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1589986392325" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.980@0.23.1680.980" timestamp="1590503363107" />
-    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590540220711" />
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.980@0.23.1680.980" timestamp="1590542494526" />
+    <state x="551" y="327" key="git4idea.merge.GitPullDialog/0.23.1680.981@0.23.1680.981" timestamp="1590567674149" />
     <state x="713" y="435" key="publish.login" timestamp="1590480458319">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
@@ -829,13 +861,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590542062235">
-      <screen x="0" y="23" width="1680" height="980" />
+    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup" timestamp="1590569712322">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590076450707" />
     <state x="505" y="240" width="670" height="631" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1590416689926" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590542062235" />
-    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590539977319" />
+    <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590569712322" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -850,6 +882,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HIS$views.coverage" NAME="views Coverage Results" MODIFIED="1589709816884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
-    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1590542084107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
+    <SUITE FILE_PATH="coverage/HIS$data_create.coverage" NAME="data_create Coverage Results" MODIFIED="1590569735151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appoint" />
   </component>
 </project>

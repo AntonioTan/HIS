@@ -21,6 +21,26 @@ import smtplib
 
 
 # Create your views here.
+
+def change_psw(request):
+    rst = {}
+    for key in request.POST.keys():
+        rst[key] = request.POST[key]
+    print(rst)
+    if len(rst['password']) == 0 or len(rst['new_password']) == 0:
+        context = rst
+        context['error'] = '请填写密码'
+        return render(request, template_name='login/password_changed.html', context=context)
+    if rst['password'] != rst['new_password']:
+        context = rst
+        context['error'] = '两次密码不一样'
+        return render(request, template_name='login/password_changed.html', context=context)
+    user = User.objects.get(id=rst['user_id'])
+    user.password = make_password(rst['new_password'])
+    user.save()
+    return render(request, template_name='login/home_page.html')
+
+
 def get_code(request, name, email):
     find_template = 'login/forget.html'
     sender = '2017312322@email.cufe.edu.cn'
@@ -56,7 +76,7 @@ class FindView(View):
         'email': '203i0908@163.com'
     }
     template_name = 'login/forget.html'
-    success_template_namee = 'login/home_page.html'
+    success_template_name = 'login/password_changed.html'
 
     def dispatch(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -84,11 +104,12 @@ class FindView(View):
             code = request.POST['code']
             try:
                 user = User.objects.get(name=name, email=email)
+                context['user_id'] = user.id
             except Exception:
                 context['error'] = '用户名或邮箱错误'
                 return render(request, template_name=self.template_name, context=context)
             if context['real_code'] == context['code']:
-                return render(request, template_name=self.success_template_namee)
+                return render(request, template_name=self.success_template_name, context=context)
             else:
                 context['error'] = '验证码错误 请重新获取'
                 return render(request, template_name=self.template_name, context=context)
