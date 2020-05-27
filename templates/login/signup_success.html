@@ -54,7 +54,7 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 <div class="container" style="margin-left:8%;margin-top:2%">
-    <img src="static/images/5.png" style="width: 823.5px;height: 123px" >
+    <img src="{% static 'login/imgs/5.png' %}" style="width: 823.5px;height: 123px" >
    </div>
 <br> </br>
 <br> </br>
@@ -69,7 +69,7 @@
     <div class="col-sm-offset-2 col-sm-10">
         <br> </br>
         <br> </br>
-        <label><a href="http://www.w3school.com.cn/" style="margin-left:50px;font-size: 25px">进入预约页面</a></label>
+        <label><a href="{% url 'login:sign_in' %}"style="margin-left:50px;font-size: 25px">进入预约页面</a></label>
          </div>
   </div>
 </body>

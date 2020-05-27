@@ -32,7 +32,7 @@ class Doctor(models.Model):
 class Order(models.Model):
     patient = models.ForeignKey(to='login.User', on_delete=models.CASCADE)
     registration = models.ForeignKey(to='Schedule', on_delete=models.CASCADE)
-    order_time = models.DateTimeField(null=True)
+    order_time = models.DateField(null=True)
     # 1 for to_purchase || 2 for purchased || 3 for completed || 4 for against_rule
     status = models.SmallIntegerField(default=1)
     description = models.CharField(default='', max_length=300)

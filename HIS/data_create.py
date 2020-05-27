@@ -11,7 +11,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")
 django.setup()
 from datetime import timedelta, datetime
 from login.models import User
-from appoint.models import Department, Doctor, Schedule
+from appoint.models import Department, Doctor, Schedule, Order
 from django.utils.timezone import now
 
 
@@ -241,9 +241,9 @@ if __name__ == '__main__':
     # create_doctor(doctors.iterrows(), departments)
     # Schedule.objects.all().delete()
     # create_schedule()
-    User.objects.create(name='谭天一', sex=1, age=21, password=make_password('谭天一', None), phone=13124766566, birth=datetime.today() - timedelta(days=365*21), email='antonio21tan@163.com',
-                        sign_up_time=now(),
-                        appoint_times=3, appoint_available=1, admin=1)
+    # User.objects.create(name='谭天一', sex=1, age=21, password=make_password('谭天一', None), phone=13124766566, birth=datetime.today() - timedelta(days=365*21), email='antonio21tan@163.com',
+    #                     sign_up_time=now(),
+    #                     appoint_times=3, appoint_available=1, admin=1)
     # for schedule in Schedule.objects.filter(type=0, weekday=datetime.isoweekday(datetime.today().date())):
     #     print(schedule.department.name)
     #
@@ -251,3 +251,5 @@ if __name__ == '__main__':
     # for department in Department.objects.all():
     #     print(department.name)
     # print(Schedule.objects.filter(department=Department.objects.get(id=int('95'))))
+    orders = Order.objects.filter(status=4)
+    print(orders[0].status)

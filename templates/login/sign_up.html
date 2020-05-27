@@ -70,7 +70,7 @@
 
 <div class="container" id="FP">
     <div class="container" style="margin-left:8%;margin-top:2%">
-        <img src="static/images/2.png" style="width: 718.5px;height: 133.5px">
+        <img src="{% static 'login/imgs/2.png' %}" style="width: 718.5px;height: 133.5px">
     </div>
     <div class="col-xs-6">
         <form class="form-horizontal" role="form" method="post"
@@ -81,7 +81,7 @@
                                                                        style="font-size: 15px">  用户名:</span></label>
                 <div class="col-sm-10">
                     <input type="text" name='name' class="form-control" id="firstname" placeholder="请输入用户名">
-                    {{ errors.name }}
+                    <div stype="color:red,margin-left:1%">{{ errors.name }}</div>
                 </div>
             </div>
             <div class="form-group">
@@ -89,7 +89,7 @@
                                                                            style="font-size: 15px">  设置密码:</span></label>
                 <div class="col-sm-10">
                     <input name="password" type="password" class="form-control" id="lastname" placeholder="请设置密码">
-                    {{ errors.password }}
+                    <div stype="color:red,margin-left:1%">{{ errors.password }}</div>
                 </div>
             </div>
             <div class="form-group">
@@ -98,7 +98,7 @@
                 <div class="col-sm-10">
                     <input name="repeat_password" type="password" class="form-control" id="lastname"
                            placeholder="请确认密码">
-                    {{ errors.repeat_password }}
+                    <div stype="color:red,margin-left:1%">{{ errors.repeat_password }}</div>
                 </div>
             </div>
 {#            {{ sign_up_form.sex }}#}
@@ -108,8 +108,9 @@
                 <div class="col-sm-9 ">
                     <label><input type="radio" name="sex" id="id_sex_0" value="male" size="12"/>男</label>
                     <label><input type="radio" name="sex" id="id_sex_1" value="female" size="12"/>女</label>
-                    {{ errors.sex }}
                 </div>
+                                    <div stype="color:red,margin-left:1%">{{ errors.sex }}</div>
+
             </div>
 
             <div class="form-group">
@@ -118,7 +119,7 @@
                 <div class="col-sm-10">
                     <input name="email" type="text" class="form-control" id="e-mail" placeholder="请输入您的邮箱">
                 </div>
-                {{ errors.email }}
+                    <div stype="color:red,margin-left:1%">{{ errors.email }}</div>
             </div>
             <div class="form-group">
                 <label for="cellphone" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-phone-alt"
@@ -126,12 +127,20 @@
                 <div class="col-sm-10">
                     <input name="phone" type="text" class="form-control" id="cellphone" placeholder="请输入您的手机号">
                     <tr style="height: 20px"></tr>
-                    {{ errors.phone }}
+                    <div stype="color:red,margin-left:1%">{{ errors.phone }}</div>
                 </div>
             </div>
-            {{ sign_up_form.birth.label }}
-            {{ sign_up_form.birth}}
-            {{ errors.birth }}
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label"><span class="	glyphicon glyphicon-asterisk"
+                                                                       style="font-size: 15px">  出生日期:</span></label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" name="birth" id="birth" placeholder="格式：YYYY-MM-DD">
+                </div>
+
+            </div>
+{#            {{ sign_up_form.birth.label }}#}
+{#            {{ sign_up_form.birth}}#}
+{#            {{ errors.birth }}#}
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-info" style="margin-left:18px;text-align: center;width:200px">
@@ -141,7 +150,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <label><a href={% url 'login:sign_in_test' %} style="margin-left:50px">已有账号？立即登录</a></label>
+                    <label><a href={% url 'login:sign_in' %} style="margin-left:50px">已有账号？立即登录</a></label>
                 </div>
             </div>
 

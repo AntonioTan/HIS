@@ -34,15 +34,28 @@ class SignUp(forms.Form):
 
     birth = forms.DateField(label="生日",
                             help_text='1999-09-03',
+                            error_messages={
+                                'required': '请输入生日'
+                            },
                             validators=[validate_user_birth])
 
     sex = forms.ChoiceField(label="性别",
+                            error_messages={
+                                'required': '请选择性别'
+                            },
                             choices=choices.SEX_CHOICES,
                             widget=forms.RadioSelect)
 
     phone = forms.CharField(max_length=11,
                             label='手机号',
+                            error_messages={
+                                'required': '请输入手机号'
+                            },
                             validators=[validate_user_phone])
 
-    email = forms.EmailField(label='邮箱')
+    email = forms.EmailField(label='邮箱',
+                             error_messages={
+                                 'required': '请输入邮箱'
+                             }
+                             )
 

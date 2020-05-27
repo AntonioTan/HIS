@@ -8,7 +8,7 @@ from django.conf import settings
 from django.urls import reverse
 import logging
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 import os, django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "HIS.settings")  # project_name 项目名称
 django.setup()
@@ -46,17 +46,23 @@ def pay_test(request, price, schedule_id):
     print(request.method)
     if request.method == 'POST':
         if 'user_id' not in request.COOKIES:
-            return render(request, 'login/home_page_test.html')
+            return render(request, 'login/home_page.html')
         user_id = request.COOKIES['user_id']
         patient = User.objects.get(id=user_id)
+        patient.appoint_times = patient.appoint_times-1
+        if patient.appoint_times == 0:
+            patient.appoint_available = 0
         registration = Schedule.objects.get(id=schedule_id)
         registration.num = registration.num-1
+        registration.save()
+        delta_days = registration.weekday-datetime.isoweekday(datetime.today().date())
+        delta_days = 7+delta_days if delta_days<0 else delta_days
         Order.objects.create(
             patient=patient,
             registration=registration,
             status=2,
             description=request.POST['description'],
-            order_time=datetime.now()
+            order_time=datetime.today().date()+timedelta(days=delta_days)
         )
         print('Order Created')
         """
@@ -112,8 +118,6 @@ def pay_test(request, price, schedule_id):
 
     else:
         return render(request, 'pay/index.html')
-
-
 
 
 # /order/alipay
@@ -210,51 +214,51 @@ import time
 
 
 # /order/alipay_check
-class AlipayCheck(LoginRequiredMixin, View):
-    """支付宝结果用户查询"""
-
-    def post(self, request):
-        """查询POST请求"""
-        while True:
-            # 检测订单状态
-            if order.order_status > 1:
-                print('支付宝内部修改成功!')
-                return JsonResponse({'res': 0, 'msg': '支付成功!'})
-            # 发送查询请求
-            client = AlipayView.sign(AlipayView.logger())
-
-            # 构造请求对象
-            model = AlipayTradeQueryModel()
-            model.out_trade_no = "x2" + str(time.time())
-            req = AlipayTradeQueryRequest(biz_model=model)
-
-            # 执行请求操作
-            try:
-                response_content = client.execute(req)
-            except Exception as e:
-                return JsonResponse({'res': -1, 'msg': e})
-            if response_content:
-                # 解析响应结果
-                response = AlipayTradeQueryResponse()
-                response.parse_response_content(response_content)
-                # 响应成功的业务处理
-                if response.is_success():
-                    # 成功
-                    if response.trade_status == 'TRADE_SUCCESS':
-                        return JsonResponse({'res': 0, 'msg': '支付成功!'})
-                    # 等待付款
-                    elif response.trade_status == 'WAIT_BUYER_PAY':
-                        time.sleep(settings.ALIPAY_TIMEOUT_SLEEP_SECS)
-                        continue
-                    else:
-                        return JsonResponse({'res': -1, 'msg': '支付失败'})
-                # 等待创建交易
-                elif response.code == '40004':
-                    # 创建交易超时
-                    if (expire_time > settings.ALIPAY_TIMEOUT_MINUTE * 60):
-                        return JsonResponse({'res': -1, 'msg': '创建交易超时'})
-                    expire_time += settings.ALIPAY_TIMEOUT_SLEEP_SECS
-                    time.sleep(settings.ALIPAY_TIMEOUT_SLEEP_SECS)
-                    continue
-                else:
-                    return JsonResponse({'res': -1, 'msg': '支付失败'})
+# class AlipayCheck(LoginRequiredMixin, View):
+#     """支付宝结果用户查询"""
+#
+#     def post(self, request):
+#         """查询POST请求"""
+#         while True:
+#             # 检测订单状态
+#             if order.order_status > 1:
+#                 print('支付宝内部修改成功!')
+#                 return JsonResponse({'res': 0, 'msg': '支付成功!'})
+#             # 发送查询请求
+#             client = AlipayView.sign(AlipayView.logger())
+#
+#             # 构造请求对象
+#             model = AlipayTradeQueryModel()
+#             model.out_trade_no = "x2" + str(time.time())
+#             req = AlipayTradeQueryRequest(biz_model=model)
+#
+#             # 执行请求操作
+#             try:
+#                 response_content = client.execute(req)
+#             except Exception as e:
+#                 return JsonResponse({'res': -1, 'msg': e})
+#             if response_content:
+#                 # 解析响应结果
+#                 response = AlipayTradeQueryResponse()
+#                 response.parse_response_content(response_content)
+#                 # 响应成功的业务处理
+#                 if response.is_success():
+#                     # 成功
+#                     if response.trade_status == 'TRADE_SUCCESS':
+#                         return JsonResponse({'res': 0, 'msg': '支付成功!'})
+#                     # 等待付款
+#                     elif response.trade_status == 'WAIT_BUYER_PAY':
+#                         time.sleep(settings.ALIPAY_TIMEOUT_SLEEP_SECS)
+#                         continue
+#                     else:
+#                         return JsonResponse({'res': -1, 'msg': '支付失败'})
+#                 # 等待创建交易
+#                 elif response.code == '40004':
+#                     # 创建交易超时
+#                     if (expire_time > settings.ALIPAY_TIMEOUT_MINUTE * 60):
+#                         return JsonResponse({'res': -1, 'msg': '创建交易超时'})
+#                     expire_time += settings.ALIPAY_TIMEOUT_SLEEP_SECS
+#                     time.sleep(settings.ALIPAY_TIMEOUT_SLEEP_SECS)
+#                     continue
+#                 else:
+#                     return JsonResponse({'res': -1, 'msg': '支付失败'})

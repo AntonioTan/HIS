@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['dev.mysite.com', 'localhost', '101.133.155.68', '127.0.0.1']
 CRONJOBS = [
     ('59 11 * * *', 'HIS.cron.restore_schedule'),
     ('59 11 * * *', 'HIS.cron.break_rule'),
+    ('59 11 * * *', 'HIS.cron.restore_user'),
 ]
 
 

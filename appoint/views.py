@@ -1,5 +1,5 @@
 from math import ceil
-
+from django.core.exceptions import ValidationError, MultipleObjectsReturned, ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from .models import Department, Doctor, Schedule, Order
 from datetime import datetime, timedelta
@@ -14,6 +14,52 @@ from login.views import add_user_id
 
 
 # Create your views here.
+def admin_register(request, order_id):
+    admin_template = 'appoint/admin.html'
+    order = Order.objects.get(id=order_id)
+    order.status = 3
+    order.save()
+    context = {}
+    return render(request, template_name=admin_template, context=context)
+
+
+def admin_search(request):
+    admin_template = 'appoint/admin.html'
+    user_name = request.POST['name']
+    try:
+        user = User.objects.get(name=user_name)
+    except ObjectDoesNotExist:
+        context = {'orders': []}
+        context = add_user_id(request, context)
+        context['error'] = ['用户名错误']
+        return render(request, template_name=admin_template, context=context)
+    hour_now = datetime.today().hour
+
+    if 0 < hour_now < 10:
+        morning_afternoon = 0
+    elif 10 < hour_now < 23:
+        morning_afternoon = 1
+    else:
+        morning_afternoon = -1
+    if morning_afternoon == -1:
+        context = {'orders': [],
+                   'error': '此时间段不可签到'}
+    else:
+        today_date = datetime.today().date()
+        today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)
+        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
+        today_orders = Order.objects.filter(patient=user, order_time__range=(today_start_datetime, today_end_datetime), status=2)
+        result_orders = []
+        for today_order in today_orders:
+            if today_order.registration.morning_afternoon == morning_afternoon:
+                result_orders.append(today_order)
+        context = {'orders': result_orders}
+        if len(result_orders) == 0:
+            context['error'] = '此时间段该用户没有预约'
+    context = add_user_id(request, context)
+    return render(request, template_name=admin_template, context=context)
+
+
 def register_test(request, department, doctor_id, weekday, type):
     if len(str(department)) != 0:
         department = Department.objects.get(name=department)
@@ -108,7 +154,7 @@ class AppointView(View):
             print(self.initial['picked_type']==0)
             if 'user_id' in request.COOKIES.keys():
                 user_orders = Order.objects.filter(patient=User.objects.get(id=request.COOKIES['user_id']), status=2)
-                if user_orders:
+                if len(user_orders)!=0:
                     print('GET User Order!')
                     for user_order in user_orders:
                         print(user_order.id)

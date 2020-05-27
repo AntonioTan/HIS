@@ -11,7 +11,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from .forms import SignUp, SignIn
 from .models import User
 from datetime import date
-from datetime import datetime
+from datetime import datetime, timedelta
 from appoint.models import Order
 from login.models import User
 # Create your views here.
@@ -77,7 +77,7 @@ class SignInView(View):
     initial = {'key': 'value'}
     template_name='login/home_page.html'
     admin_template_name = 'appoint/admin.html'
-    success_template_name = 'login/user_center_test.html'
+    success_template_name = 'login/user_center.html'
 
     def dispatch(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -161,6 +161,7 @@ class SignUpView(View):
 
     def post(self, request, *args, **kwargs):
         self.initial = request.POST
+        print(self.initial)
         form = self.form_class(
             self.initial
         )
@@ -230,8 +231,8 @@ def get_user_center_context(user_name):
         all_orders = Order.objects.filter(patient=sign_in_user)
         # get today registrations
         today_date = datetime.today().date()
-        today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)
-        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
+        today_start_datetime = today_date
+        today_end_datetime = today_start_datetime + timedelta(days=7)
         today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))
         against_rule_orders = all_orders.filter(status=4)
         history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))
@@ -249,8 +250,11 @@ def get_user_center_context(user_name):
 
 def add_user_id(request, context):
     if 'user_id' not in request.COOKIES.keys():
+        context['user_id'] = -1
+        context['user_available'] = -1
         return context
     else:
         context['user_id'] = request.COOKIES['user_id']
+        context['user_available'] = User.objects.get(id=request.COOKIES['user_id']).appoint_available
         return context
 

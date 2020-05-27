@@ -230,13 +230,15 @@
                                     <p>职称：{{ doctor.title }}</p>
                                     <p>号源：专家号</p>
                                     {% if user_id %}
-                                        <div class="form-group">
-                                            <label for="lastname">
-                                                <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
-                                                    <button class="btn btn-info">我要预约</button>
-                                                </a>
-                                            </label>
-                                        </div>
+                                        {% if user_available %}
+                                            <div class="form-group">
+                                                <label for="lastname">
+                                                    <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
+                                                        <button class="btn btn-info">我要预约</button>
+                                                    </a>
+                                                </label>
+                                            </div>
+                                        {% endif %}
                                     {% endif %}
                                 </div>
 
@@ -264,6 +266,7 @@
                              <p>科室：{{ schedule.department_name }}</p>
                              <p>号源：普通号</p>
                              {% if user_id %}
+                                 {% if user_available == 1 %}
                                  <div class="form-group">
                                      <label for="lastname">
                                          <a href="/appoint/registration_test/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
@@ -271,6 +274,7 @@
                                          </a>
                                      </label>
                                  </div>
+                                 {% endif %}
                              {% endif %}
                          </div>
                      </div>

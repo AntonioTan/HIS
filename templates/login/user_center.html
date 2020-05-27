@@ -53,7 +53,7 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-<div class="row" style="background-image: url({% static "blog/images/back2.jpg" %}")>
+<div class="row" style="background-image: url({% static "login/imgs/back2.jpg" %}")>
         <div class="col-xs-4" style="margin-left: 6%;height:600px;width:200px;margin-top:5%">
             <img src="{% static "login/imgs/user.png" %}" class="img-circle" style="width: 120px;height:120px;margin-top:5%">
 
@@ -80,7 +80,7 @@
 
             <div class="form-group" style="margin-top: 2%">
             <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-exclamation-sign" style="color:cornflowerblue;"></span></label>
-                <p id="break" style="font-size: 13px">本月违约次数:<span class="label label-danger" style="font-size:10px;margin-left: 5px">{{ user.break_rule_times }}</span></p>
+                <p id="break" style="font-size: 13px">本月违约次数:<span class="label label-danger" style="font-size:10px;margin-left: 5px">{{ against_rule_orders|length }}</span></p>
         </div>
 
         </div>
@@ -111,18 +111,22 @@
                                 {% else %}
                                     <p>号源类型：普通号</p>
                                 {% endif %}
-                                <p>时间：{{ today_date }} &nbsp&nbsp&nbsp
+                                <p>时间：{{ today_order.order_time }} &nbsp&nbsp&nbsp
                                     {% if today_order.registration.morning_afternoon %}
                                         2:00-4:00
                                     {% else %}
                                         8:00-10:00
                                     {% endif %}
                                 </p>
-                                {% if today_order.registration.status != 4 %}
-                                    <p>是否违约：无</p>
+                                {% if today_order.status == 4 %}
+                                    <p>状态：违约</p>
+                                {% elif today_order.status == 3%}
+                                    <p>状态：已结束</p>
+                                {% elif today_order.status == 2 %}
+                                    <p>状态：未签到</p>
                                 {% else %}
-                                    <p>是否违约：是</p>
-                                {% endif %}
+                                    <p>状态：待支付</p>
+                                {% endif%}
                             </li>
                         {% endfor %}
 
@@ -164,11 +168,15 @@
                                         8:00-10:00
                                     {% endif %}
                                 </p>
-                                {% if history_order.registration.status != 4 %}
-                                    <p>是否违约：无</p>
+                                {% if history_order.status == 4 %}
+                                    <p>状态：违约</p>
+                                {% elif history_order.status == 3%}
+                                    <p>状态：已结束</p>
+                                {% elif history_order.status == 2 %}
+                                    <p>状态：未签到</p>
                                 {% else %}
-                                    <p>是否违约：是</p>
-                                {% endif %}
+                                    <p>状态：待支付</p>
+                                {% endif%}
                             </li>
                         {% endfor %}
 
@@ -199,16 +207,15 @@
                                 <p>姓名：{{ against_rule_order.registration.doctor.name }}</p>
                                 <p>科室: {{ against_rule_order.registration.department.name }}
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
-                                {% if against_rule_order.registration.type == 1 %}
-                                    <p>号源类型：专家号</p>
+                                {% if against_rule_order.status == 4 %}
+                                    <p>状态：违约</p>
+                                {% elif against_rule_order.status == 3%}
+                                    <p>状态：已结束</p>
+                                {% elif against_rule_order.status == 2 %}
+                                    <p>状态：未签到</p>
                                 {% else %}
-                                    <p>号源类型：普通号</p>
-                                {% endif %}
-                                {% if against_rule_order.registration.status != 4 %}
-                                    <p>是否违约：无</p>
-                                {% else %}
-                                    <p>是否违约：是</p>
-                                {% endif %}
+                                    <p>状态：待支付</p>
+                                {% endif%}
                             </li>
                         {% endfor %}
 

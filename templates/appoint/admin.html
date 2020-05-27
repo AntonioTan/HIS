@@ -16,13 +16,14 @@
 <body>
 
 <div class="container" id="FP">
-<form class="form-horizontal" role="form" method="post" action="" style="margin-left:25%;margin-top:10%">
+<form class="form-horizontal" role="form" method="post" action="{% url 'appoint:admin_search' %}" style="margin-left:25%;margin-top:10%">
+    {% csrf_token %}
         <div class="form-group">
             <div class="col-sm-10" style="width: 600px;margin-right:0;padding-right: 0;margin-top:7px">
-            <input type="text" class="form-control" id="condiction" placeholder="输入用户名进行签到">
+            <input type="text" name='name' class="form-control" id="condiction" placeholder="输入用户名进行签到">
             </div>
             <label for="lastname" style="margin-left: 0;padding-left: 0;position: relative;left:2%;top:5px">
-            <button class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button></label>
+            <button type='submit' class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button></label>
         </div>
     </form>
 
@@ -48,5 +49,21 @@
         </div>
     </div>
 </div>
+{% if orders|length %}
+    {% for order in orders%}
+        {{ order.id }}
+        {{ order.patient.name }}
+        {% if order.registration.morning_afternoon %}
+            下午
+            {% else %}
+            上午
+        {% endif %}
+        {{ order.registration.department.name }}
+        {{ order.registration.doctor.name }}
+        <button><a href="{% url 'appoint:admin_register' order_id=order.id %}">签到</a></button>
+    {% endfor %}
+    {% else %}
+    {{ error }}
+{% endif %}
 </body>
 </html>

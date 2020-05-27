@@ -59,7 +59,7 @@
                 <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
-        {% if user_id %}
+        {% if user_id == -1 %}
             <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
@@ -68,7 +68,7 @@
                             <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
                             <li><a href="{% url 'login:logout' %}">退出登录</a></li>
                         </ul>
-                    </li>
+            </li>
         {% endif %}
     </div><!-- /.container-fluid -->
 </nav>
