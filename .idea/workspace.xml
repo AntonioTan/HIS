@@ -20,35 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f90b6668-b1e4-484c-9ae5-8088e700936a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24,_11_43_下午_[Default_Changelist]/data.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24,_11_43_下午_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_24__11_43___Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/data.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26,_11_02_下午_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_5_26__11_02___Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/help_center.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/revise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HIS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HIS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appoint/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appoint/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appoint/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pay/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appoint/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/department.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appoint/submit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appoint/submit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/forget.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/help.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/revise.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/revise.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/user_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/user_center.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/revise.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/revise.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +95,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/appoint/static/appoint/imgs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,17 +113,17 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/HIS" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
       <recent name="$PROJECT_DIR$/templates/login" />
       <recent name="$PROJECT_DIR$/login/static/login/imgs" />
       <recent name="$PROJECT_DIR$/templates/appoint" />
       <recent name="$PROJECT_DIR$/pay/alipay/alipay_keys" />
-      <recent name="$PROJECT_DIR$/appoint/static/appoint/imgs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/HIS" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.data_create">
@@ -261,14 +244,7 @@
       <workItem from="1590421450314" duration="9000" />
       <workItem from="1590453886991" duration="64835000" />
       <workItem from="1590583864237" duration="661000" />
-      <workItem from="1590584709436" duration="955000" />
-    </task>
-    <task id="LOCAL-00003" summary="The first version">
-      <created>1586439722311</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1586439722311</updated>
+      <workItem from="1590584709436" duration="5554000" />
     </task>
     <task id="LOCAL-00004" summary="Just create a model named User">
       <created>1586532793583</created>
@@ -606,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590570378274</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Final 1.0">
+      <created>1590585689563</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1590585689564</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +669,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new version of appoint urls" />
     <MESSAGE value="Well appoint version 1 &#10;now you can pick a date&#10;but other picks work the same  way" />
     <MESSAGE value="Add the appoint module setting into HIS" />
     <MESSAGE value="Create fake data into database" />
@@ -711,7 +693,8 @@
     <MESSAGE value="change test to final" />
     <MESSAGE value="add code verification" />
     <MESSAGE value="change password finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="change password finished" />
+    <MESSAGE value="Final 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final 1.0" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -747,13 +730,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="481" y="302" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442418494" />
-    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590570378084">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="432" y="144" key="CommitChangelistDialog2" timestamp="1590585689281">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="432" y="130" key="CommitChangelistDialog2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586442514800" />
     <state x="432" y="130" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1590073715105" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.979@0.23.1680.979" timestamp="1590419416949" />
-    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1590542357259" />
+    <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1590585689281" />
     <state x="432" y="144" key="CommitChangelistDialog2/0.23.1680.981@0.23.1680.981" timestamp="1590570378084" />
     <state x="168" y="111" width="1344" height="841" key="DiffContextDialog" timestamp="1590567204679">
       <screen x="0" y="23" width="1680" height="981" />
@@ -831,13 +814,13 @@
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1590028900797" />
     <state x="385" y="151" key="SettingsEditor/0.23.1680.980@0.23.1680.980" timestamp="1590501937056" />
     <state x="385" y="151" key="SettingsEditor/0.23.1680.981@0.23.1680.981" timestamp="1590540185244" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590567255010">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590585696490">
+      <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/-3840.-1149.3840.2160/0.0.1680.1050@0.0.1680.1050" timestamp="1586443483926" />
     <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1589851481007" />
     <state x="440" y="271" key="Vcs.Push.Dialog.v2/0.23.1680.979@0.23.1680.979" timestamp="1590419424204" />
-    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.980@0.23.1680.980" timestamp="1590542365649" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.980@0.23.1680.980" timestamp="1590585696490" />
     <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.981@0.23.1680.981" timestamp="1590567255010" />
     <state x="638" y="267" key="VcsDiffUtil.ChangesDialog" timestamp="1589642735540">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -883,12 +866,12 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="165" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588927230241" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590585101453">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590591318439">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590076450707" />
     <state x="505" y="240" width="670" height="631" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1590416689926" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590585101453" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1590591318439" />
     <state x="505" y="233" width="670" height="677" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1590584166478" />
   </component>
   <component name="XDebuggerManager">

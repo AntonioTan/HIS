@@ -30,24 +30,28 @@
             </button>
             <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
         </div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="service-menu">
             <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
-                <li><a href="#" id="page1">首页</a></li>
-                <li><a href="#" id="department">科室分类</a></li>
-                <li><a href="#" id="reserve">预约挂号</a></li>
-                <li><a href="#" id="contact">联系我们</a></li>
-                <li><a href="#" id="help">帮助中心</a></li>
-                <li><a href="#" id="self">个人中心</a></li>
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
-                    <ul class="dropdown-menu" style="min-width:100%">
-                        <li><a href="#">设置</a></li>
-                        <li><a href="#">我的预约</a></li>
-                        <li><a href="#">退出登录</a></li>
-                    </ul>
-                </li>
+                <li><a href="{% url 'login:sign_in' %}" id="page1">首页</a></li>
+                <li><a href="{% url 'login:department_list' %}" id="department">科室分类</a></li>
+                <li><a href="{% url 'appoint:search' %}" id="reserve">预约挂号</a></li>
+                <li><a href="{% url 'login:contact' %}" id="contact">联系我们</a></li>
+                <li><a href="{% url 'login:ourhelp' %}" id="help">帮助中心</a></li>
+                <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
+                {% if user_id != -1 and user_id %}
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="min-width:100%">
+                            <li><a href="{% url 'login:change_info' %}">设置</a></li>
+                            <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
+                            <li><a href="{% url 'login:logout' %}">退出登录</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                {% endif %}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -63,14 +67,14 @@
         <div class="form-group" style="margin-left: 13%">
             <label for="disabledTextInput" class="col-sm-2 control-label"><span
                     class="glyphicon glyphicon-euro">用户名</span></label>
-            <label  class="col-sm-2 control-label"><span>{{ user.name }}</span></label>
+            <label  class="col-sm-2 control-label"><span>{{ user_name }}</span></label>
         </div>
 
 
         <div class="form-group" style="margin-left: 11%">
             <label for="firstname" class="col-sm-2 control-label"><span class="glyphicon glyphicon-paperclip">性别</span></label>
-            <label for="firstname" class="col-sm-2 control-label"><span>&nbsp{{ user.sex }}
-                {% if user.sex %}
+            <label for="firstname" class="col-sm-2 control-label"><span>&nbsp
+                {% if user_sex  %}
                     男
                 {% else %}
                     女
@@ -80,7 +84,7 @@
 
         <div class="form-group" style="margin-left: 16%">
             <label for="firstname" class="col-sm-2 control-label"><span
-                    class="glyphicon glyphicon-unchecked">Email</span></label>
+                    class="glyphicon glyphicon-unchecked">电子邮箱</span></label>
             <div class="col-sm-10"><input type="text" name="email" id="disabledTextInput" class="form-control"
                                           placeholder="dddddd@153.com" style="width:250px">
                 {{ errors.email }}</div>
@@ -102,12 +106,9 @@
             </div>
         </div>
 
-        <div class="col-sm-offset-2 col-sm-10">
-            <label for="firstname" class="col-sm-2 control-label">
+        <div class="col-sm-offset-3 col-sm-10">
+            <label for="firstname" class="col-sm-4 control-label">
                 <button type="submit" class="btn btn-info" style="text-align: center;width:100px">修改完成</button>
-            </label>
-            <label for="firstname" class="col-sm-2 control-label" style="margin-left: 20%">
-                <button type="submit" class="btn btn-info" style="text-align: center;width:100px">返回</button>
             </label>
         </div>
     </form>

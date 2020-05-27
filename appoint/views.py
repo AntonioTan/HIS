@@ -47,7 +47,7 @@ def admin_search(request):
     else:
         today_date = datetime.today().date()
         today_start_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day)
-        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day + 1)
+        today_end_datetime = datetime(year=today_date.year, month=today_date.month, day=today_date.day, hour=23)
         today_orders = Order.objects.filter(patient=user, order_time__range=(today_start_datetime, today_end_datetime), status=2)
         result_orders = []
         for today_order in today_orders:
@@ -102,6 +102,11 @@ def deal_registration(request, *args, **kwargs):
             context['department_name'] = department.name
             context['type'] = kwargs['picked_type']
             context['price'] = schedule.price
+            if kwargs['picked_date'] - datetime.isoweekday(datetime.today()) < 0:
+                kwargs['picked_date'] = 6+ kwargs['picked_date'] - datetime.isoweekday(datetime.today())
+            else:
+                kwargs['picked_date'] = kwargs['picked_date'] - datetime.isoweekday(datetime.today())
+            print(kwargs['picked_date'])
             context['date'] = str(datetime.today().date()+timedelta(days=kwargs['picked_date']))
             context['time'] = '上午8:00 --  10:00' if not kwargs['picked_morning_afternoon'] else '下午2:00 -- 4:00'
             context['schedule_id'] = schedule.id

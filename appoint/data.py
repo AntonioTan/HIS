@@ -33,7 +33,7 @@ appoint_basic_data = {
     'departments': [{'id': Department.objects.get(name=name).id, 'name': name} for name in department_names],
     'check_departments': [{'id': Department.objects.get(name=name).id, 'name': name} for name in check_department_names],
     'types': [{'id': types.index(name), 'name': name} for name in types],
-    'dates': [{'text': str(datetime.today().date()+timedelta(days=i-1)) + weekdays[datetime.isoweekday(datetime.today().date()+timedelta(days=i-1))], 'id':i} for i in range(1, 8)],
+    'dates': [{'text': str(datetime.today().date()+timedelta(days=i)) + weekdays[datetime.isoweekday(datetime.today().date()+timedelta(days=i))], 'id':datetime.isoweekday(datetime.today().date()+timedelta(days=i))} for i in range(0, 7)],
     'tests': {'id': 0},
     'doctors': [{'id': doctor.id, 'name': doctor.name, 'sex': '男' if doctor.sex == 1 else '女',
                  'department_name': doctor.department.name, 'department_id': doctor.department.id, 'title': doctor.title} for doctor in Doctor.objects.filter(title='主任医师')],

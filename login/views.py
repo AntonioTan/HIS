@@ -22,16 +22,16 @@ import smtplib
 
 # Create your views here.
 def change_info(request):
-    print(request.POST)
+    print(request.COOKIES)
     if 'user_id' in request.COOKIES.keys():
-        if request.method != 'POST':
-            return render(request, template_name='login/revise.html')
         user_id = request.COOKIES['user_id']
         user = User.objects.get(id=user_id)
+        if request.method != 'POST':
+            return render(request, template_name='login/revise.html', context={'user_id':user.id, 'user_name': user.name, 'user_sex': user.sex})
         if user.admin:
             return render(request, template_name='login/home_page.html')
         user_data = {}
-        user_data['name'] = user.name
+        user_data['name'] = 'TEST'
         user_data['password'] = 'test'
         user_data['sex'] = 'female'
         user_data['age'] = 18
@@ -42,15 +42,18 @@ def change_info(request):
         if form.is_valid():
             print(user_data)
             age = date.today().year - int(user_data['birth'][0:4])
-            context = get_user_center_context(user.name)
-            context = add_user_id(request, context)
             user.birth = user_data['birth']
             user.email = user_data['email']
             user.phone = user_data['phone']
             user.age = date.today().year - int(user_data['birth'][0:4])
             user.save()
             print('Saved')
-            context['user'] = user
+            user = User.objects.get(id=user_id)
+            context = get_user_center_context(user.name)
+            context = add_user_id(request, context)
+            context['user_name'] = user.name
+            context['user_id'] = user.id
+            context['user_sex'] = user.sex
             response = render(request, template_name='login/user_center.html', context=context)
         else:
             errors = form.errors.as_data()
@@ -59,7 +62,9 @@ def change_info(request):
             print(errors)
             context = {'errors': errors}
             context = add_user_id(request, context)
-            context['user'] = user
+            context['user_name'] = user.name
+            context['user_id'] = user.id
+            context['user_sex'] = user.sex
             response = render(request, template_name='login/revise.html', context=context)
         response.set_cookie(key='user_id', value=user_id, expires=3600)
         return response
@@ -127,7 +132,12 @@ class FindView(View):
         if request.method == 'POST':
             return self.post(request)
         else:
-            return render(request, template_name=self.template_name, context=self.initial)
+            if 'user_id' in request.COOKIES.keys():
+                self.initial['user_id'] = request.COOKIES['user_id']
+            else:
+                self.initial['user_id'] = -1
+            context = self.initial
+            return render(request, template_name=self.template_name, context=context)
 
     def post(self, request):
         context = {}
@@ -163,19 +173,31 @@ class FindView(View):
 
 def department_list(request):
     print(request.COOKIES)
+    if 'user_id' in request.COOKIES.keys():
+        context = {'user_id': request.COOKIES['user_id']}
+    else:
+        context = {}
     department_list_template = 'login/department.html'
-    return render(request, template_name=department_list_template, context={'user_id':request.COOKIES['user_id']})
+    return render(request, template_name=department_list_template, context=context)
 
 
 def our_help(request):
+    if 'user_id' in request.COOKIES.keys():
+        context = {'user_id': request.COOKIES['user_id']}
+    else:
+        context = {}
     help_template = 'login/help_center.html'
-    return render(request, template_name= help_template, context={'user_id':request.COOKIES['user_id']})
+    return render(request, template_name= help_template, context=context)
 
 
 def contact(request):
     print(request.COOKIES)
+    if 'user_id' in request.COOKIES.keys():
+        context = {'user_id': request.COOKIES['user_id']}
+    else:
+        context = {}
     contact_template = 'login/contact.html'
-    return render(request, template_name=contact_template, context={'user_id':request.COOKIES['user_id']})
+    return render(request, template_name=contact_template, context=context)
 
 
 def user_center(request):

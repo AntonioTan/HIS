@@ -247,7 +247,7 @@
                                     <p>科室：{{ doctor.department_name }}</p>
                                     <p>职称：{{ doctor.title }}</p>
                                     <p>号源：专家号</p>
-                                    {% if user_id %}
+                                    {% if user_id and user_id != -1 %}
                                         {% if user_available %}
                                             <div class="form-group">
                                                 <label for="lastname">
@@ -283,7 +283,7 @@
                          <div class="col-xs-2" style="width:130px">
                              <p>科室：{{ schedule.department_name }}</p>
                              <p>号源：普通号</p>
-                             {% if user_id %}
+                             {% if user_id and user_id != -1 %}
                                  {% if user_available == 1 %}
                                  <div class="form-group">
                                      <label for="lastname">

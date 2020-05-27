@@ -50,8 +50,11 @@ def pay_test(request, price, schedule_id):
         user_id = request.COOKIES['user_id']
         patient = User.objects.get(id=user_id)
         patient.appoint_times = patient.appoint_times-1
+        patient.save()
+        patient = User.objects.get(id=user_id)
         if patient.appoint_times == 0:
             patient.appoint_available = 0
+            patient.save()
         registration = Schedule.objects.get(id=schedule_id)
         registration.num = registration.num-1
         registration.save()
