@@ -47,5 +47,6 @@ appoint_basic_data = {
     'picked_date': datetime.isoweekday(datetime.today().date()),
     'picked_morning_afternoon': 0,
     'page_schedules': [],
+    'picked_department_id': 0
 }
 appoint_basic_data['page_doctors'] = appoint_basic_data['doctors'][0: 8]

@@ -57,10 +57,8 @@
                 <li><a href="{% url 'login:contact' %}" id="contact">联系我们</a></li>
                 <li><a href="{% url 'login:help' %}" id="help">帮助中心</a></li>
                 <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-        {% if user_id == -1 %}
-            <li>
+                {% if user_id != -1 %}
+                    <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
                         <ul class="dropdown-menu" style="min-width:100%">
@@ -68,8 +66,11 @@
                             <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
                             <li><a href="{% url 'login:logout' %}">退出登录</a></li>
                         </ul>
-            </li>
-        {% endif %}
+                    </li>
+                {% else %}
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 

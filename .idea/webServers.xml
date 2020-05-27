@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="1e8222b5-d9cb-4bbb-a599-f9f77cc14713" name="HIS" url="http://101.133.155.68">
-        <fileTransfer rootFolder="/home" accessType="SFTP" host="101.133.155.68" port="22" sshConfigId="79d17bfc-0897-494d-a425-539a40a25bb1" sshConfig="root@101.133.155.68:22 password" />
+        <fileTransfer rootFolder="/home" accessType="SFTP" sshConfigId="79d17bfc-0897-494d-a425-539a40a25bb1" sshConfig="root@101.133.155.68:22 password" />
       </webServer>
     </option>
   </component>

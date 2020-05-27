@@ -253,3 +253,5 @@ if __name__ == '__main__':
     # print(Schedule.objects.filter(department=Department.objects.get(id=int('95'))))
     orders = Order.objects.filter(status=4)
     print(orders[0].status)
+    department = Department.objects.get(id=0)
+    print(len(department))

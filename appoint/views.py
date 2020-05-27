@@ -144,13 +144,20 @@ class AppointView(View):
                     self.initial['schedule_objs'] = Schedule.objects.filter(type=self.initial['picked_type'],
                                                                             morning_afternoon=self.initial['picked_morning_afternoon'],
                                                                             weekday=self.initial['picked_date'])
-                    if 'picked_department_id' in self.initial.keys():
+                    if 'picked_department_id' in self.initial.keys() and self.initial['picked_department_id'] != 0:
                         self.initial['schedule_objs'] = self.initial['schedule_objs'].filter(department=Department.objects.get(id=int(self.initial['picked_department_id'])))
 
-                if key == 'picked_department_id':
+                if key == 'picked_department_id'and self.initial['picked_department_id'] != 0:
                     self.initial['schedule_objs'] = Schedule.objects.filter(type=self.initial['picked_type'],
                                                                             morning_afternoon=self.initial['picked_morning_afternoon'],
                                                                             weekday=self.initial['picked_date'], department=Department.objects.get(id=self.initial['picked_department_id']))
+                elif key == 'picked_department_id'and self.initial['picked_department_id'] == 0:
+                    self.initial['schedule_objs'] = Schedule.objects.filter(type=self.initial['picked_type'],
+                                                                            morning_afternoon=self.initial[
+                                                                                'picked_morning_afternoon'],
+                                                                            weekday=self.initial['picked_date'])
+                else:
+                    pass
             print(self.initial['picked_type']==0)
             if 'user_id' in request.COOKIES.keys():
                 user_orders = Order.objects.filter(patient=User.objects.get(id=request.COOKIES['user_id']), status=2)
@@ -181,13 +188,13 @@ class AppointView(View):
                 self.initial['picked_page'] = self.initial['picked_page'] + 1 if  self.initial['picked_page'] != self.initial['pages'][-1] else self.initial['pages'][-1]
 
             if self.initial['picked_page'] != self.initial['pages'][-1]:
-                self.initial['page_schedules'] = self.initial['schedules'][(self.initial['picked_page']-1)*8: self.initial['picked_page']*8]
-                self.initial['page_doctors'] = self.initial['doctors'][(self.initial['picked_page']-1)*8: self.initial['picked_page']*8]
+                self.initial['page_schedules'] = self.initial['schedules'][(self.initial['picked_page']-1)*9: self.initial['picked_page']*9]
+                self.initial['page_doctors'] = self.initial['doctors'][(self.initial['picked_page']-1)*9: self.initial['picked_page']*9]
             else:
                 self.initial['page_schedules'] = self.initial['schedules'][
-                    (self.initial['picked_page'] - 1) * 8:]
+                    (self.initial['picked_page'] - 1) * 9:]
                 self.initial['page_doctors'] = self.initial['doctors'][
-                    (self.initial['picked_page'] - 1) * 8:]
+                    (self.initial['picked_page'] - 1) * 9:]
 
             for key in self.initial.keys():
                 if 'picked' in key:

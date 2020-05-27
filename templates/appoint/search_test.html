@@ -145,9 +145,20 @@
          <div id="choose_depart" class="col-sm-10" >
         <ul class="list-unstyled list-inline" style="margin-top: 15px;width: 900px;margin-top:0;padding-top:0">
             <!--修改科室部分 -->
+            <li><a href="/appoint/search_test/picked_department_id=0/">
+                {% if picked_department_id == 0 %}
+                    <button id="Submit6" class="btn btn-sm btn-danger" type="button">全部</button>
+                {% else %}
+                    <button id="Submit6" class="btn btn-sm btn-info" type="button">全部</button>
+                {% endif %}
+            </a></li>
             {% for department in departments %}
                 <li><a href="/appoint/search_test/picked_department_id={{ department.id }}/">
-                    <button id="Submit6" class="btn btn-sm btn-info" type="button">{{ department.name }}</button>
+                    {% if picked_department_id == department.id %}
+                        <button id="Submit6" class="btn btn-sm btn-danger" type="button">{{ department.name }}</button>
+                    {% else %}
+                        <button id="Submit6" class="btn btn-sm btn-info" type="button">{{ department.name }}</button>
+                    {% endif %}
                 </a></li>
             {% endfor %}
             {% for check_department in check_departments %}
@@ -170,7 +181,11 @@
         <ul class="list-unstyled list-inline" style="margin-top: 15px;width: 900px;margin-top:0;padding-top:0">
             <!--修改日期部分 -->
             {% for date in dates %}
-                <li><a href='/appoint/search_test/picked_date={{ date.id }}'> <button  class="btn btn-sm btn-info" type="button">{{ date.text }}</button></a></li>
+                {% if date.id == picked_date %}
+                    <li><a href='/appoint/search_test/picked_date={{ date.id }}'> <button  class="btn btn-sm btn-danger" type="button">{{ date.text }}</button></a></li>
+                {% else %}
+                    <li><a href='/appoint/search_test/picked_date={{ date.id }}'> <button  class="btn btn-sm btn-info" type="button">{{ date.text }}</button></a></li>
+                {% endif %}
             {% endfor %}
         </ul>
             </div>
@@ -188,7 +203,11 @@
         <ul class="list-unstyled list-inline" style="margin-top: 15px;width: 900px;margin-top:0;padding-top:0">
             <!--修改号种类部分 -->
             {% for type in types %}
-            <li><a href="/appoint/search_test/picked_type={{ type.id }}"> <button  class="btn btn-sm btn-info" type="button">{{ type.name }}</button></a></li>
+                {% if type.id == picked_type %}
+                    <li><a href="/appoint/search_test/picked_type={{ type.id }}"> <button  class="btn btn-sm btn-danger" type="button">{{ type.name }}</button></a></li>
+                {% else %}
+                    <li><a href="/appoint/search_test/picked_type={{ type.id }}"> <button  class="btn btn-sm btn-info" type="button">{{ type.name }}</button></a></li>
+                {% endif %}
             {% endfor %}
         </ul>
 
@@ -207,7 +226,11 @@
         <ul class="list-unstyled list-inline" style="margin-top: 15px;width: 900px;margin-top:0;padding-top:0">
             <!--上下午部分 -->
             {% for morning_afternoon in morning_afternoons %}
-            <li><a href="/appoint/search_test/picked_morning_afternoon={{ morning_afternoon.id }}"> <button  class="btn btn-sm btn-info" type="button">{{ morning_afternoon.name }}</button></a></li>
+                {% if picked_morning_afternoon == morning_afternoon.id %}
+                    <li><a href="/appoint/search_test/picked_morning_afternoon={{ morning_afternoon.id }}"> <button  class="btn btn-sm btn-danger" type="button">{{ morning_afternoon.name }}</button></a></li>
+                {% else %}
+                    <li><a href="/appoint/search_test/picked_morning_afternoon={{ morning_afternoon.id }}"> <button  class="btn btn-sm btn-info" type="button">{{ morning_afternoon.name }}</button></a></li>
+                {% endif %}
             {% endfor %}
         </ul>
 
