@@ -103,12 +103,14 @@
                     {% if today_orders|length %}
                         {% for today_order in today_orders %}
                             <li class="list-group-item" style="margin-top:2%">
-                                <p>姓名：{{ today_order.registration.doctor.name }}</p>
-                                <p>科室: {{ today_order.registration.department.name }}
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                 {% if today_order.registration.type == 1 %}
+                                    <p>姓名：{{ today_order.registration.doctor.name }}</p>
+                                    <p>科室: {{ today_order.registration.department.name }}
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                     <p>号源类型：专家号</p>
                                 {% else %}
+                                    <p>科室: {{ today_order.registration.department.name }}
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                     <p>号源类型：普通号</p>
                                 {% endif %}
                                 <p>时间：{{ today_order.order_time }} &nbsp&nbsp&nbsp
@@ -153,15 +155,17 @@
                 {% if history_orders|length %}
                         {% for history_order in history_orders %}
                             <li class="list-group-item" style="margin-top:2%">
-                                <p>姓名：{{ history_order.registration.doctor.name }}</p>
-                                <p>科室: {{ history_order.registration.department.name }}
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                 {% if history_order.registration.type == 1 %}
+                                    <p>医生姓名：{{ history_order.registration.doctor.name }}</p>
+                                    <p>科室: {{ history_order.registration.department.name }}
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                     <p>号源类型：专家号</p>
                                 {% else %}
+                                    <p>科室: {{ history_order.registration.department.name }}
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                                     <p>号源类型：普通号</p>
                                 {% endif %}
-                                <p>时间：{{ today_date }} &nbsp&nbsp&nbsp
+                                <p>时间：{{ history_order.order_time }} &nbsp&nbsp&nbsp
                                     {% if history_order.registration.morning_afternoon %}
                                         2:00-4:00
                                     {% else %}
@@ -204,9 +208,23 @@
                    {% if against_rule_orders|length %}
                         {% for against_rule_order in against_rule_orders %}
                             <li class="list-group-item" style="margin-top:2%">
-                                <p>姓名：{{ against_rule_order.registration.doctor.name }}</p>
-                                <p>科室: {{ against_rule_order.registration.department.name }}
+                                {% if against_rule_order.registration.type == 1 %}
+                                    <p>医生姓名：{{ against_rule_order.registration.doctor.name }}</p>
+                                    <p>科室: {{ against_rule_order.registration.department.name }}
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                                    <p>号源类型：专家号</p>
+                                {% else %}
+                                    <p>科室: {{ against_rule_order.registration.department.name }}
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                                    <p>号源类型：普通号</p>
+                                {% endif %}
+                                <p>时间：{{ against_rule_order.order_time }} &nbsp&nbsp&nbsp
+                                    {% if against_rule_order.registration.morning_afternoon %}
+                                        2:00-4:00
+                                    {% else %}
+                                        8:00-10:00
+                                    {% endif %}
+                                </p>
                                 {% if against_rule_order.status == 4 %}
                                     <p>状态：违约</p>
                                 {% elif against_rule_order.status == 3%}
