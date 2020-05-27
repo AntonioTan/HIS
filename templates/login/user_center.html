@@ -60,7 +60,7 @@
 <div class="row" style="background-image: url({% static "login/imgs/back2.jpg" %}")>
         <div class="col-xs-4" style="margin-left: 6%;height:600px;width:200px;margin-top:5%">
             {% if user.sex == 0 %}
-                <img src="{% static "login/imgs/user_w.png" %}" class="img-circle" style="width: 120px;height:120px;margin-top:5%"><p id="sex" style="font-size: 13px">女</p>
+                <img src="{% static "login/imgs/user_w.png" %}" class="img-circle" style="width: 120px;height:120px;margin-top:5%">
             {% else %}
                 <img src="{% static "login/imgs/user_m.png" %}" class="img-circle" style="width: 120px;height:120px;margin-top:5%">
             {% endif %}
@@ -251,6 +251,38 @@
                             <p>没有记录</p>
                         </li>
                     {% endif %}
+                </ul>
+			</div>
+		</div>
+	</div>
+    <div class="panel panel-default">
+		<div class="panel-heading" >
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+				   href="#collapseFour">
+                    检查报告
+				</a>
+			</h4>
+		</div>
+		<div id="collapseFour" class="panel-collapse collapse">
+			<div class="panel-body">
+				<ul class="list-group">
+                {% if reports|length %}
+                        {% for report in reports %}
+                            <li class="list-group-item" style="margin-top:2%">
+                                <p><b>检查名称：{{ report.name }}</b></p>
+                                <p>姓名：{{ report.patient.name }}</p>
+                                <p>报告日期：{{ report.report_time }}</p>
+                                <p>报告科室：{{ report.department.name }}</p>
+                                <p>检查结果：{{ report.result }}</p>
+                                <p>注释：{{ report.note }}</p>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li class="list-group-item" style="margin-top:2%">
+                            <p>没有记录</p>
+                        </li>
+                {% endif %}
                 </ul>
 			</div>
 		</div>

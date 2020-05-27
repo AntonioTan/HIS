@@ -37,7 +37,7 @@ def admin_search(request):
 
     if 0 < hour_now < 10:
         morning_afternoon = 0
-    elif 10 < hour_now < 23:
+    elif 10 < hour_now < 24:
         morning_afternoon = 1
     else:
         morning_afternoon = -1

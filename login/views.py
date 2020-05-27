@@ -12,7 +12,7 @@ from .forms import SignUp, SignIn
 from .models import User
 from datetime import date
 from datetime import datetime, timedelta
-from appoint.models import Order
+from appoint.models import Order, Report
 from login.models import User
 import string, random
 from email.mime.text import MIMEText
@@ -403,13 +403,14 @@ def get_user_center_context(user_name):
         today_orders = all_orders.filter(order_time__range=(today_start_datetime, today_end_datetime))
         against_rule_orders = all_orders.filter(status=4)
         history_orders = all_orders.exclude(order_time__range=(today_start_datetime, today_end_datetime))
+        reports = Report.objects.filter(patient=sign_in_user)
         context = {
             'user': sign_in_user,
             'today_orders': today_orders,
             'history_orders': history_orders,
             'today_date': today_date,
             'against_rule_orders': against_rule_orders,
-
+            'reports': reports,
         }
         return context
 

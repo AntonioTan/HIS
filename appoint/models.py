@@ -51,5 +51,14 @@ class Schedule(models.Model):
     price = models.SmallIntegerField(default=80)
 
 
+class Report(models.Model):
+    patient = models.ForeignKey(to='login.User', on_delete=models.CASCADE)
+    name = models.CharField(max_length=60)
+    report_time = models.DateField()
+    department = models.ForeignKey(to='Department', on_delete=models.CASCADE)
+    result = models.TextField()
+    note = models.TextField()
+
+
 
 
