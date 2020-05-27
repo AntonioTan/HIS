@@ -105,20 +105,20 @@ def deal_registration(request, *args, **kwargs):
             context['date'] = str(datetime.today().date()+timedelta(days=kwargs['picked_date']))
             context['time'] = '上午8:00 --  10:00' if not kwargs['picked_morning_afternoon'] else '下午2:00 -- 4:00'
             context['schedule_id'] = schedule.id
-            response = render(request, template_name='appoint/submit_test.html', context=context)
+            response = render(request, template_name='appoint/submit.html', context=context)
             response.set_cookie(key='user_id', value=request.COOKIES['user_id'], expires=3600)
             return response
         else:
-            return render(request, 'login/home_page_test.html')
+            return render(request, 'login/home_page.html')
     else:
         if 'user_id' in request.COOKIES.keys():
             print(request.POST.get('description'))
             user_id = request.COOKIES.get('user_id')
-            response = render(request, template_name='appoint/submit_test.html',)
+            response = render(request, template_name='appoint/submit.html', )
             response.set_cookie(key='user_id', value=user_id, expires=3600)
             return response
         else:
-            return render(request, 'login/home_page_test.html')
+            return render(request, 'login/home_page.html')
 
 
 class AppointView(View):
@@ -201,7 +201,7 @@ class AppointView(View):
                     print(key, self.initial[key])
             context = self.initial
             context = add_user_id(request, context)
-            response = render(request, template_name='appoint/search_test.html', context=context)
+            response = render(request, template_name='appoint/search.html', context=context)
             if 'user_id' in request.COOKIES.keys():
                 response.set_cookie(key='user_id', value=request.COOKIES['user_id'], expires=3600)
             return response

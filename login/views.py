@@ -87,7 +87,7 @@ class SignInView(View):
                 print('request', request.COOKIES)
                 request.COOKIES['post_token'] = 'allow'
             if request.COOKIES['post_token'] != 'allow':
-                return redirect('appoint:search_test')
+                return redirect('appoint:search')
             context = {'sign_in_form': SignIn()}
             context = add_user_id(request, context)
             response = render(request, self.template_name, context=context)
@@ -103,7 +103,7 @@ class SignInView(View):
         print('post', request.COOKIES)
         # TODO we need direct user to home_page_logged_in
         if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':
-            return redirect('appoint:search_test')
+            return redirect('appoint:search')
         if verify_sign_in(self.initial):
             context = get_user_center_context(self.initial['name'])
             print(context)
@@ -142,7 +142,7 @@ class SignUpView(View):
     initial = {"key": "value"}
     # TODO here we use the test html later we need to change it
     template_name = "login/sign_up.html"
-    success_template_name = "login/sign_up_success_test.html"
+    success_template_name = "login/signup_success.html"
 
     def dispatch(self, request, *args, **kwargs):
         if request.method == 'POST':
@@ -166,7 +166,7 @@ class SignUpView(View):
             self.initial
         )
         if 'post_token' not in request.COOKIES.keys() or request.COOKIES['post_token'] != 'allow':
-            return redirect('appoint:search_test')
+            return redirect('appoint:search')
         if self.initial['password'] == self.initial['repeat_password'] and form.is_valid():
             print('No Wrong')
             user_data = get_user_data(self.initial)
