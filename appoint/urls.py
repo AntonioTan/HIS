@@ -18,5 +18,4 @@ urlpatterns = [
     path('registration_test/<int:arg1>/', views.deal_registration, name='registration_test'),
     path('admin_search/', views.admin_search, name='admin_search'),
     path('admin_register/<int:order_id>/', views.admin_register, name='admin_register')
-
 ]

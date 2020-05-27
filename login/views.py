@@ -1,4 +1,4 @@
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import redirect
 from django.http.cookie import SimpleCookie
@@ -14,7 +14,85 @@ from datetime import date
 from datetime import datetime, timedelta
 from appoint.models import Order
 from login.models import User
+import string, random
+from email.mime.text import MIMEText
+from email.header import Header
+import smtplib
+
+
 # Create your views here.
+def get_code(request, name, email):
+    find_template = 'login/forget.html'
+    sender = '2017312322@email.cufe.edu.cn'
+    receivers = ['antonio21tan@163.com']
+    code = ''
+    for i in range(4):
+        code += string.ascii_letters[random.randint(0, 51)]
+    msg = ""
+    message = MIMEText('您的邮箱验证码是%s' % code, 'plain', 'utf-8')
+    message['From'] = Header("CUFE医院患者服务系统", 'utf-8')  # 发送者
+    message['To'] = Header("用户", 'utf-8')  # 接收者
+    subject = 'CUFE医院患者服务系统邮箱验证码'
+    message['Subject'] = Header(subject, 'utf-8')
+    try:
+        smtpObj = smtplib.SMTP(host='smtp.exmail.qq.com', port=25)
+        smtpObj.login(user=sender, password='r9FMXKRcmDXo5DNb')
+        smtpObj.set_debuglevel(1)
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
+    context = {
+        'name': name,
+        'email': email,
+        'real_code': code
+    }
+    return render(request, template_name=find_template, context=context)
+
+
+class FindView(View):
+    initial = {
+        'name': 'Eric',
+        'email': '203i0908@163.com'
+    }
+    template_name = 'login/forget.html'
+    success_template_namee = 'login/home_page.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            return self.post(request)
+        else:
+            return render(request, template_name=self.template_name, context=self.initial)
+
+    def post(self, request):
+        context = {}
+        for key in request.POST.keys():
+            context[key] = request.POST[key]
+        print(context)
+        if context['name'] == '' or context['email'] == '':
+            context['error'] = '请输入用户名和邮箱'
+            return render(request, template_name=self.template_name, context=context)
+        elif context['real_code'] == '':
+            context['error'] = '请获取验证码'
+            return render(request, template_name=self.template_name, context=context)
+        elif context['code'] == '':
+            context['error'] = '请输入验证码'
+            return render(request, template_name=self.template_name, context=context)
+        else:
+            name = request.POST['name']
+            email = request.POST['email']
+            code = request.POST['code']
+            try:
+                user = User.objects.get(name=name, email=email)
+            except Exception:
+                context['error'] = '用户名或邮箱错误'
+                return render(request, template_name=self.template_name, context=context)
+            if context['real_code'] == context['code']:
+                return render(request, template_name=self.success_template_namee)
+            else:
+                context['error'] = '验证码错误 请重新获取'
+                return render(request, template_name=self.template_name, context=context)
+
 
 
 def department_list(request):
