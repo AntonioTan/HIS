@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError, MultipleObjectsReturned, ObjectDoesNotExist
 from .models import User
 import datetime
+import string
 
 
 def validate_user_name(value):
@@ -37,7 +38,33 @@ def validate_user_birth(value):
 
 def validate_user_password(value):
     # TODO add this later we still need to test...
-    return
+    nums = list(range(10))
+    upper_letters = string.ascii_uppercase
+    if(len(value)) == 0:
+        raise (ValidationError('请输入密码',
+                               params={'value': value},
+                               code='请输入密码'))
+    if(len(value)) < 8:
+        raise(ValidationError('密码长度过短',
+                              params={'value': value},
+                              code='密码长度过短'))
+    no_num = True
+    for num in nums:
+        if str(num) in value:
+            no_num = False
+    if no_num:
+        raise(ValidationError('密码没有数字',
+                              params={'value': value},
+                              code='密码没有数字'))
+    no_upper = True
+    for upper_letter in upper_letters:
+        if upper_letter in value:
+            no_upper = False
+    if no_upper:
+        raise(ValidationError('密码没有大写字母',
+                              params={'value':value},
+                              code='密码没有大写字母'))
+
 
 
 

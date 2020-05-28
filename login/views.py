@@ -8,7 +8,7 @@ django.setup()
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.hashers import make_password, check_password
-from .forms import SignUp, SignIn
+from .forms import SignUp, SignIn, ChangePSW
 from .models import User
 from datetime import date
 from datetime import datetime, timedelta
@@ -73,20 +73,31 @@ def change_info(request):
 
 
 def change_psw(request):
+    context = {}
     rst = {}
     for key in request.POST.keys():
         rst[key] = request.POST[key]
     print(rst)
-    if len(rst['password']) == 0 or len(rst['new_password']) == 0:
+    # if len(rst['password']) == 0 or len(rst['new_password']) == 0:
+    #     context = rst
+    #     context['error'] = '请填写密码'
+    #     return render(request, template_name='login/password_changed.html', context=context)
+    form = ChangePSW(rst)
+    print(form.is_valid())
+    if not form.is_valid() or rst['password'] != rst['repeat_password']:
         context = rst
-        context['error'] = '请填写密码'
-        return render(request, template_name='login/password_changed.html', context=context)
-    if rst['password'] != rst['new_password']:
-        context = rst
-        context['error'] = '两次密码不一样'
+        errors = form.errors.as_data()
+        print(errors)
+        for error_key in errors.keys():
+            errors[error_key] = errors[error_key][0].message
+        print(errors)
+        context['errors'] = errors
+        if rst['password'] != rst['repeat_password']:
+            context['repeat_error2'] = '两次密码不一样'
+        print(context)
         return render(request, template_name='login/password_changed.html', context=context)
     user = User.objects.get(id=rst['user_id'])
-    user.password = make_password(rst['new_password'])
+    user.password = make_password(rst['repeat_password'])
     user.save()
     return render(request, template_name='login/home_page.html')
 
@@ -284,7 +295,7 @@ class SignInView(View):
             else:
                 context['user_id'] = context['user'].id
                 context['user_available'] = context['user'].appoint_available
-
+                context['break_rule_times'] = context['user'].break_rule_times
                 response = render(request, self.success_template_name, context=context)
                 response.set_cookie(key='post_token', value='disable', expires=3600)
                 response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
@@ -356,7 +367,7 @@ class SignUpView(View):
             new_user.save()
             new_user = User.objects.get(name=user_data['name'])
             # response = HttpResponseRedirect('welcome=%s' % user_data['name'])
-            context = {'user_id': new_user.id, 'user_available': new_user.appoint_available}
+            context = {'user_id': new_user.id, 'user_available': new_user.appoint_available, 'break_rule_times':new_user.break_rule_times}
             response = render(request, self.success_template_name, context=context)
             response.set_cookie(key='user_id', value=new_user.id, expires=3600)
             response.set_cookie(key='post_token', value='disable', expires=3600)
@@ -365,6 +376,7 @@ class SignUpView(View):
             errors = form.errors.as_data()
             for error_key in errors.keys():
                 errors[error_key] = errors[error_key][0].message
+            print(errors)
             if self.initial['password'] != self.initial['repeat_password']:
                 errors['repeat_password'] = '确认密码与密码不相同'
                 # TODO add cleaned_data
@@ -430,5 +442,6 @@ def add_user_id(request, context):
     else:
         context['user_id'] = request.COOKIES['user_id']
         context['user_available'] = User.objects.get(id=request.COOKIES['user_id']).appoint_available
+        context['break_rule_times'] = User.objects.get(id=request.COOKIES['user_id']).break_rule_times
         return context
 

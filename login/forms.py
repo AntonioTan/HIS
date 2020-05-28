@@ -1,5 +1,5 @@
 from django import forms
-from .validators import validate_user_name, validate_user_phone, validate_user_birth
+from .validators import validate_user_name, validate_user_phone, validate_user_birth, validate_user_password
 from . import choices
 
 
@@ -29,7 +29,8 @@ class SignUp(forms.Form):
                                label='密码',
                                error_messages={
                                    'required': '请输入密码'
-                               }
+                               },
+                               validators=[validate_user_password]
                                )
 
     birth = forms.DateField(label="生日",
@@ -59,3 +60,19 @@ class SignUp(forms.Form):
                              }
                              )
 
+
+class ChangePSW(forms.Form):
+    password = forms.CharField(max_length=20,
+                               label='密码',
+                               error_messages={
+                                   'required': '请输入密码'
+                               },
+                               validators=[validate_user_password]
+                               )
+    repeat_password = forms.CharField(max_length=20,
+                               label='重复密码',
+                               error_messages={
+                                   'required': '请输入密码'
+                               },
+                               validators=[validate_user_password]
+                               )
