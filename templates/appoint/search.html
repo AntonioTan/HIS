@@ -102,7 +102,11 @@
             {% endfor %}
             {% for check_department in check_departments %}
             <li><a href="/appoint/search/picked_department_id={{ check_department.id }}/">
-                <button id="Submit6" class="btn btn-sm btn-info" type="button">{{ check_department.name }}</button></a></li>
+                {% if picked_department_id == department.id %}
+                        <button id="Submit6" class="btn btn-sm btn-danger" type="button">{{ check_department.name }}</button>
+                    {% else %}
+                        <button id="Submit6" class="btn btn-sm btn-info" type="button">{{ check_department.name }}</button>
+                    {% endif %}
             {% endfor %}
         </ul>
             </div>
@@ -175,10 +179,16 @@
 
             </div>
      </div>
-
     </div>
 
     <div class="container" style="background-color: snow">
+    {% if user_id and user_id != -1 %}
+    {% if break_rule_times != 0 %}
+        <h1 style="color: red;margin-left: 30%">您已违约 当前不能预约</h1>
+    {% elif user_available != 1 %}
+        <h1 style="color: red;margin-left: 30%">预约次数已用完 当前不能预约</h1>
+    {% endif %}
+    {% endif %}
         <div class="row" style="margin-left:12%;margin-top:0" >
             {% if picked_type %}
                 {% if doctors|length %}
@@ -192,7 +202,7 @@
                                     <p>职称：{{ doctor.title }}</p>
                                     <p>号源：专家号</p>
                                     {% if user_id and user_id != -1 %}
-                                        {% if user_available %}
+                                        {% if user_available and break_rule_times == 0 %}
                                             <div class="form-group">
                                                 <label for="lastname">
                                                     <a href="/appoint/registration/picked_department_id={{ doctor.department_id }}/picked_doctor_id={{ doctor.id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">
@@ -228,7 +238,7 @@
                              <p>科室：{{ schedule.department_name }}</p>
                              <p>号源：普通号</p>
                              {% if user_id and user_id != -1 %}
-                                 {% if user_available == 1 %}
+                                 {% if user_available == 1 and break_rule_times == 0 %}
                                  <div class="form-group">
                                      <label for="lastname">
                                          <a href="/appoint/registration/picked_department_id={{ schedule.department_id }}/picked_date={{ picked_date }}/picked_type={{ picked_type }}/picked_morning_afternoon={{ picked_morning_afternoon }}">

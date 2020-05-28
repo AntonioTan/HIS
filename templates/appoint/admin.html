@@ -83,7 +83,7 @@
             {% for order in orders %}
             <li class="list-group-item" style="margin-top:2%;position: relative">
                 <p>ID：{{ order.id }}</p>
-                <p>科室：{{ order.patient.name }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
+                <p>科室：{{ order.registration.department.name }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </p>
                 {% if order.registration.doctor.id %}
                     <p>号源类型：专家号</p>
                 {% else %}
