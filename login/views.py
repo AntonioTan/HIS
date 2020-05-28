@@ -32,7 +32,7 @@ def change_info(request):
             return render(request, template_name='login/home_page.html')
         user_data = {}
         user_data['name'] = 'TEST'
-        user_data['password'] = 'test'
+        user_data['password'] = 'Aaaaaaa8'
         user_data['sex'] = 'female'
         user_data['age'] = 18
         user_data['birth'] = request.POST['birth']
