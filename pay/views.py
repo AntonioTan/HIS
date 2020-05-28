@@ -49,17 +49,20 @@ def pay_test(request, price, schedule_id):
             return render(request, 'login/home_page.html')
         user_id = request.COOKIES['user_id']
         patient = User.objects.get(id=user_id)
-        patient.appoint_times = patient.appoint_times-1
-        patient.save()
         patient = User.objects.get(id=user_id)
-        if patient.appoint_times == 0:
-            patient.appoint_available = 0
-            patient.save()
+
         registration = Schedule.objects.get(id=schedule_id)
         registration.num = registration.num-1
         registration.save()
         delta_days = registration.weekday-datetime.isoweekday(datetime.today().date())
         delta_days = 7+delta_days if delta_days<0 else delta_days
+        if len(Order.objects.filter(patient=patient,
+            registration=registration,
+            status=2,
+            description=request.POST['description'],
+            order_time=datetime.today().date()+timedelta(days=delta_days)))>0:
+            return redirect('appoint:search')
+
         Order.objects.create(
             patient=patient,
             registration=registration,
@@ -67,6 +70,10 @@ def pay_test(request, price, schedule_id):
             description=request.POST['description'],
             order_time=datetime.today().date()+timedelta(days=delta_days)
         )
+        patient.appoint_times = patient.appoint_times-1
+        if patient.appoint_times == 0:
+            patient.appoint_available = 0
+        patient.save()
         print('Order Created')
         """
         设置配置，包括支付宝网关地址、app_id、应用私钥、支付宝公钥等，其他配置值可以查看AlipayClientConfig的定义。
