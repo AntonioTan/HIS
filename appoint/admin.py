@@ -11,7 +11,6 @@ class DoctorAdmin(admin.ModelAdmin):
     list_filter = ['title']
 
 
-
 class DepartmentAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_display = ['id', 'name']
@@ -24,9 +23,9 @@ admin.site.register(models.Order)
 
 class ScheduleAdmin(admin.ModelAdmin):
     list_per_page = 10
-    list_filter = ['type']
+    list_filter = ['type', 'weekday']
     search_fields = ['id', 'doctor_name', 'department_name']
-    list_display = ('id', 'doctor_name', 'department_name', 'num')
+    list_display = ('id', 'doctor_name', 'department_name', 'num', 'weekday')
 
 admin.site.register(models.Schedule, ScheduleAdmin)
 admin.site.register(models.Report)
