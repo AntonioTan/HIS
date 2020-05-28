@@ -102,7 +102,7 @@
             {% endfor %}
             {% for check_department in check_departments %}
             <li><a href="/appoint/search/picked_department_id={{ check_department.id }}/">
-                {% if picked_department_id == department.id %}
+                {% if picked_department_id == check_department.id %}
                         <button id="Submit6" class="btn btn-sm btn-danger" type="button">{{ check_department.name }}</button>
                     {% else %}
                         <button id="Submit6" class="btn btn-sm btn-info" type="button">{{ check_department.name }}</button>
