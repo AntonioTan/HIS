@@ -35,7 +35,7 @@ def admin_search(request):
         return render(request, template_name=admin_template, context=context)
     hour_now = datetime.today().hour
 
-    if 0 < hour_now < 10:
+    if -1 < hour_now < 10:
         morning_afternoon = 0
     elif 10 < hour_now < 24:
         morning_afternoon = 1

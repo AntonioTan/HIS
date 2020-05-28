@@ -19,6 +19,10 @@ class Department(models.Model):
     # type 1 for check department || 0 for common department
     type = models.BooleanField()
 
+    def __unicode__(self):
+        return self.name
+
+
 
 class Doctor(models.Model):
     name = models.CharField(max_length=20, unique=True)
@@ -50,6 +54,19 @@ class Schedule(models.Model):
     type = models.BooleanField()
     price = models.SmallIntegerField(default=80)
 
+    def doctor_name(self):
+        if self.type:
+            return self.doctor.name
+        else:
+            return '无医生'
+    doctor_name.short_description = 'Doctor Name'
+    doctor_name.admin_order_field = 'doctor'
+
+    def department_name(self):
+        return self.department.name
+    department_name.short_description = 'Department Name'
+    department_name.admin_order_field = 'department'
+
 
 class Report(models.Model):
     patient = models.ForeignKey(to='login.User', on_delete=models.CASCADE)
@@ -58,6 +75,12 @@ class Report(models.Model):
     department = models.ForeignKey(to='Department', on_delete=models.CASCADE)
     result = models.TextField()
     note = models.TextField()
+
+    def patient_name(self):
+        return self.patient.name
+
+    patient.short_description = 'Patient Name'
+
 
 
 

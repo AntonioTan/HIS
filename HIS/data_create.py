@@ -285,4 +285,6 @@ if __name__ == '__main__':
     #     print("邮件发送成功")
     # except smtplib.SMTPException:
     #     print("Error: 无法发送邮件")
-    print(User.objects.get(id='100'))
+    # print(User.objects.get(id='100'))
+    orders = Order.objects.filter(status=2, order_time=datetime.today())
+    print(len(orders))

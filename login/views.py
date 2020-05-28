@@ -207,6 +207,7 @@ def user_center(request):
         name = User.objects.get(id=user_id).name
         context = get_user_center_context(name)
         context = add_user_id(request, context)
+        print(context)
         response = render(request, template_name='login/user_center.html', context=context)
         response.set_cookie(key='user_id', value=user_id, expires=3600)
         return response
@@ -216,9 +217,9 @@ def user_center(request):
 
 def logout(request):
     context = {'sign_in_form': SignIn()}
-    response = render(request, 'login/home_page.html', context=context)
-    response.set_cookie(key='post_token', value='allow')
+    response = redirect('login:sign_in')
     response.delete_cookie('user_id')
+    response.set_cookie(key='post_token', value='allow')
     return response
 
 
@@ -250,6 +251,7 @@ class SignInView(View):
         if request.method == 'POST':
             return self.post(request)
         else:
+            print('Dispatch', request.COOKIES)
             if 'post_token' not in request.COOKIES.keys():
                 print('request', request.COOKIES)
                 request.COOKIES['post_token'] = 'allow'
@@ -280,7 +282,9 @@ class SignInView(View):
                 response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
                 return response
             else:
-                context = add_user_id(request, context)
+                context['user_id'] = context['user'].id
+                context['user_available'] = context['user'].appoint_available
+
                 response = render(request, self.success_template_name, context=context)
                 response.set_cookie(key='post_token', value='disable', expires=3600)
                 response.set_cookie(key='user_id', value=context['user'].id, expires=3600)
@@ -350,8 +354,11 @@ class SignUpView(View):
                 appoint_available=user_data['appoint_available']
             )
             new_user.save()
+            new_user = User.objects.get(name=user_data['name'])
             # response = HttpResponseRedirect('welcome=%s' % user_data['name'])
-            response = render(request, self.success_template_name)
+            context = {'user_id': new_user.id, 'user_available': new_user.appoint_available}
+            response = render(request, self.success_template_name, context=context)
+            response.set_cookie(key='user_id', value=new_user.id, expires=3600)
             response.set_cookie(key='post_token', value='disable', expires=3600)
             return response
         else:

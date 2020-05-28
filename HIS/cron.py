@@ -1,6 +1,6 @@
 from appoint.models import Doctor, Schedule, Department, Order
 from login.models import User
-
+from datetime import datetime
 
 def test():
     print('cronb test!')
@@ -27,7 +27,7 @@ def restore_schedule():
 
 def break_rule():
     print('break_rule')
-    orders = Order.objects.filter(status=2)
+    orders = Order.objects.filter(status=2, order_time=datetime.today())
     for order in orders:
         order.status = 4
         order.save()

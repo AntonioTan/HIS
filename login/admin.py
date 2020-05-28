@@ -6,4 +6,10 @@ from . import models
 # username: tantianyi
 # password: 123456
 # with this superuser we can manage the backend
-admin.site.register(models.User)
+class UserAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = ['id', 'name']
+    search_fields = ['id', 'name']
+
+
+admin.site.register(models.User, UserAdmin)
