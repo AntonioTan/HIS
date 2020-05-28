@@ -20,53 +20,54 @@
 </style>
 <br>
 <nav class="navbar navbar-default navbar-menu" style="margin:0;padding:0">
-	  <div class="menu-container">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-menu" aria-expanded="false">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
-	    </div>
+    <div class="menu-container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#service-menu"
+                    aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-brand" style="font-size:25px;color: black">CUFE医院患者服务系统</p>
+        </div>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="service-menu">
-	      <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
-	      	<li><a href="#" id="page1">首页</a></li>
-            <li><a href="#" id="department">科室分类</a></li>
-            <li><a href="#" id="reserve">预约挂号</a></li>
-            <li><a href="#" id="contact">联系我们</a></li>
-            <li><a href="#" id="help">帮助中心</a></li>
-            <li><a href="#" id="self">个人中心</a></li>
-              <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
-                <ul class="dropdown-menu" style="min-width:100%">
-                    <li><a href="#">设置</a></li>
-                    <li><a href="#">我的预约</a></li>
-                    <li><a href="#">退出登录</a></li>
-                </ul>
-            </li>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-<div class="container" style="margin-left:8%;margin-top:2%">
-    <img src="{% static 'login/imgs/5.png' %}" style="width: 823.5px;height: 123px" >
-   </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="service-menu">
+            <ul class="nav navbar-nav" style="margin-left:35%;margin-top:0.3%">
+                <li><a href="{% url 'login:sign_in' %}" id="page1">首页</a></li>
+                <li><a href="{% url 'login:department_list' %}" id="department">科室分类</a></li>
+                <li><a href="{% url 'appoint:search' %}" id="reserve">预约挂号</a></li>
+                <li><a href="{% url 'login:contact' %}" id="contact">联系我们</a></li>
+                <li><a href="{% url 'login:ourhelp' %}" id="help">帮助中心</a></li>
+                <li><a href="{% url 'login:user_center' %}" id="self">个人中心</a></li>
+                {% if user_id != -1 and user_id %}
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="min-width:100%">
+                            <li><a href="{% url 'login:change_info' %}">设置</a></li>
+                            <li><a href="{% url 'login:user_center' %}">我的预约</a></li>
+                            <li><a href="{% url 'login:logout' %}">退出登录</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                {% endif %}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <br> </br>
 <br> </br>
 <br> </br>
 <br> </br>
 <br> </br>
 <br> </br>
-<div class="container" style="margin-left:20%;margin-top:2%">
+<div class="container" style="margin-left:40%;margin-top:2%">
     <span class="glyphicon glyphicon-ok" style="font-size: 50px;color:green" style="font-size: 50px;color: coral"> 恭喜你注册成功！</span>
 </div>
 <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-5 col-sm-10">
         <br> </br>
         <br> </br>
         <label><a href="{% url 'login:sign_in' %}"style="margin-left:50px;font-size: 25px">进入预约页面</a></label>
