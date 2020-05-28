@@ -22,6 +22,9 @@ class Department(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
 
 
 class Doctor(models.Model):
@@ -31,6 +34,8 @@ class Doctor(models.Model):
     title = models.CharField(max_length=30)
     strength = models.CharField(max_length=50)
     department = models.ForeignKey(to='Department', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
 
 class Order(models.Model):

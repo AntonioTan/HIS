@@ -27,3 +27,6 @@ class User(models.Model):
     break_rule_times = models.SmallIntegerField(default=0)
     # 0 for non-admin| 1 for admin
     admin = models.BooleanField(default=0)
+
+    def __str__(self):
+        return self.name
